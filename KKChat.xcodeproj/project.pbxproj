@@ -1,0 +1,755 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8FCF36B6259306A20026412C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF36B5259306A20026412C /* AppDelegate.m */; };
+		8FCF36BF259306A20026412C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FCF36BD259306A20026412C /* Main.storyboard */; };
+		8FCF36C1259306A40026412C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FCF36C0259306A40026412C /* Assets.xcassets */; };
+		8FCF36C4259306A40026412C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FCF36C2259306A40026412C /* LaunchScreen.storyboard */; };
+		8FCF36C7259306A40026412C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF36C6259306A40026412C /* main.m */; };
+		8FCF36D82593076F0026412C /* KKTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF36D72593076F0026412C /* KKTabBarViewController.m */; };
+		8FCF36DD2593078B0026412C /* KKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF36DC2593078B0026412C /* KKNavigationController.m */; };
+		8FCF36E32593084D0026412C /* KKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF36E22593084D0026412C /* KKBaseViewController.m */; };
+		8FCF36E7259308610026412C /* KKBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF36E6259308610026412C /* KKBaseModel.m */; };
+		8FCF36EB2593086B0026412C /* KKBaseCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF36EA2593086B0026412C /* KKBaseCellModel.m */; };
+		8FCF36EF259308830026412C /* KKBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF36EE259308830026412C /* KKBaseCell.m */; };
+		8FCF370925930B390026412C /* KKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF370825930B390026412C /* KKHomeViewController.m */; };
+		8FCF370E25930B970026412C /* KKContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF370D25930B970026412C /* KKContactsViewController.m */; };
+		8FCF371225930BED0026412C /* KKFinderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF371125930BED0026412C /* KKFinderViewController.m */; };
+		8FCF371625930BF70026412C /* KKMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF371525930BF70026412C /* KKMeViewController.m */; };
+		8FCF372125932A1F0026412C /* KKChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF372025932A1F0026412C /* KKChatDetailViewController.m */; };
+		8FCF372525932A630026412C /* KKChatTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF372425932A630026412C /* KKChatTableView.m */; };
+		8FCF372925932B8C0026412C /* KKIMTextMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF372825932B8C0026412C /* KKIMTextMsgCell.m */; };
+		8FCF372D25932B9F0026412C /* KKIMImageMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF372C25932B9F0026412C /* KKIMImageMsgCell.m */; };
+		8FCF373125932BCE0026412C /* KKIMRedBagMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF373025932BCE0026412C /* KKIMRedBagMsgCell.m */; };
+		8FCF373525932BED0026412C /* KKIMTimeMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF373425932BED0026412C /* KKIMTimeMsgCell.m */; };
+		8FCF373925932C250026412C /* KKIMSmallAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF373825932C250026412C /* KKIMSmallAppCell.m */; };
+		8FCF374825932F200026412C /* NSString+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF374625932F200026412C /* NSString+Add.m */; };
+		8FCF374C25932F480026412C /* KKIMBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF374B25932F480026412C /* KKIMBaseModel.m */; };
+		8FCF3751259330AA0026412C /* KKIMCallMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF3750259330AA0026412C /* KKIMCallMsgCell.m */; };
+		8FCF37582593313E0026412C /* KKIMVoiceMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF37572593313E0026412C /* KKIMVoiceMsgCell.m */; };
+		F58511EE57860048E3FFA24C /* Pods_KKChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD0BDD52FFC77621D1D58A6 /* Pods_KKChat.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6DD0BDD52FFC77621D1D58A6 /* Pods_KKChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FCF36B1259306A20026412C /* KKChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FCF36B4259306A20026412C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8FCF36B5259306A20026412C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8FCF36BE259306A20026412C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8FCF36C0259306A40026412C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8FCF36C3259306A40026412C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8FCF36C5259306A40026412C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FCF36C6259306A40026412C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8FCF36D62593076F0026412C /* KKTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKTabBarViewController.h; sourceTree = "<group>"; };
+		8FCF36D72593076F0026412C /* KKTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKTabBarViewController.m; sourceTree = "<group>"; };
+		8FCF36DB2593078B0026412C /* KKNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKNavigationController.h; sourceTree = "<group>"; };
+		8FCF36DC2593078B0026412C /* KKNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKNavigationController.m; sourceTree = "<group>"; };
+		8FCF36DF2593079A0026412C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		8FCF36E0259307CF0026412C /* DefaultHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaultHeader.h; sourceTree = "<group>"; };
+		8FCF36E12593084D0026412C /* KKBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKBaseViewController.h; sourceTree = "<group>"; };
+		8FCF36E22593084D0026412C /* KKBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKBaseViewController.m; sourceTree = "<group>"; };
+		8FCF36E5259308610026412C /* KKBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKBaseModel.h; sourceTree = "<group>"; };
+		8FCF36E6259308610026412C /* KKBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKBaseModel.m; sourceTree = "<group>"; };
+		8FCF36E92593086B0026412C /* KKBaseCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKBaseCellModel.h; sourceTree = "<group>"; };
+		8FCF36EA2593086B0026412C /* KKBaseCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKBaseCellModel.m; sourceTree = "<group>"; };
+		8FCF36ED259308830026412C /* KKBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKBaseCell.h; sourceTree = "<group>"; };
+		8FCF36EE259308830026412C /* KKBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKBaseCell.m; sourceTree = "<group>"; };
+		8FCF370725930B390026412C /* KKHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeViewController.h; sourceTree = "<group>"; };
+		8FCF370825930B390026412C /* KKHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeViewController.m; sourceTree = "<group>"; };
+		8FCF370C25930B970026412C /* KKContactsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKContactsViewController.h; sourceTree = "<group>"; };
+		8FCF370D25930B970026412C /* KKContactsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKContactsViewController.m; sourceTree = "<group>"; };
+		8FCF371025930BED0026412C /* KKFinderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKFinderViewController.h; sourceTree = "<group>"; };
+		8FCF371125930BED0026412C /* KKFinderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKFinderViewController.m; sourceTree = "<group>"; };
+		8FCF371425930BF70026412C /* KKMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMeViewController.h; sourceTree = "<group>"; };
+		8FCF371525930BF70026412C /* KKMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKMeViewController.m; sourceTree = "<group>"; };
+		8FCF371F25932A1F0026412C /* KKChatDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKChatDetailViewController.h; sourceTree = "<group>"; };
+		8FCF372025932A1F0026412C /* KKChatDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKChatDetailViewController.m; sourceTree = "<group>"; };
+		8FCF372325932A630026412C /* KKChatTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKChatTableView.h; sourceTree = "<group>"; };
+		8FCF372425932A630026412C /* KKChatTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKChatTableView.m; sourceTree = "<group>"; };
+		8FCF372725932B8C0026412C /* KKIMTextMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMTextMsgCell.h; sourceTree = "<group>"; };
+		8FCF372825932B8C0026412C /* KKIMTextMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMTextMsgCell.m; sourceTree = "<group>"; };
+		8FCF372B25932B9F0026412C /* KKIMImageMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMImageMsgCell.h; sourceTree = "<group>"; };
+		8FCF372C25932B9F0026412C /* KKIMImageMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMImageMsgCell.m; sourceTree = "<group>"; };
+		8FCF372F25932BCE0026412C /* KKIMRedBagMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMRedBagMsgCell.h; sourceTree = "<group>"; };
+		8FCF373025932BCE0026412C /* KKIMRedBagMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMRedBagMsgCell.m; sourceTree = "<group>"; };
+		8FCF373325932BED0026412C /* KKIMTimeMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMTimeMsgCell.h; sourceTree = "<group>"; };
+		8FCF373425932BED0026412C /* KKIMTimeMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMTimeMsgCell.m; sourceTree = "<group>"; };
+		8FCF373725932C250026412C /* KKIMSmallAppCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMSmallAppCell.h; sourceTree = "<group>"; };
+		8FCF373825932C250026412C /* KKIMSmallAppCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMSmallAppCell.m; sourceTree = "<group>"; };
+		8FCF374625932F200026412C /* NSString+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Add.m"; sourceTree = "<group>"; };
+		8FCF374725932F200026412C /* NSString+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Add.h"; sourceTree = "<group>"; };
+		8FCF374A25932F480026412C /* KKIMBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMBaseModel.h; sourceTree = "<group>"; };
+		8FCF374B25932F480026412C /* KKIMBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMBaseModel.m; sourceTree = "<group>"; };
+		8FCF374F259330AA0026412C /* KKIMCallMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMCallMsgCell.h; sourceTree = "<group>"; };
+		8FCF3750259330AA0026412C /* KKIMCallMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMCallMsgCell.m; sourceTree = "<group>"; };
+		8FCF37562593313E0026412C /* KKIMVoiceMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMVoiceMsgCell.h; sourceTree = "<group>"; };
+		8FCF37572593313E0026412C /* KKIMVoiceMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMVoiceMsgCell.m; sourceTree = "<group>"; };
+		A22901DF6A43348524B2AC67 /* Pods-KKChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKChat.release.xcconfig"; path = "Target Support Files/Pods-KKChat/Pods-KKChat.release.xcconfig"; sourceTree = "<group>"; };
+		CF5FA835014BC3F053C9AE33 /* Pods-KKChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKChat.debug.xcconfig"; path = "Target Support Files/Pods-KKChat/Pods-KKChat.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8FCF36AE259306A20026412C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F58511EE57860048E3FFA24C /* Pods_KKChat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		654D8D9A1F45818248D33A27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6DD0BDD52FFC77621D1D58A6 /* Pods_KKChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8FCF36A8259306A20026412C = {
+			isa = PBXGroup;
+			children = (
+				8FCF36B3259306A20026412C /* KKChat */,
+				8FCF36B2259306A20026412C /* Products */,
+				C2DEE4358E7AE0C5CFB7D800 /* Pods */,
+				654D8D9A1F45818248D33A27 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8FCF36B2259306A20026412C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF36B1259306A20026412C /* KKChat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8FCF36B3259306A20026412C /* KKChat */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF36B4259306A20026412C /* AppDelegate.h */,
+				8FCF36B5259306A20026412C /* AppDelegate.m */,
+				8FCF36D0259306FE0026412C /* Base */,
+				8FCF36F625930A3F0026412C /* Modules */,
+				8FCF36D1259307070026412C /* Category */,
+				8FCF36F4259309200026412C /* CustomerView */,
+				8FCF371C259324DD0026412C /* Resource */,
+				8FCF36D22593073B0026412C /* Other */,
+			);
+			path = KKChat;
+			sourceTree = "<group>";
+		};
+		8FCF36D0259306FE0026412C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF36D5259307550026412C /* Controller */,
+				8FCF36D42593074F0026412C /* Model */,
+				8FCF36D3259307480026412C /* View */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		8FCF36D1259307070026412C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF374525932F0D0026412C /* NSString */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		8FCF36D22593073B0026412C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF36E0259307CF0026412C /* DefaultHeader.h */,
+				8FCF36DF2593079A0026412C /* PrefixHeader.pch */,
+				8FCF36BD259306A20026412C /* Main.storyboard */,
+				8FCF36C0259306A40026412C /* Assets.xcassets */,
+				8FCF36C2259306A40026412C /* LaunchScreen.storyboard */,
+				8FCF36C6259306A40026412C /* main.m */,
+				8FCF36C5259306A40026412C /* Info.plist */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		8FCF36D3259307480026412C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF36ED259308830026412C /* KKBaseCell.h */,
+				8FCF36EE259308830026412C /* KKBaseCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8FCF36D42593074F0026412C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF36E5259308610026412C /* KKBaseModel.h */,
+				8FCF36E6259308610026412C /* KKBaseModel.m */,
+				8FCF36E92593086B0026412C /* KKBaseCellModel.h */,
+				8FCF36EA2593086B0026412C /* KKBaseCellModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8FCF36D5259307550026412C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF36D62593076F0026412C /* KKTabBarViewController.h */,
+				8FCF36D72593076F0026412C /* KKTabBarViewController.m */,
+				8FCF36DB2593078B0026412C /* KKNavigationController.h */,
+				8FCF36DC2593078B0026412C /* KKNavigationController.m */,
+				8FCF36E12593084D0026412C /* KKBaseViewController.h */,
+				8FCF36E22593084D0026412C /* KKBaseViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8FCF36F4259309200026412C /* CustomerView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomerView;
+			sourceTree = "<group>";
+		};
+		8FCF36F625930A3F0026412C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF36F725930A6F0026412C /* Home */,
+				8FCF36F825930A760026412C /* Contacts */,
+				8FCF36FA25930A9C0026412C /* Finder */,
+				8FCF36F925930A960026412C /* Me */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8FCF36F725930A6F0026412C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF36FD25930AD40026412C /* Controller */,
+				8FCF36FC25930ACE0026412C /* Model */,
+				8FCF36FB25930AC80026412C /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8FCF36F825930A760026412C /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF370025930AEC0026412C /* Controller */,
+				8FCF36FF25930AE50026412C /* Model */,
+				8FCF36FE25930ADF0026412C /* View */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		8FCF36F925930A960026412C /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF370625930B1C0026412C /* Controller */,
+				8FCF370525930B170026412C /* Model */,
+				8FCF370425930B110026412C /* View */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		8FCF36FA25930A9C0026412C /* Finder */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF370325930B060026412C /* Controller */,
+				8FCF370225930B010026412C /* Model */,
+				8FCF370125930AF70026412C /* View */,
+			);
+			path = Finder;
+			sourceTree = "<group>";
+		};
+		8FCF36FB25930AC80026412C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF372325932A630026412C /* KKChatTableView.h */,
+				8FCF372425932A630026412C /* KKChatTableView.m */,
+				8FCF372725932B8C0026412C /* KKIMTextMsgCell.h */,
+				8FCF372825932B8C0026412C /* KKIMTextMsgCell.m */,
+				8FCF37562593313E0026412C /* KKIMVoiceMsgCell.h */,
+				8FCF37572593313E0026412C /* KKIMVoiceMsgCell.m */,
+				8FCF372B25932B9F0026412C /* KKIMImageMsgCell.h */,
+				8FCF372C25932B9F0026412C /* KKIMImageMsgCell.m */,
+				8FCF372F25932BCE0026412C /* KKIMRedBagMsgCell.h */,
+				8FCF373025932BCE0026412C /* KKIMRedBagMsgCell.m */,
+				8FCF373325932BED0026412C /* KKIMTimeMsgCell.h */,
+				8FCF373425932BED0026412C /* KKIMTimeMsgCell.m */,
+				8FCF373725932C250026412C /* KKIMSmallAppCell.h */,
+				8FCF373825932C250026412C /* KKIMSmallAppCell.m */,
+				8FCF374F259330AA0026412C /* KKIMCallMsgCell.h */,
+				8FCF3750259330AA0026412C /* KKIMCallMsgCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8FCF36FC25930ACE0026412C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF374A25932F480026412C /* KKIMBaseModel.h */,
+				8FCF374B25932F480026412C /* KKIMBaseModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8FCF36FD25930AD40026412C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF370725930B390026412C /* KKHomeViewController.h */,
+				8FCF370825930B390026412C /* KKHomeViewController.m */,
+				8FCF371F25932A1F0026412C /* KKChatDetailViewController.h */,
+				8FCF372025932A1F0026412C /* KKChatDetailViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8FCF36FE25930ADF0026412C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8FCF36FF25930AE50026412C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8FCF370025930AEC0026412C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF370C25930B970026412C /* KKContactsViewController.h */,
+				8FCF370D25930B970026412C /* KKContactsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8FCF370125930AF70026412C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8FCF370225930B010026412C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8FCF370325930B060026412C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF371025930BED0026412C /* KKFinderViewController.h */,
+				8FCF371125930BED0026412C /* KKFinderViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8FCF370425930B110026412C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8FCF370525930B170026412C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8FCF370625930B1C0026412C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF371425930BF70026412C /* KKMeViewController.h */,
+				8FCF371525930BF70026412C /* KKMeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8FCF371C259324DD0026412C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF371D259325090026412C /* TabBar */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		8FCF371D259325090026412C /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		8FCF374525932F0D0026412C /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				8FCF374725932F200026412C /* NSString+Add.h */,
+				8FCF374625932F200026412C /* NSString+Add.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		C2DEE4358E7AE0C5CFB7D800 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF5FA835014BC3F053C9AE33 /* Pods-KKChat.debug.xcconfig */,
+				A22901DF6A43348524B2AC67 /* Pods-KKChat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8FCF36B0259306A20026412C /* KKChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FCF36CA259306A40026412C /* Build configuration list for PBXNativeTarget "KKChat" */;
+			buildPhases = (
+				D8CC83BE24BF94A8375555F2 /* [CP] Check Pods Manifest.lock */,
+				8FCF36AD259306A20026412C /* Sources */,
+				8FCF36AE259306A20026412C /* Frameworks */,
+				8FCF36AF259306A20026412C /* Resources */,
+				5A1419544C978C748CCA823E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KKChat;
+			productName = KKChat;
+			productReference = 8FCF36B1259306A20026412C /* KKChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8FCF36A9259306A20026412C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					8FCF36B0259306A20026412C = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 8FCF36AC259306A20026412C /* Build configuration list for PBXProject "KKChat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8FCF36A8259306A20026412C;
+			productRefGroup = 8FCF36B2259306A20026412C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8FCF36B0259306A20026412C /* KKChat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8FCF36AF259306A20026412C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FCF36C4259306A40026412C /* LaunchScreen.storyboard in Resources */,
+				8FCF36C1259306A40026412C /* Assets.xcassets in Resources */,
+				8FCF36BF259306A20026412C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A1419544C978C748CCA823E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKChat/Pods-KKChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKChat/Pods-KKChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKChat/Pods-KKChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8CC83BE24BF94A8375555F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KKChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8FCF36AD259306A20026412C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FCF373925932C250026412C /* KKIMSmallAppCell.m in Sources */,
+				8FCF36EF259308830026412C /* KKBaseCell.m in Sources */,
+				8FCF36D82593076F0026412C /* KKTabBarViewController.m in Sources */,
+				8FCF371225930BED0026412C /* KKFinderViewController.m in Sources */,
+				8FCF36E32593084D0026412C /* KKBaseViewController.m in Sources */,
+				8FCF36E7259308610026412C /* KKBaseModel.m in Sources */,
+				8FCF36DD2593078B0026412C /* KKNavigationController.m in Sources */,
+				8FCF372925932B8C0026412C /* KKIMTextMsgCell.m in Sources */,
+				8FCF373125932BCE0026412C /* KKIMRedBagMsgCell.m in Sources */,
+				8FCF370E25930B970026412C /* KKContactsViewController.m in Sources */,
+				8FCF37582593313E0026412C /* KKIMVoiceMsgCell.m in Sources */,
+				8FCF36B6259306A20026412C /* AppDelegate.m in Sources */,
+				8FCF372D25932B9F0026412C /* KKIMImageMsgCell.m in Sources */,
+				8FCF370925930B390026412C /* KKHomeViewController.m in Sources */,
+				8FCF373525932BED0026412C /* KKIMTimeMsgCell.m in Sources */,
+				8FCF3751259330AA0026412C /* KKIMCallMsgCell.m in Sources */,
+				8FCF36EB2593086B0026412C /* KKBaseCellModel.m in Sources */,
+				8FCF374825932F200026412C /* NSString+Add.m in Sources */,
+				8FCF372125932A1F0026412C /* KKChatDetailViewController.m in Sources */,
+				8FCF372525932A630026412C /* KKChatTableView.m in Sources */,
+				8FCF374C25932F480026412C /* KKIMBaseModel.m in Sources */,
+				8FCF371625930BF70026412C /* KKMeViewController.m in Sources */,
+				8FCF36C7259306A40026412C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8FCF36BD259306A20026412C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8FCF36BE259306A20026412C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8FCF36C2259306A40026412C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8FCF36C3259306A40026412C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8FCF36C8259306A40026412C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8FCF36C9259306A40026412C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8FCF36CB259306A40026412C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF5FA835014BC3F053C9AE33 /* Pods-KKChat.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/KKChat/Other/PrefixHeader.pch";
+				INFOPLIST_FILE = KKChat/Other/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.KKChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8FCF36CC259306A40026412C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A22901DF6A43348524B2AC67 /* Pods-KKChat.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/KKChat/Other/PrefixHeader.pch";
+				INFOPLIST_FILE = KKChat/Other/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.KKChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8FCF36AC259306A20026412C /* Build configuration list for PBXProject "KKChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FCF36C8259306A40026412C /* Debug */,
+				8FCF36C9259306A40026412C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FCF36CA259306A40026412C /* Build configuration list for PBXNativeTarget "KKChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FCF36CB259306A40026412C /* Debug */,
+				8FCF36CC259306A40026412C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8FCF36A9259306A20026412C /* Project object */;
+}
