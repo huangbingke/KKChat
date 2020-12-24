@@ -5,5 +5,6 @@ target 'KKChat' do
   use_frameworks!
   pod 'Masonry'
   pod 'SVGKit', :git => 'https://github.com/SVGKit/SVGKit.git', :branch => '3.x'
-  
+  pod 'AFNetworking'
+  pod 'SDWebImage'
 end
