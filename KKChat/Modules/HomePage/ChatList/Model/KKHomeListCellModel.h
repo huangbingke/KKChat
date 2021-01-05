@@ -8,20 +8,19 @@
 #import "KKBaseCellModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
-typedef NS_ENUM(NSUInteger, KKHomeListCellTargetType) {
-    KKHomeListCellTargetTypeNone,
-    KKHomeListCellTargetTypePersonalChat,   //聊天
-    KKHomeListCellTargetTypeNoNet,         //没有网
-    KKHomeListCellTargetTypeSearch,        // 搜索
-    KKHomeListCellTargetTypeThridDevice,   //第三方设备登录
-    KKHomeListCellTargetTypeSubscription, //订阅号
-    KKHomeListCellTargetTypePublic, //订阅号
+typedef NS_ENUM(NSUInteger, KKMessageType) {
+    KKMessageTypeNone,
+    KKMessageTypePersonalChat,   //聊天
+    KKMessageTypeRoomChat,   //群聊
+    KKMessageTypeSubscription, //订阅号
+    KKMessageTypePublic, //订阅号
 };
+extern NSString * const KKHomeChatCellID;
+extern NSString * const KKHomeNoNetworkCellID;
+extern NSString * const KKHomeThridDeviceCellID;
+extern NSString * const KKHomeSearchCellID;
 
 @interface KKHomeListCellModel : KKBaseCellModel
-
-@property (nonatomic, assign) KKHomeListCellTargetType targetType;
-
 
 
 
@@ -36,7 +35,13 @@ typedef NS_ENUM(NSUInteger, KKHomeListCellTargetType) {
 
 @interface KKHomeThridDeviceCellModel : KKHomeListCellModel
 
+@property (nonatomic, copy) NSString *deviceImageName;
+@property (nonatomic, copy) NSString *tip;
 
+- (instancetype)initWithCellHeight:(CGFloat)cellHeight
+                    cellIdentifier:(NSString *)cellIdentifier
+                   deviceImageName:(NSString *)deviceImageName
+                               tip:(NSString *)tip;
 
 @end
 
@@ -57,7 +62,7 @@ typedef NS_ENUM(NSUInteger, KKHomeListCellTargetType) {
 @property (nonatomic, copy) NSString *isDisturb; //免打扰
 @property (nonatomic, copy) NSString *date; //时间
 @property (nonatomic, copy) NSString *userId;
-@property (nonatomic, assign) NSString *chatType;//单聊, 群聊, 公众号, 订阅号...
+@property (nonatomic, assign) KKMessageType messageType;//单聊, 群聊, 公众号, 订阅号...
 
 
 

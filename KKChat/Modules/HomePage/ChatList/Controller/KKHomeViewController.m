@@ -22,6 +22,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    KKHomeNoNetworkCellModel *netModel = [[KKHomeNoNetworkCellModel alloc] initWithCellHeight:44 cellIdentifier:KKHomeNoNetworkCellID];
+    KKHomeThridDeviceCellModel *deviceModel = [[KKHomeThridDeviceCellModel alloc] initWithCellHeight:44 cellIdentifier:KKHomeThridDeviceCellID deviceImageName:@"" tip:@"Mac微信已登录"];
+    [self.dataArray addObjectsFromArray:@[netModel, deviceModel]];
+    
+    KKHomeChatCellModel *chatModel = [[KKHomeChatCellModel alloc] initWithCellHeight:70 cellIdentifier:KKHomeChatCellID];
+    [self.dataArray addObject:chatModel];
+    
+    [self.listTableView reloadData];
     
 }
 - (void)setupUI {
@@ -63,6 +71,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     KKHomeListCellModel *model = self.dataArray[indexPath.row];
     if ([model isKindOfClass:KKHomeSearchCellModel.class]) {
         
@@ -87,11 +96,17 @@
         [_listTableView registerClass:[KKHomeThridDeviceCell class] forCellReuseIdentifier:KKHomeThridDeviceCellID];
         [_listTableView registerClass:[KKHomeNoNetworkCell class] forCellReuseIdentifier:KKHomeNoNetworkCellID];
         [_listTableView registerClass:[KKHomeChatCell class] forCellReuseIdentifier:KKHomeChatCellID];
+        _listTableView.tableFooterView = UIView.new;
 
     }
     return _listTableView;
 }
-
+- (NSMutableArray<KKHomeListCellModel *> *)dataArray {
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray new];
+    }
+    return _dataArray;
+}
 
 
 @end

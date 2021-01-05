@@ -6,8 +6,7 @@
 //
 
 #import "KKBaseCell.h"
-
-extern NSString * const KKHomeThridDeviceCellID;
+#import "KKHomeListCellModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

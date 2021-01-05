@@ -7,7 +7,6 @@
 
 #import "KKBaseCell.h"
 
-extern NSString * const KKHomeSearchCellID;
 
 NS_ASSUME_NONNULL_BEGIN
 

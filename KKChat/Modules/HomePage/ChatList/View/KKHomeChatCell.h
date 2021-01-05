@@ -8,7 +8,7 @@
 #import "KKBaseCell.h"
 #import "KKHomeListCellModel.h"
 
-extern NSString * const KKHomeChatCellID;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KKHomeChatCell : KKBaseCell

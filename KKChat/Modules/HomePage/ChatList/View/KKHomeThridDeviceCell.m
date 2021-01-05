@@ -7,6 +7,14 @@
 
 #import "KKHomeThridDeviceCell.h"
 NSString * const KKHomeThridDeviceCellID = @"KKHomeThridDeviceCellID";
+
+@interface KKHomeThridDeviceCell ()
+
+@property (nonatomic, strong) UIImageView *deviceImageView;
+@property (nonatomic, strong) UILabel *tipLabel;
+
+@end
+
 @implementation KKHomeThridDeviceCell
 
 - (void)awakeFromNib {
@@ -19,5 +27,52 @@ NSString * const KKHomeThridDeviceCellID = @"KKHomeThridDeviceCellID";
 
     // Configure the view for the selected state
 }
+
+- (void)loadModel:(KKBaseCellModel *)baseModel {
+    if ([baseModel isKindOfClass:KKHomeThridDeviceCellModel.class]) {
+        KKHomeThridDeviceCellModel *model = (KKHomeThridDeviceCellModel *)baseModel;
+        self.deviceImageView.image = [UIImage imageNamed:model.deviceImageName];
+        self.tipLabel.text = model.tip;
+    }
+}
+
+- (void)setupUI {
+    [self.contentView addSubview:self.deviceImageView];
+    [self.contentView addSubview:self.tipLabel];
+}
+- (void)layoutUI {
+    [self.deviceImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.contentView).offset(20);
+        make.width.height.mas_equalTo(25);
+        make.centerY.mas_equalTo(self.contentView.mas_centerY);
+    }];
+    
+    [self.tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self.contentView.mas_centerY);
+        make.left.mas_equalTo(self.deviceImageView).offset(15);
+    }];
+    
+}
+
+
+#pragma mark - Getter -
+- (UIImageView *)deviceImageView {
+    if (!_deviceImageView) {
+        _deviceImageView = [[UIImageView alloc] init];
+    }
+    return _deviceImageView;
+}
+
+- (UILabel *)tipLabel {
+    if (!_tipLabel) {
+        _tipLabel = [[UILabel alloc] init];
+        _tipLabel.textColor = kColorRGB(123, 123, 123);
+        _tipLabel.font = [UIFont systemFontOfSize:13];
+    }
+    return _tipLabel;
+}
+
+
+
 
 @end

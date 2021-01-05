@@ -12,6 +12,8 @@
 		4B4CCAAB2594C38200CB3929 /* KKHomeNoNetworkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CCAAA2594C38200CB3929 /* KKHomeNoNetworkCell.m */; };
 		4B4CCAAF2594C3A300CB3929 /* KKHomeChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CCAAE2594C3A300CB3929 /* KKHomeChatCell.m */; };
 		4B4CCACF2594C93500CB3929 /* KKHomeListCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CCACE2594C93500CB3929 /* KKHomeListCellModel.m */; };
+		8F284FAF25A443A400FC56B0 /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F284FAE25A443A400FC56B0 /* UIView+Category.m */; };
+		8F284FB325A44A3700FC56B0 /* KKHomeNavBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F284FB225A44A3700FC56B0 /* KKHomeNavBarView.m */; };
 		8FCF36B6259306A20026412C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF36B5259306A20026412C /* AppDelegate.m */; };
 		8FCF36BF259306A20026412C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FCF36BD259306A20026412C /* Main.storyboard */; };
 		8FCF36C1259306A40026412C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FCF36C0259306A40026412C /* Assets.xcassets */; };
@@ -53,6 +55,10 @@
 		4B4CCACD2594C93500CB3929 /* KKHomeListCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeListCellModel.h; sourceTree = "<group>"; };
 		4B4CCACE2594C93500CB3929 /* KKHomeListCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeListCellModel.m; sourceTree = "<group>"; };
 		6DD0BDD52FFC77621D1D58A6 /* Pods_KKChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F284FAD25A443A400FC56B0 /* UIView+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
+		8F284FAE25A443A400FC56B0 /* UIView+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
+		8F284FB125A44A3700FC56B0 /* KKHomeNavBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeNavBarView.h; sourceTree = "<group>"; };
+		8F284FB225A44A3700FC56B0 /* KKHomeNavBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeNavBarView.m; sourceTree = "<group>"; };
 		8FCF36B1259306A20026412C /* KKChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FCF36B4259306A20026412C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8FCF36B5259306A20026412C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -190,6 +196,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8F284FAC25A4437000FC56B0 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				8F284FAD25A443A400FC56B0 /* UIView+Category.h */,
+				8F284FAE25A443A400FC56B0 /* UIView+Category.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		8FCF36A8259306A20026412C = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +251,7 @@
 		8FCF36D1259307070026412C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				8F284FAC25A4437000FC56B0 /* UIView */,
 				8FCF374525932F0D0026412C /* NSString */,
 			);
 			path = Category;
@@ -356,6 +372,8 @@
 				4B4CCAAA2594C38200CB3929 /* KKHomeNoNetworkCell.m */,
 				4B4CCAAD2594C3A300CB3929 /* KKHomeChatCell.h */,
 				4B4CCAAE2594C3A300CB3929 /* KKHomeChatCell.m */,
+				8F284FB125A44A3700FC56B0 /* KKHomeNavBarView.h */,
+				8F284FB225A44A3700FC56B0 /* KKHomeNavBarView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -594,6 +612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FCF373925932C250026412C /* KKIMSmallAppCell.m in Sources */,
+				8F284FB325A44A3700FC56B0 /* KKHomeNavBarView.m in Sources */,
 				8FCF36EF259308830026412C /* KKBaseCell.m in Sources */,
 				4B4CCA9F2594C30B00CB3929 /* KKHomeSearchCell.m in Sources */,
 				8FCF36D82593076F0026412C /* KKTabBarViewController.m in Sources */,
@@ -617,6 +636,7 @@
 				8FCF374825932F200026412C /* NSString+Add.m in Sources */,
 				8FCF372125932A1F0026412C /* KKChatDetailViewController.m in Sources */,
 				8FCF372525932A630026412C /* KKChatTableView.m in Sources */,
+				8F284FAF25A443A400FC56B0 /* UIView+Category.m in Sources */,
 				8FCF374C25932F480026412C /* KKIMBaseModel.m in Sources */,
 				8FCF371625930BF70026412C /* KKMeViewController.m in Sources */,
 				4B4CCAAF2594C3A300CB3929 /* KKHomeChatCell.m in Sources */,
