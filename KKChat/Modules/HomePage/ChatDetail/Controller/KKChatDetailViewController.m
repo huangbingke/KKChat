@@ -19,9 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
 }
-
-
 
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource -
@@ -43,6 +42,7 @@
         _chatTableView = [[KKChatTableView alloc] initWithFrame:CGRectZero style:(UITableViewStyleGrouped)];
         _chatTableView.dataSource = self;
         _chatTableView.delegate = self;
+        _chatTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _chatTableView;
 }

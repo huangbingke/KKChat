@@ -7,6 +7,12 @@
 
 #import "KKIMTextMsgCell.h"
 
+@interface KKIMTextMsgCell ()
+
+@property (nonatomic, strong) UIImageView *bgImageView;
+@property (nonatomic, strong) UILabel *textMsgLabel;
+
+@end
 @implementation KKIMTextMsgCell
 
 - (void)awakeFromNib {

@@ -42,7 +42,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataArray.count;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     KKHomeListCellModel *model = self.dataArray[indexPath.row];
     if ([model isKindOfClass:KKHomeSearchCellModel.class]) {
@@ -84,8 +83,6 @@
     }
 }
 
-
-
 #pragma mark - Getter -
 - (UITableView *)listTableView {
     if (!_listTableView) {
@@ -97,7 +94,6 @@
         [_listTableView registerClass:[KKHomeNoNetworkCell class] forCellReuseIdentifier:KKHomeNoNetworkCellID];
         [_listTableView registerClass:[KKHomeChatCell class] forCellReuseIdentifier:KKHomeChatCellID];
         _listTableView.tableFooterView = UIView.new;
-
     }
     return _listTableView;
 }
