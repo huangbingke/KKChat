@@ -11,6 +11,7 @@
 #import "KKHomeNoNetworkCell.h"
 #import "KKHomeChatCell.h"
 #import "KKHomeNavBarView.h"
+#import "KKChatDetailViewController.h"
 @interface KKHomeViewController ()<UITableViewDelegate, UITableViewDataSource, KKHomeNavBarViewDelegate>
 @property (nonatomic, strong) UITableView *listTableView;
 @property (nonatomic, strong) KKHomeNavBarView *navBarView;
@@ -83,7 +84,8 @@
     } else if ([model isKindOfClass:KKHomeThridDeviceCellModel.class]) {
         
     } else if ([model isKindOfClass:KKHomeChatCellModel.class]) {
-        
+        KKChatDetailViewController *chatVC = [KKChatDetailViewController new];
+        [self.navigationController pushViewController:chatVC animated:YES];
     }
 }
 
