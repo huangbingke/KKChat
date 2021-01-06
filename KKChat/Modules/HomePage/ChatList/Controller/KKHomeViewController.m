@@ -10,12 +10,11 @@
 #import "KKHomeThridDeviceCell.h"
 #import "KKHomeNoNetworkCell.h"
 #import "KKHomeChatCell.h"
-
-@interface KKHomeViewController ()<UITableViewDelegate, UITableViewDataSource>
-
+#import "KKHomeNavBarView.h"
+@interface KKHomeViewController ()<UITableViewDelegate, UITableViewDataSource, KKHomeNavBarViewDelegate>
 @property (nonatomic, strong) UITableView *listTableView;
+@property (nonatomic, strong) KKHomeNavBarView *navBarView;
 @property (nonatomic, strong) NSMutableArray<KKHomeListCellModel *> *dataArray;
-
 @end
 
 @implementation KKHomeViewController
@@ -23,14 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     KKHomeNoNetworkCellModel *netModel = [[KKHomeNoNetworkCellModel alloc] initWithCellHeight:44 cellIdentifier:KKHomeNoNetworkCellID];
-    KKHomeThridDeviceCellModel *deviceModel = [[KKHomeThridDeviceCellModel alloc] initWithCellHeight:44 cellIdentifier:KKHomeThridDeviceCellID deviceImageName:@"" tip:@"Mac微信已登录"];
+    KKHomeThridDeviceCellModel *deviceModel = [[KKHomeThridDeviceCellModel alloc] initWithCellHeight:44 cellIdentifier:KKHomeThridDeviceCellID deviceImageName:@"icons_filled_imac.svg" tip:@"Mac微信已登录"];
     [self.dataArray addObjectsFromArray:@[netModel, deviceModel]];
     
     KKHomeChatCellModel *chatModel = [[KKHomeChatCellModel alloc] initWithCellHeight:70 cellIdentifier:KKHomeChatCellID];
     [self.dataArray addObject:chatModel];
     
     [self.listTableView reloadData];
-    
 }
 - (void)setupUI {
     [self.view addSubview:self.listTableView];
@@ -64,6 +62,12 @@
     return UITableViewCell.new;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    return self.navBarView;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return kNavHeight;
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     KKHomeListCellModel *model = self.dataArray[indexPath.row];
     return model.cellHeight;
@@ -84,6 +88,12 @@
 }
 
 #pragma mark - Getter -
+- (void)navBarViewDidSelectMoreBtnAction {
+    
+    NSLog(@"=========");
+}
+
+#pragma mark - Getter -
 - (UITableView *)listTableView {
     if (!_listTableView) {
         _listTableView = [[UITableView alloc] initWithFrame:CGRectZero style:(UITableViewStylePlain)];
@@ -94,6 +104,12 @@
         [_listTableView registerClass:[KKHomeNoNetworkCell class] forCellReuseIdentifier:KKHomeNoNetworkCellID];
         [_listTableView registerClass:[KKHomeChatCell class] forCellReuseIdentifier:KKHomeChatCellID];
         _listTableView.tableFooterView = UIView.new;
+        _listTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        if (@available(iOS 11.0, *)) {
+            _listTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
     }
     return _listTableView;
 }
@@ -104,5 +120,12 @@
     return _dataArray;
 }
 
+- (KKHomeNavBarView *)navBarView {
+    if (!_navBarView) {
+        _navBarView = [[KKHomeNavBarView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kNavHeight)];
+        _navBarView.delegate = self;
+    }
+    return _navBarView;
+}
 
 @end

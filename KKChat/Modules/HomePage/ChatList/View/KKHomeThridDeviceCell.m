@@ -31,7 +31,7 @@ NSString * const KKHomeThridDeviceCellID = @"KKHomeThridDeviceCellID";
 - (void)loadModel:(KKBaseCellModel *)baseModel {
     if ([baseModel isKindOfClass:KKHomeThridDeviceCellModel.class]) {
         KKHomeThridDeviceCellModel *model = (KKHomeThridDeviceCellModel *)baseModel;
-        self.deviceImageView.image = [UIImage imageNamed:model.deviceImageName];
+        self.deviceImageView.image = [UIImage svgImageName:model.deviceImageName targetSize:CGSizeMake(25, 25) tintColor:kColor(0xc1c1c1)];
         self.tipLabel.text = model.tip;
     }
 }
@@ -49,7 +49,7 @@ NSString * const KKHomeThridDeviceCellID = @"KKHomeThridDeviceCellID";
     
     [self.tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(self.contentView.mas_centerY);
-        make.left.mas_equalTo(self.deviceImageView).offset(15);
+        make.left.mas_equalTo(self.deviceImageView.mas_right).offset(15);
     }];
     
 }

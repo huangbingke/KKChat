@@ -13,7 +13,7 @@
 #import "DefaultHeader.h"
 #import <Masonry/Masonry.h>
 #import <SDWebImage.h>
-
+#import "UIImage+Category.h"
 
 
 #endif /* PrefixHeader_pch */

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSString (Add)
+@interface NSString (Category)
 
 
 //计算文字高度

@@ -5,7 +5,7 @@
 //  Created by KK on 07/12/2020.
 //
 
-#import "NSString+Add.h"
+#import "NSString+Category.h"
 
 @implementation NSString (Add)
 

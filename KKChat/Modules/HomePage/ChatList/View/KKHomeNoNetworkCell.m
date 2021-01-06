@@ -38,7 +38,7 @@ NSString * const KKHomeNoNetworkCellID = @"KKHomeNoNetworkCellID";
 
 - (void)layoutUI {
     [self.tipImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(20);
+        make.width.height.mas_equalTo(25);
         make.centerY.mas_equalTo(self.contentView.mas_centerY);
         make.left.mas_equalTo(self.contentView).mas_offset(15);
     }];
@@ -52,7 +52,7 @@ NSString * const KKHomeNoNetworkCellID = @"KKHomeNoNetworkCellID";
 - (UIImageView *)tipImageView {
     if (!_tipImageView) {
         _tipImageView = [[UIImageView alloc] init];
-        _tipImageView.image = [UIImage imageNamed:@""];
+        _tipImageView.image = [UIImage svgImageName:@"icons_filled_info.svg" targetSize:CGSizeMake(30, 30) tintColor:UIColor.redColor];
     }
     return _tipImageView;
 }

@@ -9,7 +9,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol KKHomeNavBarViewDelegate <NSObject>
+
+- (void)navBarViewDidSelectMoreBtnAction;
+
+
+@end
 @interface KKHomeNavBarView : UIView
+
+@property (nonatomic, weak) id<KKHomeNavBarViewDelegate>delegate;
 
 @end
 
