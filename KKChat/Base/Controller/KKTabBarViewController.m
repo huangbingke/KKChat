@@ -22,9 +22,6 @@
     [super viewDidLoad];
     
     [self addViewController];
-    
-    
-    
 }
 
 - (void)addViewController {
@@ -56,10 +53,15 @@
     UIImage *selectedImage = [UIImage svgImageName:selectedImageName targetSize:CGSizeMake(25, 25) tintColor:kThemeColor];
     viewController.tabBarItem.selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     viewController.tabBarItem.title = title;
-    NSDictionary *defaultAttr = @{NSForegroundColorAttributeName: kColor(0x191919)};
-    NSDictionary *selectAttr = @{NSForegroundColorAttributeName: kThemeColor};
-    [viewController.tabBarItem setTitleTextAttributes:defaultAttr forState:(UIControlStateNormal)];
-    [viewController.tabBarItem setTitleTextAttributes:selectAttr forState:(UIControlStateSelected)];
+    if (@available(iOS 13.0, *)) {
+        self.tabBar.tintColor = kThemeColor;
+        self.tabBar.unselectedItemTintColor = kColor(0x191919);
+    } else {
+        NSDictionary *defaultAttr = @{NSForegroundColorAttributeName: kColor(0x191919)};
+        NSDictionary *selectAttr = @{NSForegroundColorAttributeName: kThemeColor};
+        [viewController.tabBarItem setTitleTextAttributes:defaultAttr forState:(UIControlStateNormal)];
+        [viewController.tabBarItem setTitleTextAttributes:selectAttr forState:(UIControlStateSelected)];       
+    }
     return nav;
 }
 

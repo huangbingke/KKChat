@@ -10,3 +10,44 @@
 @implementation KKIMBaseModel
 
 @end
+@implementation KKIMTextMsgCellModel 
+
+
+
+@end
+
+@implementation KKIMVoiceMsgCellModel
+
+
+
+@end
+
+@implementation KKIMImageMsgCellModel
+
+
+
+@end
+
+@implementation KKIMRedBagMsgCellModel
+
+
+
+@end
+
+@implementation KKIMTimeMsgCellModel
+
+
+
+@end
+
+@implementation KKIMSmallAppCellModel
+
+
+
+@end
+
+@implementation KKIMCallMsgCellModel
+
+
+
+@end

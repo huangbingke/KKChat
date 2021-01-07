@@ -27,4 +27,48 @@ typedef NS_ENUM(NSUInteger, KKIMCellTargetType) {
 
 @end
 
+@interface KKIMTextMsgCellModel : KKIMBaseModel
+
+
+
+@end
+
+@interface KKIMVoiceMsgCellModel : KKIMBaseModel
+
+
+
+@end
+
+@interface KKIMImageMsgCellModel : KKIMBaseModel
+
+
+
+@end
+
+@interface KKIMRedBagMsgCellModel : KKIMBaseModel
+
+
+
+@end
+
+@interface KKIMTimeMsgCellModel : KKIMBaseModel
+
+
+
+@end
+
+@interface KKIMSmallAppCellModel : KKIMBaseModel
+
+
+
+@end
+
+@interface KKIMCallMsgCellModel : KKIMBaseModel
+
+
+
+@end
+
+
+
 NS_ASSUME_NONNULL_END

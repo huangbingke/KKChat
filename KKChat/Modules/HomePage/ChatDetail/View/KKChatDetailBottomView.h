@@ -9,7 +9,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, KKInputType) {
+    KKInputTypeNone,
+    KKInputTypeText,
+    KKInputTypeVoice,
+};
+
 @interface KKChatDetailBottomView : UIView
+
+
+- (instancetype)initWithInputType:(KKInputType)type;
+
+
+
+
 
 @end
 

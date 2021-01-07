@@ -79,7 +79,7 @@
 }
 - (KKChatDetailBottomView *)bottomView {
     if (!_bottomView) {
-        _bottomView = [[KKChatDetailBottomView alloc] init];
+        _bottomView = [[KKChatDetailBottomView alloc] initWithInputType:(KKInputTypeText)];
     }
     return _bottomView;
 }

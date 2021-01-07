@@ -17,6 +17,9 @@ PODS:
   - CocoaLumberjack (3.7.0):
     - CocoaLumberjack/Core (= 3.7.0)
   - CocoaLumberjack/Core (3.7.0)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - Masonry (1.1.0)
   - SDWebImage (5.10.0):
     - SDWebImage/Core (= 5.10.0)
@@ -26,6 +29,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - FMDB
   - Masonry
   - SDWebImage
   - SVGKit (from `https://github.com/SVGKit/SVGKit.git`, branch `3.x`)
@@ -34,6 +38,7 @@ SPEC REPOS:
   trunk:
     - AFNetworking
     - CocoaLumberjack
+    - FMDB
     - Masonry
     - SDWebImage
 
@@ -50,10 +55,11 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
   SVGKit: 132b010efbf57ec345309fe4a7f627c0a40c5d63
 
-PODFILE CHECKSUM: 604d8145107e3fd6078ef756fe96a038b67ab944
+PODFILE CHECKSUM: 33681a1dff5393bc05f00fba4dbaf4c464a18b7b
 
 COCOAPODS: 1.9.1
