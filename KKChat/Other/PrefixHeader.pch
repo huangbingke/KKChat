@@ -14,6 +14,6 @@
 #import <Masonry/Masonry.h>
 #import <SDWebImage.h>
 #import "UIImage+Category.h"
-
+#import "KKNavigationBar.h"
 
 #endif /* PrefixHeader_pch */

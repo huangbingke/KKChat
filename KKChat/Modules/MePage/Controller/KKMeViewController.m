@@ -17,7 +17,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
+- (void)setupUI {
+    self.kkNavigationBar = [KKNavigationBar setupNavigationBarWithTitle:@""];
+}
 /*
 #pragma mark - Navigation
 

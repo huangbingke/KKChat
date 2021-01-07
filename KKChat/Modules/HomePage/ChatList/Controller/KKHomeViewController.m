@@ -110,8 +110,6 @@
         _listTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         if (@available(iOS 11.0, *)) {
             _listTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        } else {
-            self.automaticallyAdjustsScrollViewInsets = NO;
         }
         _listTableView.backgroundColor = kBgColor;
         _listTableView.clipsToBounds = NO;

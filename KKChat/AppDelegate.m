@@ -22,7 +22,7 @@
     self.window.rootViewController = [NSClassFromString(@"KKTabBarViewController") new];
     
     
-    
+
     return YES;
 }
 
