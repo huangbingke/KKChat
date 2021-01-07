@@ -59,9 +59,7 @@
     NSDictionary *defaultAttr = @{NSForegroundColorAttributeName: kColor(0x191919)};
     NSDictionary *selectAttr = @{NSForegroundColorAttributeName: kThemeColor};
     [viewController.tabBarItem setTitleTextAttributes:defaultAttr forState:(UIControlStateNormal)];
-    [viewController.tabBarItem setTitleTextAttributes:selectAttr forState:(UIControlStateNormal)];
-    [viewController.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, 0)];
-    [viewController.tabBarItem setImageInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [viewController.tabBarItem setTitleTextAttributes:selectAttr forState:(UIControlStateSelected)];
     return nav;
 }
 
