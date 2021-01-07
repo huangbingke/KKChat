@@ -68,7 +68,7 @@
 - (UIButton *)moreBtn {
     if (!_moreBtn) {
         _moreBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        [_moreBtn setImage:[UIImage svgImageName:@"icons_outlined_add2.svg" targetSize:CGSizeMake(30, 30)] forState:(UIControlStateNormal)];
+        [_moreBtn setImage:[UIImage svgImageName:@"icons_outlined_add2.svg" targetSize:CGSizeMake(25, 25)] forState:(UIControlStateNormal)];
         [_moreBtn addTarget:self action:@selector(moreBtnAction) forControlEvents:(UIControlEventTouchUpInside)];
     }
     return _moreBtn;

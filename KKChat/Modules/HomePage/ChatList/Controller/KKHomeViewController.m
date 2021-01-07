@@ -32,6 +32,7 @@
     [self.listTableView reloadData];
 }
 - (void)setupUI {
+    self.view.backgroundColor = kBgColor;
     [self.view addSubview:self.listTableView];
     [self.listTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.bottom.mas_equalTo(self.view).offset(0);
@@ -112,6 +113,8 @@
         } else {
             self.automaticallyAdjustsScrollViewInsets = NO;
         }
+        _listTableView.backgroundColor = kBgColor;
+        _listTableView.clipsToBounds = NO;
     }
     return _listTableView;
 }
