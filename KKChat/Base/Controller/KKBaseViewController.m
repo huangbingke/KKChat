@@ -30,6 +30,12 @@
 - (void)setNavBar {
     
 }
+
+- (void)dealloc {
+    NSLog(@"释放了==> %@", NSStringFromClass(self.class));
+    
+}
+
 /*
 #pragma mark - Navigation
 

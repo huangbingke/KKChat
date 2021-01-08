@@ -6,7 +6,8 @@
 //
 
 #import "KKChatDetailBottomView.h"
-@interface KKChatDetailBottomView ()
+#import "NSString+Category.h"
+@interface KKChatDetailBottomView ()<UITextViewDelegate>
 
 @property (nonatomic, strong) UIButton *switchBtn;//语音文字切换
 @property (nonatomic, strong) UIButton *expressionBtn; //表情包
@@ -98,14 +99,15 @@
         self.inputType = KKInputTypeText;
         [self.inputTextView resignFirstResponder];
         [self.expressionBtn setImage:[UIImage svgImageName:@"icons_outlined_keyboard.svg" targetSize:CGSizeMake(35, 35) tintColor:UIColor.blackColor] forState:(UIControlStateNormal)];
-        
         [self.switchBtn setImage:[UIImage svgImageName:@"icons_outlined_voice.svg" targetSize:CGSizeMake(35, 35)] forState:(UIControlStateNormal)];
         [self.voiceBtn removeFromSuperview];
     } else {
         [self.inputTextView becomeFirstResponder];
         [sender setImage:[UIImage svgImageName:@"expression.svg" targetSize:CGSizeMake(32, 32) tintColor:UIColor.blackColor] forState:(UIControlStateNormal)];
     }
-
+    if ([self.delegate respondsToSelector:@selector(bottomViewExpressionBtnAction:)]) {
+        [self.delegate bottomViewExpressionBtnAction:sender];
+    }
 }
 - (void)moreBtnAction:(UIButton *)sender {
     [self.inputTextView resignFirstResponder];
@@ -118,6 +120,9 @@
     } else {
         [self.inputTextView becomeFirstResponder];
     }
+    if ([self.delegate respondsToSelector:@selector(bottomViewMoreBtnAction:)]) {
+        [self.delegate bottomViewMoreBtnAction:sender];
+    }
 }
 - (void)voiceBtnTouchDownAction:(UIButton *)sender {
     [sender setTitle:@"松开 结束" forState:(UIControlStateNormal)];
@@ -128,6 +133,33 @@
     [sender setTitle:@"按住 说话" forState:(UIControlStateNormal)];
     NSLog(@"录音结束");
 }
+
+#pragma mark - UITextViewDelegate -
+- (void)textViewDidChange:(UITextView *)textView {
+//    NSLog(@"计算文字高度: %@", textView.text);
+    CGFloat height = 40;
+    CGSize size = [textView.text boundingALLRectWithText:textView.text Font:[UIFont systemFontOfSize:18] Size:CGSizeMake(kScreenWidth-(10*4+15+35*3), CGFLOAT_MAX)];
+    if (size.height > 40) {
+        height = size.height;
+    }
+    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeForHeight:)]) {
+        [self.delegate bottomViewTextViewDidChangeForHeight:height+20];
+    }
+}
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if ([@"\n" isEqualToString:text]) {
+        if ([self.delegate respondsToSelector:@selector(bottomViewSendMsgBtnAction:)]) {
+            [self.delegate bottomViewSendMsgBtnAction:textView.text];
+        }
+        textView.text = @"";
+        [self textViewDidChange:textView];
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+
+
 #pragma mark - Getter -
 - (UIButton *)switchBtn {
     if (!_switchBtn) {
@@ -174,6 +206,9 @@
         _inputTextView.layer.cornerRadius = 5;
         _inputTextView.layer.masksToBounds = YES;
         _inputTextView.tintColor = kThemeColor;
+        _inputTextView.delegate = self;
+        _inputTextView.returnKeyType = UIReturnKeySend;
+        _inputTextView.showsHorizontalScrollIndicator = NO;
     }
     return _inputTextView;
 }

@@ -15,8 +15,18 @@ typedef NS_ENUM(NSUInteger, KKInputType) {
     KKInputTypeVoice,
 };
 
+@protocol KKChatDetailBottomViewDelegate <NSObject>
+
+- (void)bottomViewExpressionBtnAction:(UIButton *)sender;
+- (void)bottomViewMoreBtnAction:(UIButton *)sender;
+- (void)bottomViewSendMsgBtnAction:(NSString *)msg;
+- (void)bottomViewTextViewDidChangeForHeight:(CGFloat)height;
+
+@end
+
 @interface KKChatDetailBottomView : UIView
 
+@property (nonatomic, weak) id<KKChatDetailBottomViewDelegate>delegate;
 
 - (instancetype)initWithInputType:(KKInputType)type;
 
