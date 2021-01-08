@@ -26,6 +26,8 @@
 		8F169CF525A6F0BC00949B40 /* UIScrollView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F169CF425A6F0BC00949B40 /* UIScrollView+Category.m */; };
 		8F284FAF25A443A400FC56B0 /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F284FAE25A443A400FC56B0 /* UIView+Category.m */; };
 		8F284FB325A44A3700FC56B0 /* KKHomeNavBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F284FB225A44A3700FC56B0 /* KKHomeNavBarView.m */; };
+		8F8080AA25A8484400A6D292 /* KKChatExpressionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8080A925A8484400A6D292 /* KKChatExpressionView.m */; };
+		8F8080AE25A849CB00A6D292 /* KKChatMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8080AD25A849CB00A6D292 /* KKChatMoreView.m */; };
 		8FBE151A25A5A1BF008E49C0 /* icons_outlined_discover.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FBE151225A5A1BF008E49C0 /* icons_outlined_discover.svg */; };
 		8FBE151B25A5A1BF008E49C0 /* icons_filled_contacts.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FBE151325A5A1BF008E49C0 /* icons_filled_contacts.svg */; };
 		8FBE151C25A5A1BF008E49C0 /* icons_outlined_me.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FBE151425A5A1BF008E49C0 /* icons_outlined_me.svg */; };
@@ -104,6 +106,10 @@
 		8F284FAE25A443A400FC56B0 /* UIView+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
 		8F284FB125A44A3700FC56B0 /* KKHomeNavBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeNavBarView.h; sourceTree = "<group>"; };
 		8F284FB225A44A3700FC56B0 /* KKHomeNavBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeNavBarView.m; sourceTree = "<group>"; };
+		8F8080A825A8484400A6D292 /* KKChatExpressionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKChatExpressionView.h; sourceTree = "<group>"; };
+		8F8080A925A8484400A6D292 /* KKChatExpressionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKChatExpressionView.m; sourceTree = "<group>"; };
+		8F8080AC25A849CB00A6D292 /* KKChatMoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKChatMoreView.h; sourceTree = "<group>"; };
+		8F8080AD25A849CB00A6D292 /* KKChatMoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKChatMoreView.m; sourceTree = "<group>"; };
 		8FBE151225A5A1BF008E49C0 /* icons_outlined_discover.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_outlined_discover.svg; sourceTree = "<group>"; };
 		8FBE151325A5A1BF008E49C0 /* icons_filled_contacts.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_filled_contacts.svg; sourceTree = "<group>"; };
 		8FBE151425A5A1BF008E49C0 /* icons_outlined_me.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_outlined_me.svg; sourceTree = "<group>"; };
@@ -235,11 +241,10 @@
 		4B4CCAB82594C41B00CB3929 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8F8080A725A8471E00A6D292 /* InputView */,
 				4B43F2FE25A73FD10015557E /* Cells */,
 				8FCF372325932A630026412C /* KKChatTableView.h */,
 				8FCF372425932A630026412C /* KKChatTableView.m */,
-				8F169CC725A6C6B400949B40 /* KKChatDetailBottomView.h */,
-				8F169CC825A6C6B400949B40 /* KKChatDetailBottomView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -286,6 +291,19 @@
 				8F284FAE25A443A400FC56B0 /* UIView+Category.m */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		8F8080A725A8471E00A6D292 /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				8F169CC725A6C6B400949B40 /* KKChatDetailBottomView.h */,
+				8F169CC825A6C6B400949B40 /* KKChatDetailBottomView.m */,
+				8F8080AC25A849CB00A6D292 /* KKChatMoreView.h */,
+				8F8080AD25A849CB00A6D292 /* KKChatMoreView.m */,
+				8F8080A825A8484400A6D292 /* KKChatExpressionView.h */,
+				8F8080A925A8484400A6D292 /* KKChatExpressionView.m */,
+			);
+			path = InputView;
 			sourceTree = "<group>";
 		};
 		8FBE150D25A5A1BF008E49C0 /* CostomView */ = {
@@ -778,6 +796,7 @@
 				8FCF373925932C250026412C /* KKIMSmallAppCell.m in Sources */,
 				8F284FB325A44A3700FC56B0 /* KKHomeNavBarView.m in Sources */,
 				8FCF36EF259308830026412C /* KKBaseCell.m in Sources */,
+				8F8080AE25A849CB00A6D292 /* KKChatMoreView.m in Sources */,
 				4B4CCA9F2594C30B00CB3929 /* KKHomeSearchCell.m in Sources */,
 				8FCF36D82593076F0026412C /* KKTabBarViewController.m in Sources */,
 				4B4CCACF2594C93500CB3929 /* KKHomeListCellModel.m in Sources */,
@@ -800,6 +819,7 @@
 				8FCF3751259330AA0026412C /* KKIMCallMsgCell.m in Sources */,
 				8FCF36EB2593086B0026412C /* KKBaseCellModel.m in Sources */,
 				8FCF374825932F200026412C /* NSString+Category.m in Sources */,
+				8F8080AA25A8484400A6D292 /* KKChatExpressionView.m in Sources */,
 				8F169CC925A6C6B400949B40 /* KKChatDetailBottomView.m in Sources */,
 				8FBE152625A5A307008E49C0 /* UIImage+Category.m in Sources */,
 				8FCF372125932A1F0026412C /* KKChatDetailViewController.m in Sources */,
