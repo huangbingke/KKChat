@@ -429,7 +429,6 @@
 			children = (
 				8F169CF225A6F0A100949B40 /* UIScrollView */,
 				8FBE152325A5A2E1008E49C0 /* UIImage */,
-				8F284FAC25A4437000FC56B0 /* UIView */,
 				8FCF374525932F0D0026412C /* NSString */,
 			);
 			path = Category;
@@ -639,6 +638,7 @@
 		8FCF374525932F0D0026412C /* NSString */ = {
 			isa = PBXGroup;
 			children = (
+				8F284FAC25A4437000FC56B0 /* UIView */,
 				8FCF374725932F200026412C /* NSString+Category.h */,
 				8FCF374625932F200026412C /* NSString+Category.m */,
 			);

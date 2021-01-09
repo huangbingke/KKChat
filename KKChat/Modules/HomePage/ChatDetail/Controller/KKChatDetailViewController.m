@@ -46,6 +46,7 @@
         make.left.right.mas_equalTo(self.view);
         make.bottom.mas_equalTo(self.bottomView.mas_top).offset(0);
     }];
+    [self.bottomView setupBottomViewUI];
 }
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource -
@@ -68,15 +69,13 @@
 - (void)bottomViewSendMsgBtnAction:(NSString *)msg {
     NSLog(@"发送消息: %@", msg);
 }
-- (void)bottomViewTextViewDidChangeForHeight:(CGFloat)height {
-    NSLog(@"======%f", height);
+- (void)bottomViewTextViewDidChangeHeight:(CGFloat)height bottomMargin:(CGFloat)bottomMargin {
+//    NSLog(@"======> %f == %f", height, bottomMargin);
     dispatch_async(dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:0.2 animations:^{
-            [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.left.right.mas_equalTo(self.view);
-                make.bottom.mas_equalTo(self.view).offset(-kIPhoneXBottomHeight);
-                make.height.mas_equalTo((height == 0) ? 60 : height);
-            }];
+        [self.bottomView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.mas_equalTo(self.view);
+            make.bottom.mas_equalTo(self.view).offset(-bottomMargin);
+            make.height.mas_equalTo(height);
         }];
     });
 }

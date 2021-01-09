@@ -10,17 +10,15 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, KKInputType) {
-    KKInputTypeNone,
     KKInputTypeText,
     KKInputTypeVoice,
 };
 
 @protocol KKChatDetailBottomViewDelegate <NSObject>
 
-//- (void)bottomViewExpressionBtnAction:(UIButton *)sender;
-//- (void)bottomViewMoreBtnAction:(UIButton *)sender;
 - (void)bottomViewSendMsgBtnAction:(NSString *)msg;
-- (void)bottomViewTextViewDidChangeForHeight:(CGFloat)height;
+- (void)bottomViewTextViewDidChangeHeight:(CGFloat)height
+                             bottomMargin:(CGFloat)bottomMargin;
 
 @end
 
@@ -30,6 +28,7 @@ typedef NS_ENUM(NSUInteger, KKInputType) {
 
 - (instancetype)initWithInputType:(KKInputType)type;
 
+- (void)setupBottomViewUI;
 
 
 
