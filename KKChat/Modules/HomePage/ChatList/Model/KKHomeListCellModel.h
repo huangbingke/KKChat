@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSUInteger, KKMessageType) {
     KKMessageTypeNone,
+    KKMessageTypeFileHelper,   //文件传输助手
     KKMessageTypePersonalChat,   //聊天
     KKMessageTypeRoomChat,   //群聊
     KKMessageTypeSubscription, //订阅号

@@ -9,6 +9,10 @@
 #import "NSString+Category.h"
 #import "KKChatMoreView.h"
 #import "KKChatExpressionView.h"
+
+#define kMoreViewHeight   (kScreenWidth/4*2+20+kIPhoneXBottomHeight)
+#define kExpressionViewHeight 300
+
 @interface KKChatDetailBottomView ()<UITextViewDelegate>
 
 @property (nonatomic, strong) UIButton *switchBtn;//语音文字切换
@@ -42,7 +46,7 @@
 }
 #pragma mark - UI -
 - (void)setupBottomViewUI {
-    self.backgroundColor = kColor(0xf5f5f5);
+    self.backgroundColor = kColor(0xf7f7f7);
     [self switchBtn];
     [self moreBtn];
     [self expressionBtn];
@@ -158,25 +162,29 @@
     
     if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
         if (self.moreBtn.selected) {
-            self.keyboardHeight = 200;
+            self.keyboardHeight = kMoreViewHeight;
         }
         if (self.expressionBtn.selected) {
-            self.keyboardHeight = 300;
+            self.keyboardHeight = kExpressionViewHeight;
         }
         [self.delegate bottomViewTextViewDidChangeHeight:self.textHeight bottomMargin:self.keyboardHeight];
     }
 }
 - (void)keyboardDidHidden:(NSNotification *)sender {
     self.keyboardHeight = kIPhoneXBottomHeight;
+    CGFloat height = self.textHeight;
+    
     if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
-        NSLog(@"333");
-        CGFloat height = self.textHeight;
         if (self.switchBtn.selected) {
             height = 60;
         }
+        NSLog(@"333");
         [self.delegate bottomViewTextViewDidChangeHeight:height bottomMargin:kIPhoneXBottomHeight];
     }
+    self.moreBtn.selected = NO;
+    self.expressionBtn.selected = NO;
 }
+
 #pragma mark - UITextViewDelegate -
 - (void)textViewDidChange:(UITextView *)textView {
 //    NSLog(@"计算文字高度: %@", textView.text);
@@ -298,14 +306,14 @@
 }
 - (KKChatMoreView *)moreView {
     if (!_moreView) {
-        _moreView = [[KKChatMoreView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 200)];
-        _moreView.backgroundColor = [UIColor yellowColor];
+        _moreView = [[KKChatMoreView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kMoreViewHeight) msgType:(KKMessageTypeRoomChat)];
+        _moreView.backgroundColor = kColor(0xf7f7f7);
     }
     return _moreView;
 }
 - (KKChatExpressionView *)expressionView {
     if (!_expressionView) {
-        _expressionView = [[KKChatExpressionView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 300)];
+        _expressionView = [[KKChatExpressionView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kExpressionViewHeight)];
         _expressionView.backgroundColor = [UIColor greenColor];
     }
     return _expressionView;
