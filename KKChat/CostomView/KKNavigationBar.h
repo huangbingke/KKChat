@@ -16,9 +16,8 @@ typedef void(^ClickBlock)(void);
 @property (nonatomic, strong) UIButton *leftBtn;
 @property (nonatomic, strong) UIButton *rightBtn;
 @property (nonatomic, strong) UIImage *bgImage;
-
+@property (nonatomic, strong) CALayer *lineLayer;
 @property (nonatomic, copy) NSString *title;
-
 
 + (instancetype)setupNavigationBarWithTitle:(NSString *)title;
 

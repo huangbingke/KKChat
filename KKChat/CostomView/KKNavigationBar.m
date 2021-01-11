@@ -29,7 +29,7 @@
         layer.frame = CGRectMake(0, kNavHeight-0.5, kScreenWidth, 0.5);
         layer.backgroundColor = kColor(0xdddddd).CGColor;
         [self.layer addSublayer:layer];
-        
+        self.lineLayer = layer;
         self.backgroundColor = kBgColor;
     }
     return self;
@@ -49,9 +49,12 @@
         UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, kNavHeight-44, kScreenWidth, 44-0.5)];
         [self addSubview:bottomView];
         if (title) {
-            self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, kScreenWidth-100, 44)];
+            //WithFrame:CGRectMake(50, 0, kScreenWidth-100, 44)
+            self.titleLabel = [[UILabel alloc] init];
             self.titleLabel.textAlignment = NSTextAlignmentCenter;
             self.titleLabel.text = title;
+            [self.titleLabel sizeToFit];
+            self.titleLabel.center = CGPointMake(bottomView.center.x, 22);
             [bottomView addSubview:self.titleLabel];
         }
         if (leftName) {
