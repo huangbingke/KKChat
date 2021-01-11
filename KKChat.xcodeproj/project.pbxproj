@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B43F34B25AC839A0015557E /* KKMeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B43F34A25AC839A0015557E /* KKMeHeaderView.m */; };
 		4B4CCA9F2594C30B00CB3929 /* KKHomeSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CCA9E2594C30B00CB3929 /* KKHomeSearchCell.m */; };
 		4B4CCAA32594C34A00CB3929 /* KKHomeThridDeviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CCAA22594C34A00CB3929 /* KKHomeThridDeviceCell.m */; };
 		4B4CCAAB2594C38200CB3929 /* KKHomeNoNetworkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CCAAA2594C38200CB3929 /* KKHomeNoNetworkCell.m */; };
@@ -31,7 +32,6 @@
 		8F587AB825ABEE27006B4B2D /* KKUserInfoDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F587AB725ABEE27006B4B2D /* KKUserInfoDBHelper.m */; };
 		8F587ABC25ABEEF2006B4B2D /* KKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F587ABB25ABEEF2006B4B2D /* KKDBHelper.m */; };
 		8F587AC725ABF019006B4B2D /* KKUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F587AC625ABF019006B4B2D /* KKUserInfoModel.m */; };
-		8F587ACC25ABF06B006B4B2D /* KKMeTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F587ACB25ABF06B006B4B2D /* KKMeTopCell.m */; };
 		8F587AD025AC15E4006B4B2D /* icons_filled_camera.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8F587ACF25AC15E4006B4B2D /* icons_filled_camera.svg */; };
 		8F587AD425AC1B57006B4B2D /* KKNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F587AD325AC1B57006B4B2D /* KKNormalCell.m */; };
 		8F587AD825AC1BFD006B4B2D /* KKNormalCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F587AD725AC1BFD006B4B2D /* KKNormalCellModel.m */; };
@@ -85,6 +85,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B43F34925AC839A0015557E /* KKMeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMeHeaderView.h; sourceTree = "<group>"; };
+		4B43F34A25AC839A0015557E /* KKMeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKMeHeaderView.m; sourceTree = "<group>"; };
 		4B4CCA9D2594C30B00CB3929 /* KKHomeSearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeSearchCell.h; sourceTree = "<group>"; };
 		4B4CCA9E2594C30B00CB3929 /* KKHomeSearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeSearchCell.m; sourceTree = "<group>"; };
 		4B4CCAA12594C34A00CB3929 /* KKHomeThridDeviceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeThridDeviceCell.h; sourceTree = "<group>"; };
@@ -125,8 +127,6 @@
 		8F587ABB25ABEEF2006B4B2D /* KKDBHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKDBHelper.m; sourceTree = "<group>"; };
 		8F587AC525ABF019006B4B2D /* KKUserInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKUserInfoModel.h; sourceTree = "<group>"; };
 		8F587AC625ABF019006B4B2D /* KKUserInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKUserInfoModel.m; sourceTree = "<group>"; };
-		8F587ACA25ABF06B006B4B2D /* KKMeTopCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMeTopCell.h; sourceTree = "<group>"; };
-		8F587ACB25ABF06B006B4B2D /* KKMeTopCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKMeTopCell.m; sourceTree = "<group>"; };
 		8F587ACF25AC15E4006B4B2D /* icons_filled_camera.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_filled_camera.svg; sourceTree = "<group>"; };
 		8F587AD225AC1B57006B4B2D /* KKNormalCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKNormalCell.h; sourceTree = "<group>"; };
 		8F587AD325AC1B57006B4B2D /* KKNormalCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKNormalCell.m; sourceTree = "<group>"; };
@@ -358,8 +358,8 @@
 			children = (
 				8F587AD225AC1B57006B4B2D /* KKNormalCell.h */,
 				8F587AD325AC1B57006B4B2D /* KKNormalCell.m */,
-				8F587ACA25ABF06B006B4B2D /* KKMeTopCell.h */,
-				8F587ACB25ABF06B006B4B2D /* KKMeTopCell.m */,
+				4B43F34925AC839A0015557E /* KKMeHeaderView.h */,
+				4B43F34A25AC839A0015557E /* KKMeHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -880,8 +880,8 @@
 				8FCF36DD2593078B0026412C /* KKNavigationController.m in Sources */,
 				4B4CCAAB2594C38200CB3929 /* KKHomeNoNetworkCell.m in Sources */,
 				8FCF372925932B8C0026412C /* KKIMTextMsgCell.m in Sources */,
+				4B43F34B25AC839A0015557E /* KKMeHeaderView.m in Sources */,
 				8FCF373125932BCE0026412C /* KKIMRedBagMsgCell.m in Sources */,
-				8F587ACC25ABF06B006B4B2D /* KKMeTopCell.m in Sources */,
 				8F587AAF25ABED2C006B4B2D /* KKChatRecordDBHelper.m in Sources */,
 				8FCF370E25930B970026412C /* KKContactsViewController.m in Sources */,
 				8FCF37582593313E0026412C /* KKIMVoiceMsgCell.m in Sources */,

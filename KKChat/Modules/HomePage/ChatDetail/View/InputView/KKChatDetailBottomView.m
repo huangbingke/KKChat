@@ -24,7 +24,7 @@
 @property (nonatomic, strong) KKChatMoreView *moreView; //
 @property (nonatomic, strong) KKChatExpressionView *expressionView; //表情输入
 
-@property (nonatomic, strong) UIButton *coverBtn;//覆盖在textView上的button
+//@property (nonatomic, strong) UIButton *coverBtn;//覆盖在textView上的button
 
 @property (nonatomic, assign) KKInputType inputType;
 
@@ -37,8 +37,10 @@
 - (instancetype)initWithInputType:(KKInputType)type {
     if (self = [super init]) {
         self.inputType = type;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardWillShowNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHidden:) name:UIKeyboardDidHideNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+
         self.textHeight = 60;
         self.keyboardHeight = kIPhoneXBottomHeight;
     }
@@ -93,17 +95,8 @@
         self.moreBtn.selected = NO;
         if (sender.selected) {
             [self.inputTextView resignFirstResponder];
-            self.inputTextView.inputView = self.expressionView;
-            [self.inputTextView becomeFirstResponder];
-            self.inputTextView.tintColor = UIColor.clearColor;
-            [self coverBtn];
         } else {
-            [self.inputTextView resignFirstResponder];
-            self.inputTextView.inputView = nil;
             [self.inputTextView becomeFirstResponder];
-            self.inputTextView.tintColor = kThemeColor;
-            [self.coverBtn removeFromSuperview];
-            self.coverBtn = nil;
         }
     });
 }
@@ -115,17 +108,11 @@
     self.expressionBtn.selected = NO;
     if (sender.selected) {
         [self.inputTextView resignFirstResponder];
-        self.inputTextView.inputView = self.moreView;
-        [self.inputTextView becomeFirstResponder];
-        self.inputTextView.tintColor = UIColor.clearColor;
-        [self coverBtn];
+
     } else {
-        [self.inputTextView resignFirstResponder];
-        self.inputTextView.inputView = nil;
+
         [self.inputTextView becomeFirstResponder];
-        self.inputTextView.tintColor = kThemeColor;
-        [self.coverBtn removeFromSuperview];
-        self.coverBtn = nil;
+
     }
 }
 - (void)voiceBtnTouchDownAction:(UIButton *)sender {
@@ -137,23 +124,9 @@
     [sender setTitle:@"按住 说话" forState:(UIControlStateNormal)];
     NSLog(@"录音结束");
 }
-- (void)inputViewIsEditing:(UIButton *)sender {
-    NSLog(@"点击了键盘");
-    if (self.expressionBtn.selected || self.moreBtn.selected) {
-        self.expressionBtn.selected = NO;
-        self.moreBtn.selected = NO;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.inputTextView resignFirstResponder];
-            self.inputTextView.inputView = nil;
-                [self.inputTextView becomeFirstResponder];
-                self.inputTextView.tintColor = kThemeColor;
-        });
-        [self.coverBtn removeFromSuperview];
-        self.coverBtn = nil;
-    }
-}
+
 #pragma mark - Keyboard Notificition -
-- (void)keyboardDidShow:(NSNotification *)sender {
+- (void)keyboardWillShow:(NSNotification *)sender {
 //    NSValue *value = [[sender userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey];
 //    CGFloat height = [value CGRectValue].size.height;
     //键盘高度 第二次弹起获取不准确, 这里先写死
@@ -170,7 +143,7 @@
         [self.delegate bottomViewTextViewDidChangeHeight:self.textHeight bottomMargin:self.keyboardHeight];
     }
 }
-- (void)keyboardDidHidden:(NSNotification *)sender {
+- (void)keyboardWillHide:(NSNotification *)sender {
     self.keyboardHeight = kIPhoneXBottomHeight;
     CGFloat height = self.textHeight;
     
@@ -184,7 +157,10 @@
     self.moreBtn.selected = NO;
     self.expressionBtn.selected = NO;
 }
+- (void)keyboardWillChangeFrame:(NSNotification *)sender {
+    CGRect keyboardFrame = [sender.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
 
+}
 #pragma mark - UITextViewDelegate -
 - (void)textViewDidChange:(UITextView *)textView {
 //    NSLog(@"计算文字高度: %@", textView.text);
@@ -319,21 +295,6 @@
     return _expressionView;
 }
 
-- (UIButton *)coverBtn {
-    if (!_coverBtn) {
-        _coverBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-//        _coverBtn.backgroundColor = [UIColor purpleColor];
-        [_coverBtn addTarget:self action:@selector(inputViewIsEditing:) forControlEvents:(UIControlEventTouchUpInside)];
-        [self addSubview:_coverBtn];
-        [_coverBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.switchBtn.mas_right).offset(10);
-            make.right.mas_equalTo(self.expressionBtn.mas_left).offset(-10);
-            make.top.mas_equalTo(self).offset(10);
-            make.bottom.mas_equalTo(self).offset(-10);
-        }];
-    }
-    return _coverBtn;
-}
 
 
 #pragma mark - dealloc -

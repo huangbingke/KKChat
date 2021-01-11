@@ -9,4 +9,23 @@
 
 @implementation KKNormalCellModel
 
+
+- (instancetype)initWithName:(NSString *)name
+                         pic:(NSString *)pic
+                  targetType:(KKNormalCellTargetType)targetType {
+    if (self = [super init]) {
+        self.name = name;
+        self.pic = pic;
+        self.targetType = targetType;
+    }
+    return self;
+}
+
+
+
+
+
+
+
+
 @end
