@@ -24,12 +24,6 @@
         CGRect frame = self.frame;
         frame.size = size;
         self.frame = frame;
-
-        CALayer *layer = [CALayer layer];
-        layer.frame = CGRectMake(0, kNavHeight-0.5, kScreenWidth, 0.5);
-        layer.backgroundColor = kColor(0xdddddd).CGColor;
-        [self.layer addSublayer:layer];
-        self.lineLayer = layer;
         self.backgroundColor = kBgColor;
     }
     return self;
@@ -46,7 +40,7 @@
         self.bgImageView.userInteractionEnabled = YES;
         [self addSubview:self.bgImageView];
         
-        UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, kNavHeight-44, kScreenWidth, 44-0.5)];
+        UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, kNavHeight-44, kScreenWidth, 44)];
         [self addSubview:bottomView];
         if (title) {
             //WithFrame:CGRectMake(50, 0, kScreenWidth-100, 44)

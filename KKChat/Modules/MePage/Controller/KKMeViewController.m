@@ -85,7 +85,6 @@
             
         }];
         bar.backgroundColor = kColor(0xfefefe);
-        bar.lineLayer.backgroundColor = [UIColor clearColor].CGColor;
         _meTableView.tableHeaderView = bar;
     }
     return _meTableView;
