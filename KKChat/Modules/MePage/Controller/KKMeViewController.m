@@ -93,12 +93,12 @@
 - (NSMutableArray<NSArray<KKNormalCellModel *> *> *)dataArray {
     if (!_dataArray) {
         _dataArray = [NSMutableArray new];
-        KKNormalCellModel *payModel = [[KKNormalCellModel alloc] initWithName:@"支付" pic:@"" targetType:(KKNormalCellTargetTypePay)];
-        KKNormalCellModel *collModel = [[KKNormalCellModel alloc] initWithName:@"收藏" pic:@"" targetType:(KKNormalCellTargetTypeCollection)];
-        KKNormalCellModel *pyqModel = [[KKNormalCellModel alloc] initWithName:@"朋友圈" pic:@"" targetType:(KKNormalCellTargetTypePyqMe)];
-        KKNormalCellModel *cardModel = [[KKNormalCellModel alloc] initWithName:@"卡包" pic:@"" targetType:(KKNormalCellTargetTypeCardBag)];
-        KKNormalCellModel *expressionModel = [[KKNormalCellModel alloc] initWithName:@"表情" pic:@"" targetType:(KKNormalCellTargetTypeExpression)];
-        KKNormalCellModel *setModel = [[KKNormalCellModel alloc] initWithName:@"设置" pic:@"" targetType:(KKNormalCellTargetTypeSetting)];
+        KKNormalCellModel *payModel = [[KKNormalCellModel alloc] initWithName:@"支付" image:[UIImage svgImageName:@"icons_outlined_wechatpay.svg"] targetType:(KKNormalCellTargetTypePay)];
+        KKNormalCellModel *collModel = [[KKNormalCellModel alloc] initWithName:@"收藏" image:[UIImage svgImageName:@"icons_outlined_colorful_favorites_dark.svg"] targetType:(KKNormalCellTargetTypeCollection)];
+        KKNormalCellModel *pyqModel = [[KKNormalCellModel alloc] initWithName:@"朋友圈" image:[UIImage svgImageName:@"icons_outlined_album.svg" targetSize:CGSizeMake(25, 25) tintColor:kColor(0x60838f)] targetType:(KKNormalCellTargetTypePyqMe)];
+        KKNormalCellModel *cardModel = [[KKNormalCellModel alloc] initWithName:@"卡包" image:[UIImage svgImageName:@"icons_outlined_colorful_cards_dark.svg"] targetType:(KKNormalCellTargetTypeCardBag)];
+        KKNormalCellModel *expressionModel = [[KKNormalCellModel alloc] initWithName:@"表情" image:[UIImage svgImageName:@"expression.svg" targetSize:CGSizeMake(25, 25) tintColor:kColor(0xd8bb57)] targetType:(KKNormalCellTargetTypeExpression)];
+        KKNormalCellModel *setModel = [[KKNormalCellModel alloc] initWithName:@"设置" image:[UIImage svgImageName:@"icons_outlined_setting.svg" targetSize:CGSizeMake(25, 25) tintColor:kColor(0x60838f)] targetType:(KKNormalCellTargetTypeSetting)];
         [_dataArray addObject:@[payModel]];
         [_dataArray addObject:@[collModel, pyqModel, cardModel, expressionModel]];
         [_dataArray addObject:@[setModel]];

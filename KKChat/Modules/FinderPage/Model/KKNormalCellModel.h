@@ -29,11 +29,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface KKNormalCellModel : KKBaseCellModel
 
-@property (nonatomic, copy) NSString *pic;
+@property (nonatomic, strong) UIImage *image;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) KKNormalCellTargetType targetType;
 - (instancetype)initWithName:(NSString *)name
-                         pic:(NSString *)pic
+                       image:(UIImage *)image
                   targetType:(KKNormalCellTargetType)targetType;
 
 

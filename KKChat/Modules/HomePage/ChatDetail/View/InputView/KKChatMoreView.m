@@ -109,7 +109,7 @@ static NSString * const KKChatMoreViewCellID = @"KKChatMoreViewCellID";
         KKChatMoreViewCellModel *fileModel = [[KKChatMoreViewCellModel alloc] initWithTitle:@"文件" pic:@""];
         KKChatMoreViewCellModel *cheapCardModel = [[KKChatMoreViewCellModel alloc] initWithTitle:@"卡券" pic:@""];
         KKChatMoreViewCellModel *liveModel = [[KKChatMoreViewCellModel alloc] initWithTitle:@"群直播" pic:@""];
-        KKChatMoreViewCellModel *longModel = [[KKChatMoreViewCellModel alloc] initWithTitle:@"接龙" pic:@""];
+        KKChatMoreViewCellModel *longModel = [[KKChatMoreViewCellModel alloc] initWithTitle:@"接龙" pic:@"icon_outlined_solitaire.svg"];
         if (self.msgType == KKMessageTypeRoomChat) {
             NSArray *qunArr = @[photoModel, cameraModel, callModel, locationModel, redBagModel, voiceModel, collectModel, toolModel, longModel, liveModel, cardModel, fileModel, cheapCardModel];
             [_dataArray addObjectsFromArray:qunArr];

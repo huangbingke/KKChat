@@ -82,9 +82,9 @@
         self.inputTextView.text = self.inputContent;
         [self.inputTextView becomeFirstResponder];
     }
-    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
-        [self.delegate bottomViewTextViewDidChangeHeight:sender.selected ? 60 : self.textHeight bottomMargin:self.keyboardHeight];
-    }
+//    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
+//        [self.delegate bottomViewTextViewDidChangeHeight:sender.selected ? 60 : self.textHeight bottomMargin:self.keyboardHeight];
+//    }
 }
 //表情点击
 - (void)expressionBtnAction:(UIButton *)sender {
@@ -108,7 +108,7 @@
     self.expressionBtn.selected = NO;
     if (sender.selected) {
         [self.inputTextView resignFirstResponder];
-
+        
     } else {
 
         [self.inputTextView becomeFirstResponder];
@@ -133,32 +133,32 @@
     self.keyboardHeight = 336;
 //    NSLog(@"弹起键盘高度: %f", height);
     
-    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
-        if (self.moreBtn.selected) {
-            self.keyboardHeight = kMoreViewHeight;
-        }
-        if (self.expressionBtn.selected) {
-            self.keyboardHeight = kExpressionViewHeight;
-        }
-        [self.delegate bottomViewTextViewDidChangeHeight:self.textHeight bottomMargin:self.keyboardHeight];
-    }
+//    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
+//        if (self.moreBtn.selected) {
+//            self.keyboardHeight = kMoreViewHeight;
+//        }
+//        if (self.expressionBtn.selected) {
+//            self.keyboardHeight = kExpressionViewHeight;
+//        }
+//        [self.delegate bottomViewTextViewDidChangeHeight:self.textHeight bottomMargin:self.keyboardHeight];
+//    }
 }
 - (void)keyboardWillHide:(NSNotification *)sender {
     self.keyboardHeight = kIPhoneXBottomHeight;
     CGFloat height = self.textHeight;
     
-    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
-        if (self.switchBtn.selected) {
-            height = 60;
-        }
-        NSLog(@"333");
-        [self.delegate bottomViewTextViewDidChangeHeight:height bottomMargin:kIPhoneXBottomHeight];
-    }
+//    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
+//        if (self.switchBtn.selected) {
+//            height = 60;
+//        }
+//        NSLog(@"333");
+//        [self.delegate bottomViewTextViewDidChangeHeight:height bottomMargin:kIPhoneXBottomHeight];
+//    }
     self.moreBtn.selected = NO;
     self.expressionBtn.selected = NO;
 }
 - (void)keyboardWillChangeFrame:(NSNotification *)sender {
-    CGRect keyboardFrame = [sender.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+//    CGRect keyboardFrame = [sender.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
 
 }
 #pragma mark - UITextViewDelegate -
@@ -174,9 +174,9 @@
         }
     }
     self.textHeight = height + 20;
-    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
-        [self.delegate bottomViewTextViewDidChangeHeight:self.textHeight bottomMargin:self.keyboardHeight];
-    }
+//    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
+//        [self.delegate bottomViewTextViewDidChangeHeight:self.textHeight bottomMargin:self.keyboardHeight];
+//    }
 }
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if ([@"\n" isEqualToString:text]) {

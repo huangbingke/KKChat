@@ -11,11 +11,11 @@
 
 
 - (instancetype)initWithName:(NSString *)name
-                         pic:(NSString *)pic
+                       image:(UIImage *)image
                   targetType:(KKNormalCellTargetType)targetType {
     if (self = [super init]) {
         self.name = name;
-        self.pic = pic;
+        self.image = image;
         self.targetType = targetType;
     }
     return self;

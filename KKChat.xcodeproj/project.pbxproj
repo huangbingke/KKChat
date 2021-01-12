@@ -37,6 +37,16 @@
 		8F587AD825AC1BFD006B4B2D /* KKNormalCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F587AD725AC1BFD006B4B2D /* KKNormalCellModel.m */; };
 		8F8080AA25A8484400A6D292 /* KKChatExpressionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8080A925A8484400A6D292 /* KKChatExpressionView.m */; };
 		8F8080AE25A849CB00A6D292 /* KKChatMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8080AD25A849CB00A6D292 /* KKChatMoreView.m */; };
+		8FB8A1BD25AD2AA900649FEF /* icons_outlined_arrow.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8A1BC25AD2AA900649FEF /* icons_outlined_arrow.svg */; };
+		8FB8A1C025AD2CC700649FEF /* icons_outlined_colorful_cards_dark.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8A1BF25AD2CC700649FEF /* icons_outlined_colorful_cards_dark.svg */; };
+		8FB8A1C325AD2D1B00649FEF /* icons_outlined_colorful_favorites_dark.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8A1C225AD2D1B00649FEF /* icons_outlined_colorful_favorites_dark.svg */; };
+		8FB8A1C625AD2D3900649FEF /* icons_outlined_wechatpay.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8A1C525AD2D3900649FEF /* icons_outlined_wechatpay.svg */; };
+		8FB8A1C925AD2D5E00649FEF /* icons_outlined_album.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8A1C825AD2D5E00649FEF /* icons_outlined_album.svg */; };
+		8FB8A1CC25AD2F9000649FEF /* icons_outlined_qr_code.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8A1CB25AD2F9000649FEF /* icons_outlined_qr_code.svg */; };
+		8FB8A1CF25AD30DC00649FEF /* icon_outlined_solitaire.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8A1CE25AD30DC00649FEF /* icon_outlined_solitaire.svg */; };
+		8FB8A1D225AD315500649FEF /* icons_outlined_setting.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8A1D125AD315500649FEF /* icons_outlined_setting.svg */; };
+		8FB8A1DF25AD404500649FEF /* network_setting.html in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8A1DE25AD404500649FEF /* network_setting.html */; };
+		8FB8A1E325AD407100649FEF /* KKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8A1E225AD407100649FEF /* KKWebViewController.m */; };
 		8FBE151A25A5A1BF008E49C0 /* icons_outlined_discover.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FBE151225A5A1BF008E49C0 /* icons_outlined_discover.svg */; };
 		8FBE151B25A5A1BF008E49C0 /* icons_filled_contacts.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FBE151325A5A1BF008E49C0 /* icons_filled_contacts.svg */; };
 		8FBE151C25A5A1BF008E49C0 /* icons_outlined_me.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FBE151425A5A1BF008E49C0 /* icons_outlined_me.svg */; };
@@ -136,6 +146,17 @@
 		8F8080A925A8484400A6D292 /* KKChatExpressionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKChatExpressionView.m; sourceTree = "<group>"; };
 		8F8080AC25A849CB00A6D292 /* KKChatMoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKChatMoreView.h; sourceTree = "<group>"; };
 		8F8080AD25A849CB00A6D292 /* KKChatMoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKChatMoreView.m; sourceTree = "<group>"; };
+		8FB8A1BC25AD2AA900649FEF /* icons_outlined_arrow.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_outlined_arrow.svg; sourceTree = "<group>"; };
+		8FB8A1BF25AD2CC700649FEF /* icons_outlined_colorful_cards_dark.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_outlined_colorful_cards_dark.svg; sourceTree = "<group>"; };
+		8FB8A1C225AD2D1B00649FEF /* icons_outlined_colorful_favorites_dark.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_outlined_colorful_favorites_dark.svg; sourceTree = "<group>"; };
+		8FB8A1C525AD2D3900649FEF /* icons_outlined_wechatpay.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_outlined_wechatpay.svg; sourceTree = "<group>"; };
+		8FB8A1C825AD2D5E00649FEF /* icons_outlined_album.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_outlined_album.svg; sourceTree = "<group>"; };
+		8FB8A1CB25AD2F9000649FEF /* icons_outlined_qr_code.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_outlined_qr_code.svg; sourceTree = "<group>"; };
+		8FB8A1CE25AD30DC00649FEF /* icon_outlined_solitaire.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icon_outlined_solitaire.svg; sourceTree = "<group>"; };
+		8FB8A1D125AD315500649FEF /* icons_outlined_setting.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_outlined_setting.svg; sourceTree = "<group>"; };
+		8FB8A1DE25AD404500649FEF /* network_setting.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = network_setting.html; sourceTree = "<group>"; };
+		8FB8A1E125AD407100649FEF /* KKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKWebViewController.h; sourceTree = "<group>"; };
+		8FB8A1E225AD407100649FEF /* KKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKWebViewController.m; sourceTree = "<group>"; };
 		8FBE151225A5A1BF008E49C0 /* icons_outlined_discover.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_outlined_discover.svg; sourceTree = "<group>"; };
 		8FBE151325A5A1BF008E49C0 /* icons_filled_contacts.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_filled_contacts.svg; sourceTree = "<group>"; };
 		8FBE151425A5A1BF008E49C0 /* icons_outlined_me.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_outlined_me.svg; sourceTree = "<group>"; };
@@ -347,8 +368,6 @@
 			children = (
 				8F587AC525ABF019006B4B2D /* KKUserInfoModel.h */,
 				8F587AC625ABF019006B4B2D /* KKUserInfoModel.m */,
-				8F587AD625AC1BFD006B4B2D /* KKNormalCellModel.h */,
-				8F587AD725AC1BFD006B4B2D /* KKNormalCellModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -356,8 +375,6 @@
 		8F587AC925ABF02F006B4B2D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8F587AD225AC1B57006B4B2D /* KKNormalCell.h */,
-				8F587AD325AC1B57006B4B2D /* KKNormalCell.m */,
 				4B43F34925AC839A0015557E /* KKMeHeaderView.h */,
 				4B43F34A25AC839A0015557E /* KKMeHeaderView.m */,
 			);
@@ -367,6 +384,13 @@
 		8F587ACE25AC15D8006B4B2D /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				8FB8A1D125AD315500649FEF /* icons_outlined_setting.svg */,
+				8FB8A1CB25AD2F9000649FEF /* icons_outlined_qr_code.svg */,
+				8FB8A1C825AD2D5E00649FEF /* icons_outlined_album.svg */,
+				8FB8A1C525AD2D3900649FEF /* icons_outlined_wechatpay.svg */,
+				8FB8A1C225AD2D1B00649FEF /* icons_outlined_colorful_favorites_dark.svg */,
+				8FB8A1BF25AD2CC700649FEF /* icons_outlined_colorful_cards_dark.svg */,
+				8FB8A1BC25AD2AA900649FEF /* icons_outlined_arrow.svg */,
 				8F587ACF25AC15E4006B4B2D /* icons_filled_camera.svg */,
 			);
 			path = Me;
@@ -385,6 +409,24 @@
 			path = InputView;
 			sourceTree = "<group>";
 		};
+		8FB8A1B925AD295200649FEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8F587AD625AC1BFD006B4B2D /* KKNormalCellModel.h */,
+				8F587AD725AC1BFD006B4B2D /* KKNormalCellModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8FB8A1BA25AD295900649FEF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8F587AD225AC1B57006B4B2D /* KKNormalCell.h */,
+				8F587AD325AC1B57006B4B2D /* KKNormalCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8FBE150D25A5A1BF008E49C0 /* CostomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +439,7 @@
 		8FBE150E25A5A1BF008E49C0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				8FB8A1DE25AD404500649FEF /* network_setting.html */,
 				8FBE150F25A5A1BF008E49C0 /* Picture */,
 			);
 			path = Resource;
@@ -457,6 +500,7 @@
 				8FBE152C25A5AAFD008E49C0 /* icons_outlined_add-friends.svg */,
 				8FBE152E25A5AAFD008E49C0 /* icons_filled_back.svg */,
 				8FBE152F25A5AAFD008E49C0 /* icons_outlined_back.svg */,
+				8FB8A1CE25AD30DC00649FEF /* icon_outlined_solitaire.svg */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -558,6 +602,8 @@
 				8FCF36DC2593078B0026412C /* KKNavigationController.m */,
 				8FCF36E12593084D0026412C /* KKBaseViewController.h */,
 				8FCF36E22593084D0026412C /* KKBaseViewController.m */,
+				8FB8A1E125AD407100649FEF /* KKWebViewController.h */,
+				8FB8A1E225AD407100649FEF /* KKWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -606,8 +652,8 @@
 			isa = PBXGroup;
 			children = (
 				8FCF370325930B060026412C /* Controller */,
-				8FCF370225930B010026412C /* Model */,
-				8FCF370125930AF70026412C /* View */,
+				8FB8A1B925AD295200649FEF /* Model */,
+				8FB8A1BA25AD295900649FEF /* View */,
 			);
 			path = FinderPage;
 			sourceTree = "<group>";
@@ -668,20 +714,6 @@
 				8FCF370D25930B970026412C /* KKContactsViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		8FCF370125930AF70026412C /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		8FCF370225930B010026412C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		8FCF370325930B060026412C /* Controller */ = {
@@ -779,11 +811,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FB8A1C625AD2D3900649FEF /* icons_outlined_wechatpay.svg in Resources */,
 				8FBE153E25A5B21F008E49C0 /* icons_outlined_pay.svg in Resources */,
 				8FBE153125A5AAFD008E49C0 /* icons_outlined_add-friends.svg in Resources */,
 				8FBE151C25A5A1BF008E49C0 /* icons_outlined_me.svg in Resources */,
+				8FB8A1CF25AD30DC00649FEF /* icon_outlined_solitaire.svg in Resources */,
 				8F169CE025A6D35C00949B40 /* icons_outlined_videocall.svg in Resources */,
 				8FBE153325A5AAFD008E49C0 /* icons_filled_back.svg in Resources */,
+				8FB8A1BD25AD2AA900649FEF /* icons_outlined_arrow.svg in Resources */,
 				8F169CCF25A6D10700949B40 /* icon_filled_brand_voice_fg_1.svg in Resources */,
 				8FBE153C25A5B21F008E49C0 /* icons_filled_add_friends.svg in Resources */,
 				8FBE153D25A5B21F008E49C0 /* icons_filled_scan.svg in Resources */,
@@ -795,15 +830,21 @@
 				8FBE152025A5A1BF008E49C0 /* icons_outlined_contacts.svg in Resources */,
 				8FBE155625A5B691008E49C0 /* icons_filled_info.svg in Resources */,
 				8FBE151E25A5A1BF008E49C0 /* icons_outlined_chats.svg in Resources */,
+				8FB8A1C925AD2D5E00649FEF /* icons_outlined_album.svg in Resources */,
+				8FB8A1CC25AD2F9000649FEF /* icons_outlined_qr_code.svg in Resources */,
 				8F587AD025AC15E4006B4B2D /* icons_filled_camera.svg in Resources */,
+				8FB8A1DF25AD404500649FEF /* network_setting.html in Resources */,
 				8F169CDA25A6D28600949B40 /* icons_outlined_keyboard.svg in Resources */,
 				8F169CD025A6D10700949B40 /* icon_filled_brand_voice_fg_2.svg in Resources */,
+				8FB8A1C325AD2D1B00649FEF /* icons_outlined_colorful_favorites_dark.svg in Resources */,
 				8F169CD125A6D10700949B40 /* icon_filled_brand_voice_fg_3.svg in Resources */,
+				8FB8A1C025AD2CC700649FEF /* icons_outlined_colorful_cards_dark.svg in Resources */,
 				8FBE153B25A5B21F008E49C0 /* icons_filled_chats.svg in Resources */,
 				8FCF36C1259306A40026412C /* Assets.xcassets in Resources */,
 				8FBE151A25A5A1BF008E49C0 /* icons_outlined_discover.svg in Resources */,
 				8FBE153025A5AAFD008E49C0 /* icons_filled_more.svg in Resources */,
 				8F169CD425A6D18300949B40 /* icons_filled_ear.svg in Resources */,
+				8FB8A1D225AD315500649FEF /* icons_outlined_setting.svg in Resources */,
 				8F169CDD25A6D2B300949B40 /* icons_outlined_voice.svg in Resources */,
 				8FBE154125A5B2C6008E49C0 /* icons_filled_imac.svg in Resources */,
 				8FBE151D25A5A1BF008E49C0 /* icons_filled_me.svg in Resources */,
@@ -863,6 +904,7 @@
 			files = (
 				8FCF373925932C250026412C /* KKIMSmallAppCell.m in Sources */,
 				8F284FB325A44A3700FC56B0 /* KKHomeNavBarView.m in Sources */,
+				8FB8A1E325AD407100649FEF /* KKWebViewController.m in Sources */,
 				8FCF36EF259308830026412C /* KKBaseCell.m in Sources */,
 				8F8080AE25A849CB00A6D292 /* KKChatMoreView.m in Sources */,
 				8F587AC725ABF019006B4B2D /* KKUserInfoModel.m in Sources */,

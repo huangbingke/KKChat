@@ -43,7 +43,7 @@ NSString * const KKNormalCellID = @"KKNormalCellID";
 
 - (void)setCellModel:(KKNormalCellModel *)cellModel {
     _cellModel = cellModel;
-//    _picImageView.image = [UIImage svgImageName:cellModel.pic];
+    _picImageView.image = cellModel.image;
     _titleLabel.text = cellModel.name;
 }
 
@@ -52,12 +52,13 @@ NSString * const KKNormalCellID = @"KKNormalCellID";
 - (UIImageView *)picImageView {
     if (!_picImageView) {
         _picImageView = [[UIImageView alloc] init];
-        _picImageView.backgroundColor = [UIColor redColor];
+//        _picImageView.backgroundColor = [UIColor redColor];
         [self addSubview:_picImageView];
         [_picImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.mas_left).offset(10);
-            make.top.mas_equalTo(self.mas_top).offset(15/2);
-            make.width.height.mas_equalTo(35);
+//            make.top.mas_equalTo(self.mas_top).offset(25/2);
+            make.centerY.mas_equalTo(self.contentView.mas_centerY);
+            make.width.height.mas_equalTo(25);
         }];
     }
     return _picImageView;
@@ -79,12 +80,11 @@ NSString * const KKNormalCellID = @"KKNormalCellID";
 - (UIImageView *)arrowImageView {
     if (!_arrowImageView) {
         _arrowImageView = [[UIImageView alloc] init];
-//        _arrowImageView.image = [UIImage svgImageName:@""];
+        _arrowImageView.image = [UIImage svgImageName:@"icons_outlined_arrow.svg"];
         [self.contentView addSubview:_arrowImageView];
         [_arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(self.contentView.mas_right).offset(-10);
+            make.right.mas_equalTo(self.contentView.mas_right).offset(-15);
             make.centerY.mas_equalTo(self.picImageView.mas_centerY);
-            make.width.height.mas_equalTo(25);
         }];
     }
     return _arrowImageView;

@@ -42,17 +42,25 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     KKNormalCellModel *model = self.dataArray[indexPath.section][indexPath.row];
-    if (model.targetType == KKNormalCellTargetTypePay) {
+    if (model.targetType == KKNormalCellTargetTypePyq) {
         
-    } else if (model.targetType == KKNormalCellTargetTypeCollection) {
+    } else if (model.targetType == KKNormalCellTargetTypeVodie) {
         
-    } else if (model.targetType == KKNormalCellTargetTypePyq) {
+    } else if (model.targetType == KKNormalCellTargetTypeScan) {
         
-    } else if (model.targetType == KKNormalCellTargetTypeCardBag) {
+    } else if (model.targetType == KKNormalCellTargetTypeShake) {
         
-    } else if (model.targetType == KKNormalCellTargetTypeExpression) {
+    } else if (model.targetType == KKNormalCellTargetTypeWatch) {
         
-    } else if (model.targetType == KKNormalCellTargetTypeSetting) {
+    } else if (model.targetType == KKNormalCellTargetTypeSearch) {
+        
+    } else if (model.targetType == KKNormalCellTargetTypeNear) {
+        
+    } else if (model.targetType == KKNormalCellTargetTypeShop) {
+        
+    } else if (model.targetType == KKNormalCellTargetTypeGame) {
+        
+    } else if (model.targetType == KKNormalCellTargetTypeApp) {
         
     }
 }
@@ -91,16 +99,16 @@
 - (NSMutableArray<NSArray<KKNormalCellModel *> *> *)dataArray {
     if (!_dataArray) {
         _dataArray = [NSMutableArray new];
-        KKNormalCellModel *pyqModel = [[KKNormalCellModel alloc] initWithName:@"朋友圈" pic:@"" targetType:(KKNormalCellTargetTypePyq)];
-        KKNormalCellModel *vedioModel = [[KKNormalCellModel alloc] initWithName:@"视频号" pic:@"" targetType:(KKNormalCellTargetTypeVodie)];
-        KKNormalCellModel *scanModel = [[KKNormalCellModel alloc] initWithName:@"扫一扫" pic:@"" targetType:(KKNormalCellTargetTypeScan)];
-        KKNormalCellModel *shakeModel = [[KKNormalCellModel alloc] initWithName:@"摇一摇" pic:@"" targetType:(KKNormalCellTargetTypeShake)];
-        KKNormalCellModel *watchModel = [[KKNormalCellModel alloc] initWithName:@"看一看" pic:@"" targetType:(KKNormalCellTargetTypeWatch)];
-        KKNormalCellModel *searchModel = [[KKNormalCellModel alloc] initWithName:@"搜一搜" pic:@"" targetType:(KKNormalCellTargetTypeSearch)];
-        KKNormalCellModel *nearModel = [[KKNormalCellModel alloc] initWithName:@"附近的直播和人" pic:@"" targetType:(KKNormalCellTargetTypeNear)];
-        KKNormalCellModel *shopModel = [[KKNormalCellModel alloc] initWithName:@"购物" pic:@"" targetType:(KKNormalCellTargetTypeShop)];
-        KKNormalCellModel *gameModel = [[KKNormalCellModel alloc] initWithName:@"游戏" pic:@"" targetType:(KKNormalCellTargetTypeGame)];
-        KKNormalCellModel *appModel = [[KKNormalCellModel alloc] initWithName:@"小程序" pic:@"" targetType:(KKNormalCellTargetTypeApp)];
+        KKNormalCellModel *pyqModel = [[KKNormalCellModel alloc] initWithName:@"朋友圈" image:[UIImage svgImageName:@""] targetType:(KKNormalCellTargetTypePyq)];
+        KKNormalCellModel *vedioModel = [[KKNormalCellModel alloc] initWithName:@"视频号" image:[UIImage svgImageName:@""] targetType:(KKNormalCellTargetTypeVodie)];
+        KKNormalCellModel *scanModel = [[KKNormalCellModel alloc] initWithName:@"扫一扫" image:[UIImage svgImageName:@""] targetType:(KKNormalCellTargetTypeScan)];
+        KKNormalCellModel *shakeModel = [[KKNormalCellModel alloc] initWithName:@"摇一摇" image:[UIImage svgImageName:@""] targetType:(KKNormalCellTargetTypeShake)];
+        KKNormalCellModel *watchModel = [[KKNormalCellModel alloc] initWithName:@"看一看" image:[UIImage svgImageName:@""] targetType:(KKNormalCellTargetTypeWatch)];
+        KKNormalCellModel *searchModel = [[KKNormalCellModel alloc] initWithName:@"搜一搜" image:[UIImage svgImageName:@""] targetType:(KKNormalCellTargetTypeSearch)];
+        KKNormalCellModel *nearModel = [[KKNormalCellModel alloc] initWithName:@"附近的直播和人" image:[UIImage svgImageName:@""] targetType:(KKNormalCellTargetTypeNear)];
+        KKNormalCellModel *shopModel = [[KKNormalCellModel alloc] initWithName:@"购物" image:[UIImage svgImageName:@""] targetType:(KKNormalCellTargetTypeShop)];
+        KKNormalCellModel *gameModel = [[KKNormalCellModel alloc] initWithName:@"游戏" image:[UIImage svgImageName:@""] targetType:(KKNormalCellTargetTypeGame)];
+        KKNormalCellModel *appModel = [[KKNormalCellModel alloc] initWithName:@"小程序" image:[UIImage svgImageName:@""] targetType:(KKNormalCellTargetTypeApp)];
         [_dataArray addObject:@[pyqModel]];
         [_dataArray addObject:@[vedioModel]];
         [_dataArray addObject:@[scanModel, shakeModel]];

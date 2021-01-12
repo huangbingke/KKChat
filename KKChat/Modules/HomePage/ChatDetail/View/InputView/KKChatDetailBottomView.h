@@ -17,8 +17,7 @@ typedef NS_ENUM(NSUInteger, KKInputType) {
 @protocol KKChatDetailBottomViewDelegate <NSObject>
 
 - (void)bottomViewSendMsgBtnAction:(NSString *)msg;
-- (void)bottomViewTextViewDidChangeHeight:(CGFloat)height
-                             bottomMargin:(CGFloat)bottomMargin;
+//- (void)bottomViewTextViewDidChangeHeight:(CGFloat)height bottomMargin:(CGFloat)bottomMargin;
 
 @end
 
