@@ -10,7 +10,7 @@
 #import "KKChatMoreView.h"
 #import "KKChatExpressionView.h"
 
-#define kMoreViewHeight   (kScreenWidth/4*2+20+kIPhoneXBottomHeight)
+#define kMoreViewHeight   (kScreenWidth/4*2+20)
 #define kExpressionViewHeight 300
 CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
 
@@ -49,7 +49,7 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
 }
 #pragma mark - UI -
 - (void)setupBottomViewUI {
-    self.backgroundColor = kColor(0xf7f7f7);
+//    self.backgroundColor = kColor(0xf7f7f7);
     [self switchBtn];
     [self moreBtn];
     [self expressionBtn];
@@ -68,6 +68,10 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
 //语音文字切换
 - (void)switchBtnAction:(UIButton *)sender {
     sender.selected = !sender.selected;
+        [self.moreView removeFromSuperview];
+        self.moreView = nil;
+        [self.expressionView removeFromSuperview];
+        self.expressionView = nil;
     if (sender.selected) {
         self.moreBtn.selected = NO;
         self.expressionBtn.selected = NO;
@@ -86,20 +90,44 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
     if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
         [self.delegate bottomViewTextViewDidChangeHeight:sender.selected ? 60 : self.textHeight bottomMargin:self.keyboardHeight];
     }
+    [self layoutIfNeeded];
 }
 //表情点击
 - (void)expressionBtnAction:(UIButton *)sender {
     sender.selected = !sender.selected;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.inputTextView.text = self.inputContent;
-        self.switchBtn.selected = NO;
-        self.moreBtn.selected = NO;
-        if (sender.selected) {
-            [self.inputTextView resignFirstResponder];
-        } else {
-            [self.inputTextView becomeFirstResponder];
+    self.inputTextView.text = self.inputContent;
+    self.switchBtn.selected = NO;
+    self.moreBtn.selected = NO;
+    [self.moreView removeFromSuperview];
+    self.moreView = nil;
+    if (sender.selected) {
+        self.keyboardHeight = kIPhoneXBottomHeight;
+        if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
+            [self.delegate bottomViewTextViewDidChangeHeight:self.textHeight+kExpressionViewHeight bottomMargin:self.keyboardHeight];
         }
-    });
+        [self.inputTextView resignFirstResponder];
+        [UIView animateWithDuration:KKChatDetailBottomViewAnimationDuration animations:^{
+            [self expressionView];
+            [self.switchBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.bottom.mas_equalTo(self.expressionView.mas_top).offset(-25/2);
+                make.left.mas_equalTo(self.mas_left).offset(10);
+                make.width.height.mas_equalTo(35);
+            }];
+//            [self.expressionView layoutIfNeeded];
+        }];
+    } else {
+        [self.expressionView removeFromSuperview];
+        self.expressionView = nil;
+        [self.switchBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(self.mas_bottom).offset(-25/2);
+            make.left.mas_equalTo(self.mas_left).offset(10);
+            make.width.height.mas_equalTo(35);
+        }];
+        [self.inputTextView becomeFirstResponder];
+        if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
+            [self.delegate bottomViewTextViewDidChangeHeight:self.textHeight bottomMargin:self.keyboardHeight];
+        }
+    }
 }
 //加号点击
 - (void)moreBtnAction:(UIButton *)sender {
@@ -107,31 +135,29 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
     self.inputTextView.text = self.inputContent;
     self.switchBtn.selected = NO;
     self.expressionBtn.selected = NO;
+    [self.expressionView removeFromSuperview];
+    self.expressionView = nil;
     if (sender.selected) {
+        self.keyboardHeight = kIPhoneXBottomHeight;
         if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
             [self.delegate bottomViewTextViewDidChangeHeight:self.textHeight+kMoreViewHeight bottomMargin:self.keyboardHeight];
         }
         [self.inputTextView resignFirstResponder];
-        [UIView animateWithDuration:KKChatDetailBottomViewAnimationDuration animations:^{
-            [self addSubview:self.moreView];
-            [self.moreView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.right.bottom.mas_equalTo(self);
-                make.height.mas_equalTo(kMoreViewHeight);
-            }];
+//        [UIView animateWithDuration:KKChatDetailBottomViewAnimationDuration animations:^{
+            [self moreView];
             [self.switchBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
-                make.bottom.mas_equalTo(self.moreView.mas_top).offset(-10);
-                make.left.mas_equalTo(self).offset(10);
+                make.bottom.mas_equalTo(self.moreView.mas_top).offset(-25/2);
+                make.left.mas_equalTo(self.mas_left).offset(10);
                 make.width.height.mas_equalTo(35);
             }];
-            [self.moreView.superview layoutIfNeeded];
-        }];
+//        }];
 
     } else {
         [self.moreView removeFromSuperview];
         self.moreView = nil;
         [self.switchBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.mas_equalTo(self).offset(-10);
-            make.left.mas_equalTo(self).offset(10);
+            make.bottom.mas_equalTo(self.mas_bottom).offset(-25/2);
+            make.left.mas_equalTo(self.mas_left).offset(10);
             make.width.height.mas_equalTo(35);
         }];
         [self.inputTextView becomeFirstResponder];
@@ -159,29 +185,23 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
     self.keyboardHeight = 336;
 //    NSLog(@"弹起键盘高度: %f", height);
     
-//    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
-//        if (self.moreBtn.selected) {
-//            self.keyboardHeight = kMoreViewHeight;
-//        }
-//        if (self.expressionBtn.selected) {
-//            self.keyboardHeight = kExpressionViewHeight;
-//        }
-//        [self.delegate bottomViewTextViewDidChangeHeight:self.textHeight bottomMargin:self.keyboardHeight];
-//    }
+    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
+        [self.delegate bottomViewTextViewDidChangeHeight:self.textHeight bottomMargin:self.keyboardHeight];
+    }
 }
 - (void)keyboardWillHide:(NSNotification *)sender {
     self.keyboardHeight = kIPhoneXBottomHeight;
     CGFloat height = self.textHeight;
     
-//    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
-//        if (self.switchBtn.selected) {
-//            height = 60;
-//        }
-//        NSLog(@"333");
-//        [self.delegate bottomViewTextViewDidChangeHeight:height bottomMargin:kIPhoneXBottomHeight];
-//    }
-    self.moreBtn.selected = NO;
-    self.expressionBtn.selected = NO;
+    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
+        if (self.switchBtn.selected) {
+            height = 60;
+        }
+        NSLog(@"333");
+        [self.delegate bottomViewTextViewDidChangeHeight:height bottomMargin:kIPhoneXBottomHeight];
+    }
+//    self.moreBtn.selected = NO;
+//    self.expressionBtn.selected = NO;
 }
 - (void)keyboardWillChangeFrame:(NSNotification *)sender {
 //    CGRect keyboardFrame = [sender.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
@@ -227,10 +247,11 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
         [_switchBtn setImage:[UIImage svgImageName:@"icons_outlined_voice.svg" targetSize:CGSizeMake(35, 35)] forState:(UIControlStateNormal)];
         [self addSubview:_switchBtn];
         [_switchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self).offset(10);
-            make.bottom.mas_equalTo(self).offset(-10);
+            make.left.mas_equalTo(self.mas_left).offset(10);
+            make.bottom.mas_equalTo(self.mas_bottom).offset(-25/2);
             make.width.height.mas_equalTo(35);
         }];
+        _switchBtn.backgroundColor = [UIColor purpleColor];
     }
     return _switchBtn;
 }
@@ -246,6 +267,7 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
             make.bottom.mas_equalTo(self.switchBtn.mas_bottom);
             make.width.height.mas_equalTo(35);
         }];
+        _expressionBtn.backgroundColor = [UIColor blueColor];
     }
     return _expressionBtn;
 }
@@ -256,10 +278,11 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
         [_moreBtn setImage:[UIImage svgImageName:@"icons_outlined_add2.svg" targetSize:CGSizeMake(35, 35) tintColor:UIColor.blackColor] forState:(UIControlStateNormal)];
         [self addSubview:_moreBtn];
         [_moreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(self).offset(-10);
+            make.right.mas_equalTo(self.mas_right).offset(-10);
             make.bottom.mas_equalTo(self.switchBtn.mas_bottom);
             make.width.height.mas_equalTo(35);
         }];
+        _moreBtn.backgroundColor = [UIColor orangeColor];
     }
     return _moreBtn;
 }
@@ -278,7 +301,7 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
         [_voiceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.switchBtn.mas_right).offset(10);
             make.right.mas_equalTo(self.expressionBtn.mas_left).offset(-10);
-            make.top.mas_equalTo(self).offset(10);
+            make.top.mas_equalTo(self.mas_top).offset(10);
             make.bottom.mas_equalTo(self.switchBtn.mas_bottom);
         }];
     }
@@ -299,7 +322,7 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
         [_inputTextView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.switchBtn.mas_right).offset(10);
             make.right.mas_equalTo(self.expressionBtn.mas_left).offset(-10);
-            make.top.mas_equalTo(self).offset(10);
+            make.top.mas_equalTo(self.mas_top).offset(10);
             make.bottom.mas_equalTo(self.switchBtn.mas_bottom);
         }];
     }
@@ -309,13 +332,24 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
     if (!_moreView) {
         _moreView = [[KKChatMoreView alloc] initWithMsgType:(KKMessageTypeRoomChat)];
         _moreView.backgroundColor = kColor(0xf7f7f7);
+        [self addSubview:_moreView];
+        [_moreView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.bottom.mas_equalTo(self);
+            make.height.mas_equalTo(kMoreViewHeight);
+        }];
+        [_moreView layoutIfNeeded];
     }
     return _moreView;
 }
 - (KKChatExpressionView *)expressionView {
     if (!_expressionView) {
-        _expressionView = [[KKChatExpressionView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kExpressionViewHeight)];
+        _expressionView = [[KKChatExpressionView alloc] init];
         _expressionView.backgroundColor = [UIColor greenColor];
+        [self addSubview:_expressionView];
+        [_expressionView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.bottom.mas_equalTo(self);
+            make.height.mas_equalTo(kExpressionViewHeight);
+        }];
     }
     return _expressionView;
 }

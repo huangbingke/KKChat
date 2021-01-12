@@ -28,13 +28,13 @@ static NSString * const KKChatMoreViewCellID = @"KKChatMoreViewCellID";
 
 
 - (void)layoutIfNeeded {
-//    CALayer *layer = [CALayer layer];
-//    layer.frame = CGRectMake(0, 0, kScreenWidth, 0.5);
-//    layer.backgroundColor = kColor(0xdddddd).CGColor;
-//    [self.layer addSublayer:layer];
-//    
-//    [self.collectionView reloadData];
-//    self.pageControl.numberOfPages = (self.dataArray.count%8 > 0) ? (self.dataArray.count/8+1) : self.dataArray.count/8;
+    CALayer *layer = [CALayer layer];
+    layer.frame = CGRectMake(0, 0, kScreenWidth, 0.5);
+    layer.backgroundColor = kColor(0xdddddd).CGColor;
+    [self.layer addSublayer:layer];
+    
+    [self.collectionView reloadData];
+    self.pageControl.numberOfPages = (self.dataArray.count%8 > 0) ? (self.dataArray.count/8+1) : self.dataArray.count/8;
 }
 
 
