@@ -9,6 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern CGFloat const KKChatDetailBottomViewAnimationDuration;
+
+
 typedef NS_ENUM(NSUInteger, KKInputType) {
     KKInputTypeText,
     KKInputTypeVoice,
@@ -17,7 +20,7 @@ typedef NS_ENUM(NSUInteger, KKInputType) {
 @protocol KKChatDetailBottomViewDelegate <NSObject>
 
 - (void)bottomViewSendMsgBtnAction:(NSString *)msg;
-//- (void)bottomViewTextViewDidChangeHeight:(CGFloat)height bottomMargin:(CGFloat)bottomMargin;
+- (void)bottomViewTextViewDidChangeHeight:(CGFloat)height bottomMargin:(CGFloat)bottomMargin;
 
 @end
 

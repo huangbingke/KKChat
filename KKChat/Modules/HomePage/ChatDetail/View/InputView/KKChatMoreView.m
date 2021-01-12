@@ -19,19 +19,22 @@ static NSString * const KKChatMoreViewCellID = @"KKChatMoreViewCellID";
 @end
 @implementation KKChatMoreView
 
-- (instancetype)initWithFrame:(CGRect)frame msgType:(KKMessageType)msgType{
-    self = [super initWithFrame:frame];
-    if (self) {
-        CALayer *layer = [CALayer layer];
-        layer.frame = CGRectMake(0, 0, kScreenWidth, 0.5);
-        layer.backgroundColor = kColor(0xdddddd).CGColor;
-        [self.layer addSublayer:layer];
-        
-        [self.collectionView reloadData];
+- (instancetype)initWithMsgType:(KKMessageType)msgType {
+    if (self = [super init]) {
         self.msgType = msgType;
-        self.pageControl.numberOfPages = (self.dataArray.count%8 > 0) ? (self.dataArray.count/8+1) : self.dataArray.count/8;
     }
     return self;
+}
+
+
+- (void)layoutIfNeeded {
+//    CALayer *layer = [CALayer layer];
+//    layer.frame = CGRectMake(0, 0, kScreenWidth, 0.5);
+//    layer.backgroundColor = kColor(0xdddddd).CGColor;
+//    [self.layer addSublayer:layer];
+//    
+//    [self.collectionView reloadData];
+//    self.pageControl.numberOfPages = (self.dataArray.count%8 > 0) ? (self.dataArray.count/8+1) : self.dataArray.count/8;
 }
 
 

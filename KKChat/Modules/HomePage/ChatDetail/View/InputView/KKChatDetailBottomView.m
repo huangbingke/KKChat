@@ -12,6 +12,7 @@
 
 #define kMoreViewHeight   (kScreenWidth/4*2+20+kIPhoneXBottomHeight)
 #define kExpressionViewHeight 300
+CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
 
 @interface KKChatDetailBottomView ()<UITextViewDelegate>
 
@@ -82,9 +83,9 @@
         self.inputTextView.text = self.inputContent;
         [self.inputTextView becomeFirstResponder];
     }
-//    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
-//        [self.delegate bottomViewTextViewDidChangeHeight:sender.selected ? 60 : self.textHeight bottomMargin:self.keyboardHeight];
-//    }
+    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
+        [self.delegate bottomViewTextViewDidChangeHeight:sender.selected ? 60 : self.textHeight bottomMargin:self.keyboardHeight];
+    }
 }
 //表情点击
 - (void)expressionBtnAction:(UIButton *)sender {
@@ -107,13 +108,38 @@
     self.switchBtn.selected = NO;
     self.expressionBtn.selected = NO;
     if (sender.selected) {
+        if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
+            [self.delegate bottomViewTextViewDidChangeHeight:self.textHeight+kMoreViewHeight bottomMargin:self.keyboardHeight];
+        }
         [self.inputTextView resignFirstResponder];
-        
+        [UIView animateWithDuration:KKChatDetailBottomViewAnimationDuration animations:^{
+            [self addSubview:self.moreView];
+            [self.moreView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.right.bottom.mas_equalTo(self);
+                make.height.mas_equalTo(kMoreViewHeight);
+            }];
+            [self.switchBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.bottom.mas_equalTo(self.moreView.mas_top).offset(-10);
+                make.left.mas_equalTo(self).offset(10);
+                make.width.height.mas_equalTo(35);
+            }];
+            [self.moreView.superview layoutIfNeeded];
+        }];
+
     } else {
-
+        [self.moreView removeFromSuperview];
+        self.moreView = nil;
+        [self.switchBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(self).offset(-10);
+            make.left.mas_equalTo(self).offset(10);
+            make.width.height.mas_equalTo(35);
+        }];
         [self.inputTextView becomeFirstResponder];
-
+        if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
+            [self.delegate bottomViewTextViewDidChangeHeight:self.textHeight bottomMargin:self.keyboardHeight];
+        }
     }
+
 }
 - (void)voiceBtnTouchDownAction:(UIButton *)sender {
     [sender setTitle:@"松开 结束" forState:(UIControlStateNormal)];
@@ -174,9 +200,9 @@
         }
     }
     self.textHeight = height + 20;
-//    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
-//        [self.delegate bottomViewTextViewDidChangeHeight:self.textHeight bottomMargin:self.keyboardHeight];
-//    }
+    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
+        [self.delegate bottomViewTextViewDidChangeHeight:self.textHeight bottomMargin:self.keyboardHeight];
+    }
 }
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if ([@"\n" isEqualToString:text]) {
@@ -217,10 +243,9 @@
         [self addSubview:_expressionBtn];
         [_expressionBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(self.moreBtn.mas_left).offset(-15);
-            make.bottom.mas_equalTo(self).offset(-10);
+            make.bottom.mas_equalTo(self.switchBtn.mas_bottom);
             make.width.height.mas_equalTo(35);
         }];
-        
     }
     return _expressionBtn;
 }
@@ -232,7 +257,7 @@
         [self addSubview:_moreBtn];
         [_moreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(self).offset(-10);
-            make.bottom.mas_equalTo(self).offset(-10);
+            make.bottom.mas_equalTo(self.switchBtn.mas_bottom);
             make.width.height.mas_equalTo(35);
         }];
     }
@@ -254,7 +279,7 @@
             make.left.mas_equalTo(self.switchBtn.mas_right).offset(10);
             make.right.mas_equalTo(self.expressionBtn.mas_left).offset(-10);
             make.top.mas_equalTo(self).offset(10);
-            make.bottom.mas_equalTo(self).offset(-10);
+            make.bottom.mas_equalTo(self.switchBtn.mas_bottom);
         }];
     }
     return _voiceBtn;
@@ -275,14 +300,14 @@
             make.left.mas_equalTo(self.switchBtn.mas_right).offset(10);
             make.right.mas_equalTo(self.expressionBtn.mas_left).offset(-10);
             make.top.mas_equalTo(self).offset(10);
-            make.bottom.mas_equalTo(self).offset(-10);
+            make.bottom.mas_equalTo(self.switchBtn.mas_bottom);
         }];
     }
     return _inputTextView;
 }
 - (KKChatMoreView *)moreView {
     if (!_moreView) {
-        _moreView = [[KKChatMoreView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kMoreViewHeight) msgType:(KKMessageTypeRoomChat)];
+        _moreView = [[KKChatMoreView alloc] initWithMsgType:(KKMessageTypeRoomChat)];
         _moreView.backgroundColor = kColor(0xf7f7f7);
     }
     return _moreView;

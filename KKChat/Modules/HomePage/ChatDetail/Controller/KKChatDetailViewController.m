@@ -70,14 +70,14 @@
     NSLog(@"发送消息: %@", msg);
 }
 - (void)bottomViewTextViewDidChangeHeight:(CGFloat)height bottomMargin:(CGFloat)bottomMargin {
-//    NSLog(@"======> %f == %f", height, bottomMargin);
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.bottomView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.mas_equalTo(self.view);
+    NSLog(@"======> %f == %f", height, bottomMargin);
+    [UIView animateWithDuration:KKChatDetailBottomViewAnimationDuration animations:^{
+        [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.bottom.mas_equalTo(self.view).offset(-bottomMargin);
             make.height.mas_equalTo(height);
         }];
-    });
+        [self.bottomView.superview layoutIfNeeded];
+    }];
 }
 
 

@@ -12,8 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class KKChatMoreViewCellModel;
 
 @interface KKChatMoreView : UIView
-
-- (instancetype)initWithFrame:(CGRect)frame msgType:(KKMessageType)msgType;
+- (instancetype)initWithMsgType:(KKMessageType)msgType;
 
 @end
 
