@@ -169,6 +169,14 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
     NSLog(@"录音结束");
 }
 
+- (void)dismiss {
+    [self intoEditMode];
+    [self.inputTextView resignFirstResponder];
+    if ([self.delegate respondsToSelector:@selector(bottomViewTextViewDidChangeHeight:bottomMargin:)]) {
+        [self.delegate bottomViewTextViewDidChangeHeight:self.textHeight bottomMargin:kIPhoneXBottomHeight];
+    }
+}
+
 #pragma mark - Keyboard Notificition -
 - (void)keyboardWillShow:(NSNotification *)sender {
 //    NSValue *value = [[sender userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey];

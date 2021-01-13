@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, KKInputType) {
 
 - (void)setupBottomViewUI;
 
-
+- (void)dismiss;
 
 
 @end

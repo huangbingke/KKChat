@@ -102,7 +102,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.view endEditing:YES];
+    [self.bottomView dismiss];
     KKIMBaseModel *baseModel = self.dataArray[indexPath.row];
     if ([baseModel isKindOfClass:KKIMTimeMsgCellModel.class]) {
         return;
