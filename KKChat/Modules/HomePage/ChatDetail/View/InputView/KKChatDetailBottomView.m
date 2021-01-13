@@ -203,7 +203,6 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
         if (self.expressionBtn.selected) {
             height += kExpressionViewHeight;
         }
-        NSLog(@"333");
         [self.delegate bottomViewTextViewDidChangeHeight:height bottomMargin:kIPhoneXBottomHeight];
     }
 }

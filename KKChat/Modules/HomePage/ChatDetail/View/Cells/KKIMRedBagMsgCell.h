@@ -5,7 +5,7 @@
 //
 //  Created by KK on 23/12/2020.
 //
-
+//红包cell
 #import "KKIMBaseCell.h"
 #import "KKIMBaseModel.h"
 

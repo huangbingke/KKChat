@@ -4,6 +4,7 @@
 //
 //  Created by q.zhang on 2021/1/13.
 //
+//群聊邀请cell
 
 #import "KKIMBaseCell.h"
 #import "KKIMBaseModel.h"

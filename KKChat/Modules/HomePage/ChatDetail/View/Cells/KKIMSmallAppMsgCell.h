@@ -4,7 +4,7 @@
 //
 //  Created by KK on 23/12/2020.
 //
-
+//小程序cell
 #import "KKIMBaseCell.h"
 #import "KKIMBaseModel.h"
 

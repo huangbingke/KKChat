@@ -20,15 +20,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = kColor(0xf7f7f7);
-
-    
 }
 
 - (void)setupUI {
     @weakify(self);
-    self.kkNavigationBar = [KKNavigationBar setupNavigationBarWithTitle:@"聊天" backAction:^{
+    self.kkNavigationBar = [KKNavigationBar setupNavigationBarWithTitle:@"聊天" leftName:@"icons_filled_back.svg" leftAction:^{
         @strongify(self);
         [self.navigationController popViewControllerAnimated:YES];
+    } rightName:@"icons_filled_more.svg" rightAction:^{
+        NSLog(@"========");
+//        @strongify(self);
+
     }];
     
     [self.view addSubview:self.chatTableView];
@@ -116,7 +118,6 @@
     NSLog(@"发送消息: %@", msg);
 }
 - (void)bottomViewTextViewDidChangeHeight:(CGFloat)height bottomMargin:(CGFloat)bottomMargin {
-    NSLog(@"======> %f == %f", height, bottomMargin);
     [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.view).offset(-bottomMargin);
         make.height.mas_equalTo(height);
@@ -144,6 +145,10 @@
 - (NSMutableArray<KKIMBaseModel *> *)dataArray {
     if (!_dataArray) {
         _dataArray = [NSMutableArray new];
+        for (int i = 0; i < 20; i++) {
+            KKIMBaseModel *model = [[KKIMBaseModel alloc] initWithCellHeight:40 cellIdentifier:@""];
+            [_dataArray addObject:model];
+        }
     }
     return _dataArray;
 }

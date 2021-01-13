@@ -4,7 +4,7 @@
 //
 //  Created by KK on 23/12/2020.
 //
-
+//文字消息cell
 #import "KKIMBaseCell.h"
 #import "KKIMBaseModel.h"
 

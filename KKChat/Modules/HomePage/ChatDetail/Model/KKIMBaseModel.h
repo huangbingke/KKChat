@@ -26,7 +26,8 @@ typedef NS_ENUM(NSUInteger, KKIMMsgType) {
 
 @property (nonatomic, copy) NSString *sendDate;//发送的时间
 @property (nonatomic, assign) BOOL sendSuccess;//是否发送成功
-//@property (nonatomic, assign)
+@property (nonatomic, assign) BOOL openSelectStatus; //是否开启多选
+
 
 @end
 

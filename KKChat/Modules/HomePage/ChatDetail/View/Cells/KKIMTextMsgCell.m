@@ -6,11 +6,13 @@
 //
 
 #import "KKIMTextMsgCell.h"
-
+#import <YYText.h>
 @interface KKIMTextMsgCell ()
 
 @property (nonatomic, strong) UIImageView *bgImageView;
-@property (nonatomic, strong) UILabel *textMsgLabel;
+@property (nonatomic, strong) YYLabel *textMsgLabel;
+@property (nonatomic, strong) UILabel *nameLabel;
+@property (nonatomic, strong) UIButton *errorBtn;
 
 @end
 @implementation KKIMTextMsgCell
@@ -29,15 +31,27 @@
 - (void)setupUI {
     [super setupUI];
     
-    
 }
 
+#pragma mark - Getter -
+- (UIImageView *)bgImageView {
+    if (!_bgImageView) {
+        _bgImageView = [[UIImageView alloc] init];
+    }
+    return _bgImageView;
+}
 
-
-
-
-
-
-
+- (YYLabel *)textMsgLabel {
+    if (!_textMsgLabel) {
+        _textMsgLabel = [[YYLabel alloc] init];
+    }
+    return _textMsgLabel;
+}
+- (UILabel *)nameLabel {
+    if (!_nameLabel) {
+        _nameLabel = [[UILabel alloc] init];
+    }
+    return _nameLabel;
+}
 
 @end

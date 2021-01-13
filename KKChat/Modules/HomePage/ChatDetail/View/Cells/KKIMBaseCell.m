@@ -9,6 +9,7 @@
 
 @interface KKIMBaseCell ()
 
+
 @end
 
 @implementation KKIMBaseCell
@@ -23,6 +24,38 @@
 
     // Configure the view for the selected state
 }
+
+- (void)setupUI {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+}
+
+- (void)loadModel:(KKIMBaseModel *)baseModel {
+
+    
+}
+
+- (UIButton *)selectBtn {
+    if (!_selectBtn) {
+        _selectBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        _selectBtn.userInteractionEnabled = NO;
+        [_selectBtn setImage:[UIImage svgImageName:@"" targetSize:CGSizeMake(35, 35)] forState:(UIControlStateNormal)];
+        [_selectBtn setImage:[UIImage svgImageName:@"" targetSize:CGSizeMake(35, 35)] forState:(UIControlStateSelected)];
+        [self.contentView addSubview:_selectBtn];
+        [_selectBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(self.contentView).offset(10);
+            make.centerY.mas_equalTo(self.contentView.mas_centerY);
+            make.width.height.mas_equalTo(35);
+        }];
+    }
+    return _selectBtn;
+}
+
+
+
+
+
+
 
 
 @end
