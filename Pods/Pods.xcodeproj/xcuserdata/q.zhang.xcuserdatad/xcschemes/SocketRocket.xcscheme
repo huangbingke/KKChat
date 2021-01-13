@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E95654B155D25890BE8E26081FCA8265"
-               BuildableName = "CocoaLumberjack.framework"
-               BlueprintName = "CocoaLumberjack"
+               BlueprintIdentifier = "1948D0B63D2CF6A48E18B0B292BC6091"
+               BuildableName = "SocketRocket.framework"
+               BlueprintName = "SocketRocket"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -10,4 +10,5 @@ target 'KKChat' do
   pod 'SDWebImage'
   pod 'FMDB'
   pod 'YYText'
+  pod 'SocketRocket'
 end
