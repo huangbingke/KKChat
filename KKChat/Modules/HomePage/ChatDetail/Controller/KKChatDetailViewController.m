@@ -80,7 +80,7 @@
         make.bottom.mas_equalTo(self.view).offset(-bottomMargin);
         make.height.mas_equalTo(height);
     }];
-    [self.bottomView layoutIfNeeded];
+//    [self.bottomView layoutIfNeeded];
 }
 
 
@@ -98,7 +98,6 @@
     if (!_bottomView) {
         _bottomView = [[KKChatDetailBottomView alloc] initWithInputType:(KKInputTypeText)];
         _bottomView.delegate = self;
-        _bottomView.backgroundColor = [UIColor redColor];
     }
     return _bottomView;
 }
