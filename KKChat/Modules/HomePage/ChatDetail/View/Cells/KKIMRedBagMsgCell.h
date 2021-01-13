@@ -6,11 +6,12 @@
 //  Created by KK on 23/12/2020.
 //
 
-#import "KKBaseCell.h"
+#import "KKIMBaseCell.h"
+#import "KKIMBaseModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KKIMRedBagMsgCell : KKBaseCell
+@interface KKIMRedBagMsgCell : KKIMBaseCell
 
 @end
 

@@ -1,15 +1,15 @@
 //
-//  KKIMSmallAppCell.h
+//  KKIMBaseCell.h
 //  KKChat
 //
-//  Created by KK on 23/12/2020.
+//  Created by q.zhang on 2021/1/13.
 //
 
 #import "KKBaseCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KKIMSmallAppCell : KKBaseCell
+@interface KKIMBaseCell : KKBaseCell
 
 @end
 

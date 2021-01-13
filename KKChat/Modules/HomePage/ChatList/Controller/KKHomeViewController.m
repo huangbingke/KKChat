@@ -122,7 +122,6 @@
     }
     return _dataArray;
 }
-
 - (KKHomeNavBarView *)navBarView {
     if (!_navBarView) {
         _navBarView = [[KKHomeNavBarView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kNavHeight)];

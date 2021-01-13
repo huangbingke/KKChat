@@ -26,6 +26,7 @@ PODS:
   - SDWebImage/Core (5.10.0)
   - SVGKit (2.1.0):
     - CocoaLumberjack (~> 3.0)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - AFNetworking
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - Masonry
   - SDWebImage
   - SVGKit (from `https://github.com/SVGKit/SVGKit.git`, branch `3.x`)
+  - YYText
 
 SPEC REPOS:
   trunk:
@@ -41,6 +43,7 @@ SPEC REPOS:
     - FMDB
     - Masonry
     - SDWebImage
+    - YYText
 
 EXTERNAL SOURCES:
   SVGKit:
@@ -59,7 +62,8 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
   SVGKit: 132b010efbf57ec345309fe4a7f627c0a40c5d63
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 33681a1dff5393bc05f00fba4dbaf4c464a18b7b
+PODFILE CHECKSUM: 96138454df99e3ac2d4012dde200ba441e765467
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0

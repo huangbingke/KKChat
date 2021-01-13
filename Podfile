@@ -9,4 +9,5 @@ target 'KKChat' do
   pod 'AFNetworking'
   pod 'SDWebImage'
   pod 'FMDB'
+  pod 'YYText'
 end

@@ -40,13 +40,19 @@
 
 @end
 
-@implementation KKIMSmallAppCellModel
+@implementation KKIMSmallAppMsgCellModel
 
 
 
 @end
 
 @implementation KKIMCallMsgCellModel
+
+
+
+@end
+
+@implementation KKIMInvitationMsgCellModel
 
 
 

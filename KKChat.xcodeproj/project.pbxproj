@@ -37,6 +37,8 @@
 		8F587AD825AC1BFD006B4B2D /* KKNormalCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F587AD725AC1BFD006B4B2D /* KKNormalCellModel.m */; };
 		8F8080AA25A8484400A6D292 /* KKChatExpressionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8080A925A8484400A6D292 /* KKChatExpressionView.m */; };
 		8F8080AE25A849CB00A6D292 /* KKChatMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8080AD25A849CB00A6D292 /* KKChatMoreView.m */; };
+		8FB5358925AEDF9600B40877 /* KKIMInvitationMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB5358825AEDF9600B40877 /* KKIMInvitationMsgCell.m */; };
+		8FB5359525AEE56500B40877 /* KKIMBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB5359425AEE56500B40877 /* KKIMBaseCell.m */; };
 		8FB8A1BD25AD2AA900649FEF /* icons_outlined_arrow.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8A1BC25AD2AA900649FEF /* icons_outlined_arrow.svg */; };
 		8FB8A1C025AD2CC700649FEF /* icons_outlined_colorful_cards_dark.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8A1BF25AD2CC700649FEF /* icons_outlined_colorful_cards_dark.svg */; };
 		8FB8A1C325AD2D1B00649FEF /* icons_outlined_colorful_favorites_dark.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8A1C225AD2D1B00649FEF /* icons_outlined_colorful_favorites_dark.svg */; };
@@ -86,7 +88,7 @@
 		8FCF372D25932B9F0026412C /* KKIMImageMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF372C25932B9F0026412C /* KKIMImageMsgCell.m */; };
 		8FCF373125932BCE0026412C /* KKIMRedBagMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF373025932BCE0026412C /* KKIMRedBagMsgCell.m */; };
 		8FCF373525932BED0026412C /* KKIMTimeMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF373425932BED0026412C /* KKIMTimeMsgCell.m */; };
-		8FCF373925932C250026412C /* KKIMSmallAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF373825932C250026412C /* KKIMSmallAppCell.m */; };
+		8FCF373925932C250026412C /* KKIMSmallAppMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF373825932C250026412C /* KKIMSmallAppMsgCell.m */; };
 		8FCF374825932F200026412C /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF374625932F200026412C /* NSString+Category.m */; };
 		8FCF374C25932F480026412C /* KKIMBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF374B25932F480026412C /* KKIMBaseModel.m */; };
 		8FCF3751259330AA0026412C /* KKIMCallMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF3750259330AA0026412C /* KKIMCallMsgCell.m */; };
@@ -146,6 +148,10 @@
 		8F8080A925A8484400A6D292 /* KKChatExpressionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKChatExpressionView.m; sourceTree = "<group>"; };
 		8F8080AC25A849CB00A6D292 /* KKChatMoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKChatMoreView.h; sourceTree = "<group>"; };
 		8F8080AD25A849CB00A6D292 /* KKChatMoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKChatMoreView.m; sourceTree = "<group>"; };
+		8FB5358725AEDF9600B40877 /* KKIMInvitationMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMInvitationMsgCell.h; sourceTree = "<group>"; };
+		8FB5358825AEDF9600B40877 /* KKIMInvitationMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMInvitationMsgCell.m; sourceTree = "<group>"; };
+		8FB5359325AEE56500B40877 /* KKIMBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMBaseCell.h; sourceTree = "<group>"; };
+		8FB5359425AEE56500B40877 /* KKIMBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMBaseCell.m; sourceTree = "<group>"; };
 		8FB8A1BC25AD2AA900649FEF /* icons_outlined_arrow.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_outlined_arrow.svg; sourceTree = "<group>"; };
 		8FB8A1BF25AD2CC700649FEF /* icons_outlined_colorful_cards_dark.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_outlined_colorful_cards_dark.svg; sourceTree = "<group>"; };
 		8FB8A1C225AD2D1B00649FEF /* icons_outlined_colorful_favorites_dark.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_outlined_colorful_favorites_dark.svg; sourceTree = "<group>"; };
@@ -218,8 +224,8 @@
 		8FCF373025932BCE0026412C /* KKIMRedBagMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMRedBagMsgCell.m; sourceTree = "<group>"; };
 		8FCF373325932BED0026412C /* KKIMTimeMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMTimeMsgCell.h; sourceTree = "<group>"; };
 		8FCF373425932BED0026412C /* KKIMTimeMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMTimeMsgCell.m; sourceTree = "<group>"; };
-		8FCF373725932C250026412C /* KKIMSmallAppCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMSmallAppCell.h; sourceTree = "<group>"; };
-		8FCF373825932C250026412C /* KKIMSmallAppCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMSmallAppCell.m; sourceTree = "<group>"; };
+		8FCF373725932C250026412C /* KKIMSmallAppMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMSmallAppMsgCell.h; sourceTree = "<group>"; };
+		8FCF373825932C250026412C /* KKIMSmallAppMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMSmallAppMsgCell.m; sourceTree = "<group>"; };
 		8FCF374625932F200026412C /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
 		8FCF374725932F200026412C /* NSString+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
 		8FCF374A25932F480026412C /* KKIMBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMBaseModel.h; sourceTree = "<group>"; };
@@ -247,6 +253,8 @@
 		4B43F2FE25A73FD10015557E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8FB5359325AEE56500B40877 /* KKIMBaseCell.h */,
+				8FB5359425AEE56500B40877 /* KKIMBaseCell.m */,
 				8FCF372725932B8C0026412C /* KKIMTextMsgCell.h */,
 				8FCF372825932B8C0026412C /* KKIMTextMsgCell.m */,
 				8FCF37562593313E0026412C /* KKIMVoiceMsgCell.h */,
@@ -257,10 +265,12 @@
 				8FCF373025932BCE0026412C /* KKIMRedBagMsgCell.m */,
 				8FCF373325932BED0026412C /* KKIMTimeMsgCell.h */,
 				8FCF373425932BED0026412C /* KKIMTimeMsgCell.m */,
-				8FCF373725932C250026412C /* KKIMSmallAppCell.h */,
-				8FCF373825932C250026412C /* KKIMSmallAppCell.m */,
+				8FCF373725932C250026412C /* KKIMSmallAppMsgCell.h */,
+				8FCF373825932C250026412C /* KKIMSmallAppMsgCell.m */,
 				8FCF374F259330AA0026412C /* KKIMCallMsgCell.h */,
 				8FCF3750259330AA0026412C /* KKIMCallMsgCell.m */,
+				8FB5358725AEDF9600B40877 /* KKIMInvitationMsgCell.h */,
+				8FB5358825AEDF9600B40877 /* KKIMInvitationMsgCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -902,8 +912,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FCF373925932C250026412C /* KKIMSmallAppCell.m in Sources */,
+				8FCF373925932C250026412C /* KKIMSmallAppMsgCell.m in Sources */,
 				8F284FB325A44A3700FC56B0 /* KKHomeNavBarView.m in Sources */,
+				8FB5358925AEDF9600B40877 /* KKIMInvitationMsgCell.m in Sources */,
 				8FB8A1E325AD407100649FEF /* KKWebViewController.m in Sources */,
 				8FCF36EF259308830026412C /* KKBaseCell.m in Sources */,
 				8F8080AE25A849CB00A6D292 /* KKChatMoreView.m in Sources */,
@@ -922,6 +933,7 @@
 				8FCF36DD2593078B0026412C /* KKNavigationController.m in Sources */,
 				4B4CCAAB2594C38200CB3929 /* KKHomeNoNetworkCell.m in Sources */,
 				8FCF372925932B8C0026412C /* KKIMTextMsgCell.m in Sources */,
+				8FB5359525AEE56500B40877 /* KKIMBaseCell.m in Sources */,
 				4B43F34B25AC839A0015557E /* KKMeHeaderView.m in Sources */,
 				8FCF373125932BCE0026412C /* KKIMRedBagMsgCell.m in Sources */,
 				8F587AAF25ABED2C006B4B2D /* KKChatRecordDBHelper.m in Sources */,

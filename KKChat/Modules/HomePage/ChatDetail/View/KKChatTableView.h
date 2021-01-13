@@ -11,9 +11,9 @@
 #import "KKIMImageMsgCell.h"
 #import "KKIMRedBagMsgCell.h"
 #import "KKIMTimeMsgCell.h"
-#import "KKIMSmallAppCell.h"
+#import "KKIMSmallAppMsgCell.h"
 #import "KKIMCallMsgCell.h"
-
+#import "KKIMInvitationMsgCell.h"
 NS_ASSUME_NONNULL_BEGIN
 
 extern NSString * const KKIMTextMsgCellID;
@@ -21,9 +21,9 @@ extern NSString * const KKIMVoiceMsgCellID;
 extern NSString * const KKIMImageMsgCellID;
 extern NSString * const KKIMRedBagMsgCellID;
 extern NSString * const KKIMTimeMsgCellID;
-extern NSString * const KKIMSmallAppCellID;
+extern NSString * const KKIMSmallAppMsgCellID;
 extern NSString * const KKIMCallMsgCellID;
-
+extern NSString * const KKIMInvitationMsgCellID;
 
 @interface KKChatTableView : UITableView
 

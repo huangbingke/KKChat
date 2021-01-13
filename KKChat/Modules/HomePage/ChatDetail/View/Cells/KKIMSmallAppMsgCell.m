@@ -5,9 +5,9 @@
 //  Created by KK on 23/12/2020.
 //
 
-#import "KKIMSmallAppCell.h"
+#import "KKIMSmallAppMsgCell.h"
 
-@implementation KKIMSmallAppCell
+@implementation KKIMSmallAppMsgCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -19,5 +19,9 @@
 
     // Configure the view for the selected state
 }
-
+- (void)setupUI {
+    [super setupUI];
+    
+    
+}
 @end
