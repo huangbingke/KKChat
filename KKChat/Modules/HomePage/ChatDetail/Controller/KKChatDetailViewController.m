@@ -122,17 +122,17 @@
     if (!_dataArray) {
         _dataArray = [NSMutableArray new];
         
-        KKIMTextMsgCellModel *model = [[KKIMTextMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMTextMsgCellID];
-        KKIMVoiceMsgCellModel *model1 = [[KKIMVoiceMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMVoiceMsgCellID];
-        KKIMImageMsgCellModel *model2 = [[KKIMImageMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMImageMsgCellID];
-        KKIMRedBagMsgCellModel *model3 = [[KKIMRedBagMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMRedBagMsgCellID];
-        KKIMTimeMsgCellModel *model4 = [[KKIMTimeMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMTimeMsgCellID];
-        KKIMSmallAppMsgCellModel *model5 = [[KKIMSmallAppMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMSmallAppMsgCellID];
-        KKIMCallMsgCellModel *model6 = [[KKIMCallMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMCallMsgCellID];
-        KKIMInvitationMsgCellModel *model7 = [[KKIMInvitationMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMInvitationMsgCellID];
-        KKIMChatRecordMsgCellModel *model8 = [[KKIMChatRecordMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMChatRecordMsgCellID];
-        KKIMReEditMsgCellModel *model9 = [[KKIMReEditMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMReEditMsgCellID];
-        KKIMVideoMsgCellModel *model10 = [[KKIMVideoMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMVideoMsgCellID];
+        KKIMTextMsgCellModel *model = [[KKIMTextMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMTextMsgCellID];
+        KKIMVoiceMsgCellModel *model1 = [[KKIMVoiceMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMVoiceMsgCellID];
+        KKIMImageMsgCellModel *model2 = [[KKIMImageMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMImageMsgCellID];
+        KKIMRedBagMsgCellModel *model3 = [[KKIMRedBagMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMRedBagMsgCellID];
+        KKIMTimeMsgCellModel *model4 = [[KKIMTimeMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMTimeMsgCellID];
+        KKIMSmallAppMsgCellModel *model5 = [[KKIMSmallAppMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMSmallAppMsgCellID];
+        KKIMCallMsgCellModel *model6 = [[KKIMCallMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMCallMsgCellID];
+        KKIMInvitationMsgCellModel *model7 = [[KKIMInvitationMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMInvitationMsgCellID];
+        KKIMChatRecordMsgCellModel *model8 = [[KKIMChatRecordMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMChatRecordMsgCellID];
+        KKIMReEditMsgCellModel *model9 = [[KKIMReEditMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMReEditMsgCellID];
+        KKIMVideoMsgCellModel *model10 = [[KKIMVideoMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMVideoMsgCellID];
         [_dataArray addObjectsFromArray:@[model, model1, model2, model3, model4, model5, model6, model7, model8, model9, model10]];
         
     }

@@ -69,6 +69,7 @@ extern NSString * const KKHomeSearchCellID;
 @property (nonatomic, copy) NSString *date; //时间
 @property (nonatomic, copy) NSString *userId;
 @property (nonatomic, assign) KKMessageType messageType;//单聊, 群聊, 公众号, 订阅号...
+@property (nonatomic, assign) NSInteger noReadCount;
 
 @property (nonatomic, assign) KKVoiceListionMode listionMode;
 @property (nonatomic, assign) BOOL showName;//群聊里是否展示昵称

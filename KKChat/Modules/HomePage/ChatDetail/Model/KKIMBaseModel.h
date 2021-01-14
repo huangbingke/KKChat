@@ -24,6 +24,7 @@ typedef NS_ENUM(NSUInteger, KKIMMsgType) {
 
 @interface KKIMBaseModel : KKBaseCellModel
 
+@property (nonatomic, assign) BOOL isMe;//是自己发送的, 还是别人发来的
 @property (nonatomic, copy) NSString *sendDate;//发送的时间
 @property (nonatomic, assign) BOOL sendSuccess;//是否发送成功
 @property (nonatomic, assign) BOOL isSelect;

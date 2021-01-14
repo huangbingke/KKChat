@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4B43F34B25AC839A0015557E /* KKMeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B43F34A25AC839A0015557E /* KKMeHeaderView.m */; };
-		4B43F36225AF2A090015557E /* chat_left_qipao.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4B43F36025AF2A090015557E /* chat_left_qipao.svg */; };
-		4B43F36325AF2A090015557E /* chat_right_qipao.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4B43F36125AF2A090015557E /* chat_right_qipao.svg */; };
 		4B43F36725AF3DC70015557E /* KKIMChatRecordMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B43F36625AF3DC70015557E /* KKIMChatRecordMsgCell.m */; };
+		4B43F37625B0A0CD0015557E /* chat_left_qipao.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4B43F37425B0A0CD0015557E /* chat_left_qipao.svg */; };
+		4B43F37725B0A0CD0015557E /* chat_right_qipao.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4B43F37525B0A0CD0015557E /* chat_right_qipao.svg */; };
 		4B4CCA9F2594C30B00CB3929 /* KKHomeSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CCA9E2594C30B00CB3929 /* KKHomeSearchCell.m */; };
 		4B4CCAA32594C34A00CB3929 /* KKHomeThridDeviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CCAA22594C34A00CB3929 /* KKHomeThridDeviceCell.m */; };
 		4B4CCAAB2594C38200CB3929 /* KKHomeNoNetworkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CCAAA2594C38200CB3929 /* KKHomeNoNetworkCell.m */; };
@@ -251,10 +251,10 @@
 /* Begin PBXFileReference section */
 		4B43F34925AC839A0015557E /* KKMeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMeHeaderView.h; sourceTree = "<group>"; };
 		4B43F34A25AC839A0015557E /* KKMeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKMeHeaderView.m; sourceTree = "<group>"; };
-		4B43F36025AF2A090015557E /* chat_left_qipao.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = chat_left_qipao.svg; sourceTree = "<group>"; };
-		4B43F36125AF2A090015557E /* chat_right_qipao.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = chat_right_qipao.svg; sourceTree = "<group>"; };
 		4B43F36525AF3DC70015557E /* KKIMChatRecordMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMChatRecordMsgCell.h; sourceTree = "<group>"; };
 		4B43F36625AF3DC70015557E /* KKIMChatRecordMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMChatRecordMsgCell.m; sourceTree = "<group>"; };
+		4B43F37425B0A0CD0015557E /* chat_left_qipao.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = chat_left_qipao.svg; sourceTree = "<group>"; };
+		4B43F37525B0A0CD0015557E /* chat_right_qipao.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = chat_right_qipao.svg; sourceTree = "<group>"; };
 		4B4CCA9D2594C30B00CB3929 /* KKHomeSearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeSearchCell.h; sourceTree = "<group>"; };
 		4B4CCA9E2594C30B00CB3929 /* KKHomeSearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeSearchCell.m; sourceTree = "<group>"; };
 		4B4CCAA12594C34A00CB3929 /* KKHomeThridDeviceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeThridDeviceCell.h; sourceTree = "<group>"; };
@@ -959,8 +959,8 @@
 			isa = PBXGroup;
 			children = (
 				8F5CDD1125B005BD005C71EA /* icons_outlined_loading_light.svg */,
-				4B43F36025AF2A090015557E /* chat_left_qipao.svg */,
-				4B43F36125AF2A090015557E /* chat_right_qipao.svg */,
+				4B43F37425B0A0CD0015557E /* chat_left_qipao.svg */,
+				4B43F37525B0A0CD0015557E /* chat_right_qipao.svg */,
 				8F169CE225A6D39A00949B40 /* expression.svg */,
 				8F169CDF25A6D35C00949B40 /* icons_outlined_videocall.svg */,
 				8F169CDC25A6D2B300949B40 /* icons_outlined_voice.svg */,
@@ -1299,6 +1299,7 @@
 				8F5CDCEF25AFE31B005C71EA /* [转圈]@2x.png in Resources */,
 				8F5CDD0125AFE31B005C71EA /* [奋斗]@2x.png in Resources */,
 				8F5CDCB025AFE31B005C71EA /* [咒骂]@2x.png in Resources */,
+				4B43F37625B0A0CD0015557E /* chat_left_qipao.svg in Resources */,
 				8F5CDC9925AFE31B005C71EA /* [左太极]@2x.png in Resources */,
 				8F5CDCCB25AFE31B005C71EA /* [猪头]@2x.png in Resources */,
 				8F5CDD0025AFE31B005C71EA /* [月亮]@2x.png in Resources */,
@@ -1428,7 +1429,6 @@
 				8F5CDD0D25AFE31B005C71EA /* [鄙视]@2x.png in Resources */,
 				8FB8A1C025AD2CC700649FEF /* icons_outlined_colorful_cards_dark.svg in Resources */,
 				8F5CDCB325AFE31B005C71EA /* [车厢]@2x.png in Resources */,
-				4B43F36225AF2A090015557E /* chat_left_qipao.svg in Resources */,
 				8F5CDCDA25AFE31B005C71EA /* [跳跳]@2x.png in Resources */,
 				8FBE153B25A5B21F008E49C0 /* icons_filled_chats.svg in Resources */,
 				8F5CDCF325AFE31B005C71EA /* [爱情]@2x.png in Resources */,
@@ -1443,6 +1443,7 @@
 				8F5CDCF625AFE31B005C71EA /* [下雨]@2x.png in Resources */,
 				8F5CDCF125AFE31B005C71EA /* [风车]@2x.png in Resources */,
 				8FBE151A25A5A1BF008E49C0 /* icons_outlined_discover.svg in Resources */,
+				4B43F37725B0A0CD0015557E /* chat_right_qipao.svg in Resources */,
 				8F5CDCF525AFE31B005C71EA /* [鼓掌]@2x.png in Resources */,
 				8F5CDCA725AFE31B005C71EA /* [么么哒]@2x.png in Resources */,
 				8F5CDCBA25AFE31B005C71EA /* [可怜]@2x.png in Resources */,
@@ -1462,7 +1463,6 @@
 				8F5CDCE625AFE31B005C71EA /* [偷笑]@2x.png in Resources */,
 				8F5CDCBC25AFE31B005C71EA /* [坏笑]@2x.png in Resources */,
 				8F5CDD0225AFE31B005C71EA /* [大兵]@2x.png in Resources */,
-				4B43F36325AF2A090015557E /* chat_right_qipao.svg in Resources */,
 				8F5CDCA925AFE31B005C71EA /* [抱拳]@2x.png in Resources */,
 				8F5CDCE325AFE31B005C71EA /* [闭嘴]@2x.png in Resources */,
 				8F5CDC8525AFE31B005C71EA /* [灯泡]@2x.png in Resources */,

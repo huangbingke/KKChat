@@ -19,7 +19,15 @@
 
     // Configure the view for the selected state
 }
+
+- (void)setupUI {
+    [super setupUI];
+    
+}
 - (void)loadModel:(KKBaseCellModel *)baseModel {
     [super loadModel:baseModel];
 }
+
+
+
 @end

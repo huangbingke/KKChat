@@ -8,8 +8,6 @@
 #import "KKIMBaseCell.h"
 
 NSString * const KKIMCellMsgLongPressGestureNotificationName = @"KKIMCellMsgLongPressGestureNotificationName";
-
-
 @interface KKIMBaseCell ()
 
 
@@ -29,16 +27,59 @@ NSString * const KKIMCellMsgLongPressGestureNotificationName = @"KKIMCellMsgLong
 }
 
 - (void)setupUI {
-    self.backgroundColor = kRandomColor;
+//    self.backgroundColor = kRandomColor;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
 }
 
-- (void)loadModel:(KKIMBaseModel *)baseModel {
-
-    self.textLabel.text = baseModel.cellIdentifier;
+- (void)layoutUIForMe {
+    [self.headBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(self.contentView.mas_right).offset(-12);
+        make.top.mas_equalTo(self.contentView.mas_top).offset(12);
+        make.width.height.mas_equalTo(36);
+    }];
+    self.headBtn.layer.cornerRadius = 5;
+    self.headBtn.layer.masksToBounds = YES;
+//    [self.msgContentView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.mas_equalTo(self.headBtn.mas_left).offset(-8);
+//        make.top.mas_equalTo(self.headBtn.mas_top);
+//        make.bottom.mas_equalTo(self.headBtn.mas_bottom);
+//        make.left.mas_equalTo(self.contentView.mas_left).offset(64);
+//    }];
+    
+}
+- (void)layoutUIForOther {
+    [self.headBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.contentView.mas_left).offset(12);
+        make.top.mas_equalTo(self.contentView.mas_top).offset(12);
+        make.width.height.mas_equalTo(36);
+    }];
+    self.headBtn.layer.cornerRadius = 5;
+    self.headBtn.layer.masksToBounds = YES;
+//    [self.msgContentView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(self.headBtn.mas_right).offset(8);
+//        make.top.mas_equalTo(self.headBtn.mas_top);
+//        make.bottom.mas_equalTo(self.headBtn.mas_bottom);
+//        make.right.mas_equalTo(self.contentView.mas_right).offset(-64);
+//    }];
 }
 
+- (void)loadModel:(KKIMBaseModel *)baseModel {
+    self.detailTextLabel.text = baseModel.cellIdentifier;
+    if (!baseModel.isMe) {
+        [self layoutUIForMe];
+    } else {
+        [self layoutUIForOther];
+    }
+}
+
+#pragma mark - Action -
+- (void)clickHeadAction:(UIButton *)sender {
+    
+    
+}
+
+#pragma mark - Getter -
 - (UIButton *)selectBtn {
     if (!_selectBtn) {
         _selectBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
@@ -55,10 +96,33 @@ NSString * const KKIMCellMsgLongPressGestureNotificationName = @"KKIMCellMsgLong
     return _selectBtn;
 }
 
+- (UIButton *)loadingBtn {
+    if (!_loadingBtn) {
+        _loadingBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_loadingBtn setImage:[UIImage svgImageName:@"icons_outlined_loading_light.svg" targetSize:CGSizeMake(25, 25)] forState:(UIControlStateNormal)];
+        [self.contentView addSubview:_loadingBtn];
+    }
+    return _loadingBtn;
+}
 
+- (UIButton *)headBtn {
+    if (!_headBtn) {
+        _headBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        [_headBtn addTarget:self action:@selector(clickHeadAction:) forControlEvents:(UIControlEventTouchUpInside)];
+        _headBtn.backgroundColor = kRandomColor;
+        [self.contentView addSubview:_headBtn];
+    }
+    return _headBtn;
+}
 
-
-
+//- (UIView *)msgContentView {
+//    if (!_msgContentView) {
+//        _msgContentView = [[UIView alloc] init];
+//        _msgContentView.backgroundColor = kRandomColor;
+//        [self.contentView addSubview:_msgContentView];
+//    }
+//    return _msgContentView;
+//}
 
 
 

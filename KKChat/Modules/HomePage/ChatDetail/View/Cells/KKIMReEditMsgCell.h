@@ -6,12 +6,12 @@
 //
 //撤回 重新编辑cell
 //
-#import "KKBaseCell.h"
+#import "KKIMBaseCell.h"
 #import "KKIMBaseModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KKIMReEditMsgCell : KKBaseCell
+@interface KKIMReEditMsgCell : KKIMBaseCell
 
 @end
 
