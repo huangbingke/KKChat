@@ -37,7 +37,7 @@ NSString * const KKIMVideoMsgCellID = @"KKIMVideoMsgCellID";
         [self registerClass:[KKIMInvitationMsgCell class] forCellReuseIdentifier:KKIMInvitationMsgCellID];
         [self registerClass:[KKIMChatRecordMsgCell class] forCellReuseIdentifier:KKIMChatRecordMsgCellID];
         [self registerClass:[KKIMReEditMsgCell class] forCellReuseIdentifier:KKIMReEditMsgCellID];
-
+        [self registerClass:[KKIMVideoMsgCell class] forCellReuseIdentifier:KKIMVideoMsgCellID];
         
         if (@available(iOS 11.0, *)) {
             self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -87,6 +87,10 @@ NSString * const KKIMVideoMsgCellID = @"KKIMVideoMsgCellID";
         return cell;
     } else if ([baseModel isKindOfClass:KKIMReEditMsgCellModel.class]) {
         KKIMReEditMsgCell *cell = [self dequeueReusableCellWithIdentifier:KKIMReEditMsgCellID forIndexPath:indexPath];
+        [cell loadModel:baseModel];
+        return cell;
+    } else if ([baseModel isKindOfClass:KKIMVideoMsgCellModel.class]) {
+        KKIMVideoMsgCell *cell = [self dequeueReusableCellWithIdentifier:KKIMVideoMsgCellID forIndexPath:indexPath];
         [cell loadModel:baseModel];
         return cell;
     }

@@ -132,7 +132,8 @@
         KKIMInvitationMsgCellModel *model7 = [[KKIMInvitationMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMInvitationMsgCellID];
         KKIMChatRecordMsgCellModel *model8 = [[KKIMChatRecordMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMChatRecordMsgCellID];
         KKIMReEditMsgCellModel *model9 = [[KKIMReEditMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMReEditMsgCellID];
-        [_dataArray addObjectsFromArray:@[model, model1, model2, model3, model4, model5, model6, model7, model8, model9]];
+        KKIMVideoMsgCellModel *model10 = [[KKIMVideoMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMVideoMsgCellID];
+        [_dataArray addObjectsFromArray:@[model, model1, model2, model3, model4, model5, model6, model7, model8, model9, model10]];
         
     }
     return _dataArray;
