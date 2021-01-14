@@ -8,6 +8,8 @@
 #import "KKBaseCell.h"
 #import "KKIMBaseModel.h"
 
+extern NSString * _Nonnull const KKIMCellMsgLongPressGestureNotificationName;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KKIMBaseCell : KKBaseCell

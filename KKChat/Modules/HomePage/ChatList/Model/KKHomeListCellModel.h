@@ -73,6 +73,8 @@ extern NSString * const KKHomeSearchCellID;
 @property (nonatomic, assign) KKVoiceListionMode listionMode;
 @property (nonatomic, assign) BOOL showName;//群聊里是否展示昵称
 
+@property (nonatomic, assign) BOOL openSelectStatus; //是否开启多选
+
 @end
 
 

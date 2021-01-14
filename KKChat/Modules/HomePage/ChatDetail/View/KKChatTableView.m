@@ -16,6 +16,7 @@ NSString * const KKIMCallMsgCellID = @"KKIMCallMsgCellID";
 NSString * const KKIMInvitationMsgCellID = @"KKIMInvitationMsgCellID";
 NSString * const KKIMChatRecordMsgCellID = @"KKIMChatRecordMsgCellID";
 NSString * const KKIMReEditMsgCellID = @"KKIMReEditMsgCellID";
+NSString * const KKIMVideoMsgCellID = @"KKIMVideoMsgCellID";
 @interface KKChatTableView ()
 
 @end

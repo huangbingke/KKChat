@@ -26,13 +26,19 @@ typedef NS_ENUM(NSUInteger, KKIMMsgType) {
 
 @property (nonatomic, copy) NSString *sendDate;//发送的时间
 @property (nonatomic, assign) BOOL sendSuccess;//是否发送成功
-@property (nonatomic, assign) BOOL openSelectStatus; //是否开启多选
+@property (nonatomic, assign) BOOL isSelect;
 
 @end
 #pragma mark  ========================我是分割线=========================
 @interface KKIMTextMsgCellModel : KKIMBaseModel
 
 @property (nonatomic, copy) NSAttributedString *contentAttributedText;
+
+@end
+#pragma mark  ========================我是分割线=========================
+@interface KKIMVideoMsgCellModel : KKIMBaseModel
+
+
 
 @end
 #pragma mark  ========================我是分割线=========================

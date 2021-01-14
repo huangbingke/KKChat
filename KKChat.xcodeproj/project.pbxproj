@@ -186,6 +186,7 @@
 		8F5CDD0E25AFE31B005C71EA /* [惊恐]@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5CDC7C25AFE31B005C71EA /* [惊恐]@2x.png */; };
 		8F5CDD1225B005BD005C71EA /* icons_outlined_loading_light.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8F5CDD1125B005BD005C71EA /* icons_outlined_loading_light.svg */; };
 		8F5CDD1625B015D4005C71EA /* KKIMReEditMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5CDD1525B015D4005C71EA /* KKIMReEditMsgCell.m */; };
+		8F5CDD1B25B03E85005C71EA /* KKIMVideoMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5CDD1A25B03E85005C71EA /* KKIMVideoMsgCell.m */; };
 		8F8080AA25A8484400A6D292 /* KKChatExpressionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8080A925A8484400A6D292 /* KKChatExpressionView.m */; };
 		8F8080AE25A849CB00A6D292 /* KKChatMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8080AD25A849CB00A6D292 /* KKChatMoreView.m */; };
 		8FB5358925AEDF9600B40877 /* KKIMInvitationMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB5358825AEDF9600B40877 /* KKIMInvitationMsgCell.m */; };
@@ -448,6 +449,8 @@
 		8F5CDD1125B005BD005C71EA /* icons_outlined_loading_light.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_outlined_loading_light.svg; sourceTree = "<group>"; };
 		8F5CDD1425B015D4005C71EA /* KKIMReEditMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMReEditMsgCell.h; sourceTree = "<group>"; };
 		8F5CDD1525B015D4005C71EA /* KKIMReEditMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMReEditMsgCell.m; sourceTree = "<group>"; };
+		8F5CDD1925B03E85005C71EA /* KKIMVideoMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMVideoMsgCell.h; sourceTree = "<group>"; };
+		8F5CDD1A25B03E85005C71EA /* KKIMVideoMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMVideoMsgCell.m; sourceTree = "<group>"; };
 		8F8080A825A8484400A6D292 /* KKChatExpressionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKChatExpressionView.h; sourceTree = "<group>"; };
 		8F8080A925A8484400A6D292 /* KKChatExpressionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKChatExpressionView.m; sourceTree = "<group>"; };
 		8F8080AC25A849CB00A6D292 /* KKChatMoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKChatMoreView.h; sourceTree = "<group>"; };
@@ -561,6 +564,8 @@
 				8FB5359425AEE56500B40877 /* KKIMBaseCell.m */,
 				8FCF372725932B8C0026412C /* KKIMTextMsgCell.h */,
 				8FCF372825932B8C0026412C /* KKIMTextMsgCell.m */,
+				8F5CDD1925B03E85005C71EA /* KKIMVideoMsgCell.h */,
+				8F5CDD1A25B03E85005C71EA /* KKIMVideoMsgCell.m */,
 				8FCF37562593313E0026412C /* KKIMVoiceMsgCell.h */,
 				8FCF37572593313E0026412C /* KKIMVoiceMsgCell.m */,
 				8FCF372B25932B9F0026412C /* KKIMImageMsgCell.h */,
@@ -1545,6 +1550,7 @@
 				8FCF36E32593084D0026412C /* KKBaseViewController.m in Sources */,
 				8FCF36E7259308610026412C /* KKBaseModel.m in Sources */,
 				8FCF36DD2593078B0026412C /* KKNavigationController.m in Sources */,
+				8F5CDD1B25B03E85005C71EA /* KKIMVideoMsgCell.m in Sources */,
 				4B4CCAAB2594C38200CB3929 /* KKHomeNoNetworkCell.m in Sources */,
 				8FCF372925932B8C0026412C /* KKIMTextMsgCell.m in Sources */,
 				8FB5359525AEE56500B40877 /* KKIMBaseCell.m in Sources */,

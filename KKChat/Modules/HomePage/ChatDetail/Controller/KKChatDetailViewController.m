@@ -8,6 +8,7 @@
 #import "KKChatDetailViewController.h"
 #import "KKChatTableView.h"
 #import "KKChatDetailBottomView.h"
+#import "KKHomeListCellModel.h"
 @interface KKChatDetailViewController ()<UITableViewDelegate, UITableViewDataSource, KKChatDetailBottomViewDelegate>
 
 @property (nonatomic, strong) KKChatTableView *chatTableView;
@@ -20,6 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = kColor(0xf7f7f7);
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cellMsgLongGestureAction:) name:KKIMCellMsgLongPressGestureNotificationName object:nil];
     
 }
 
@@ -68,14 +70,26 @@
     return baseModel.cellHeight;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.bottomView dismiss];
+    if (!self.chatModel.openSelectStatus) {//没有开启多选, return
+        [self.bottomView dismiss];
+        return;
+    }
     KKIMBaseModel *baseModel = self.dataArray[indexPath.row];
-    if ([baseModel isKindOfClass:KKIMTimeMsgCellModel.class]) {
+    if ([baseModel isKindOfClass:KKIMTimeMsgCellModel.class]
+        || [baseModel isKindOfClass:KKIMReEditMsgCellModel.class]) {
         return;
     } else {
-        
+        baseModel.isSelect = !baseModel.isSelect;
+        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationNone)];
     }
 }
+
+#pragma mark - Action -
+- (void)cellMsgLongGestureAction:(NSNotification *)notification {
+    NSLog(@"长按啦");
+    
+}
+
 #pragma mark - KKChatDetailBottomViewDelegate -
 - (void)bottomViewSendMsgBtnAction:(NSString *)msg {
     NSLog(@"发送消息: %@", msg);
@@ -123,5 +137,10 @@
     }
     return _dataArray;
 }
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 @end

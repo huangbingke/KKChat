@@ -7,6 +7,9 @@
 
 #import "KKIMBaseCell.h"
 
+NSString * const KKIMCellMsgLongPressGestureNotificationName = @"KKIMCellMsgLongPressGestureNotificationName";
+
+
 @interface KKIMBaseCell ()
 
 

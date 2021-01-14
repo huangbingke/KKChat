@@ -16,6 +16,7 @@
 #import "KKIMInvitationMsgCell.h"
 #import "KKIMChatRecordMsgCell.h"
 #import "KKIMReEditMsgCell.h"
+#import "KKIMVideoMsgCell.h"
 NS_ASSUME_NONNULL_BEGIN
 
 extern NSString * const KKIMTextMsgCellID;
@@ -28,7 +29,7 @@ extern NSString * const KKIMCallMsgCellID;
 extern NSString * const KKIMInvitationMsgCellID;
 extern NSString * const KKIMChatRecordMsgCellID;
 extern NSString * const KKIMReEditMsgCellID;
-
+extern NSString * const KKIMVideoMsgCellID;
 @interface KKChatTableView : UITableView
 
 - (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath

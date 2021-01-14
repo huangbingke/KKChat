@@ -15,7 +15,12 @@
 
 
 @end
+@implementation KKIMVideoMsgCellModel
 
+
+
+
+@end
 @implementation KKIMVoiceMsgCellModel
 
 

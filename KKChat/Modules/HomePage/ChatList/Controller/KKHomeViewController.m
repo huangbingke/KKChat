@@ -86,6 +86,7 @@
         
     } else if ([model isKindOfClass:KKHomeChatCellModel.class]) {
         KKChatDetailViewController *chatVC = [KKChatDetailViewController new];
+        chatVC.chatModel = (KKHomeChatCellModel *)model;
         [self.navigationController pushViewController:chatVC animated:YES];
     }
 }
