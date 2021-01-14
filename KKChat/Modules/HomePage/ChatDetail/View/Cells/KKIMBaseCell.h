@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface KKIMBaseCell : KKBaseCell
 
 @property (nonatomic, strong) UIButton *selectBtn;
+@property (nonatomic, strong) UIImageView *loadingImageView;
 
 @end
 

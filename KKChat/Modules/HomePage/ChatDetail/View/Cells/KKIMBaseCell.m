@@ -26,13 +26,14 @@
 }
 
 - (void)setupUI {
+    self.backgroundColor = kRandomColor;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
 }
 
 - (void)loadModel:(KKIMBaseModel *)baseModel {
 
-    
+    self.textLabel.text = baseModel.cellIdentifier;
 }
 
 - (UIButton *)selectBtn {

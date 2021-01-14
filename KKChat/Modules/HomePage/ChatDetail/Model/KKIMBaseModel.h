@@ -28,54 +28,62 @@ typedef NS_ENUM(NSUInteger, KKIMMsgType) {
 @property (nonatomic, assign) BOOL sendSuccess;//是否发送成功
 @property (nonatomic, assign) BOOL openSelectStatus; //是否开启多选
 
-
 @end
-
+#pragma mark  ========================我是分割线=========================
 @interface KKIMTextMsgCellModel : KKIMBaseModel
 
 @property (nonatomic, copy) NSAttributedString *contentAttributedText;
 
 @end
-
+#pragma mark  ========================我是分割线=========================
 @interface KKIMVoiceMsgCellModel : KKIMBaseModel
 
 
 
 @end
-
+#pragma mark  ========================我是分割线=========================
 @interface KKIMImageMsgCellModel : KKIMBaseModel
 
 
 
 @end
-
+#pragma mark  ========================我是分割线=========================
 @interface KKIMRedBagMsgCellModel : KKIMBaseModel
 
 
 
 @end
-
+#pragma mark  ========================我是分割线=========================
 @interface KKIMTimeMsgCellModel : KKIMBaseModel
 
 @property (nonatomic, copy) NSString *showDate;//展示的时间
 
 @end
-
+#pragma mark  ========================我是分割线=========================
 @interface KKIMSmallAppMsgCellModel : KKIMBaseModel
 
 @property (nonatomic, copy) NSString *previewPicUrl;
 
 
 @end
-
+#pragma mark  ========================我是分割线=========================
 @interface KKIMCallMsgCellModel : KKIMBaseModel
 
 
 
 @end
-
+#pragma mark  ========================我是分割线=========================
 @interface KKIMInvitationMsgCellModel : KKIMBaseModel
 
 @end
+#pragma mark  ========================我是分割线=========================
+@interface KKIMChatRecordMsgCellModel : KKIMBaseModel
+
+@end
+#pragma mark  ========================我是分割线=========================
+@interface KKIMReEditMsgCellModel : KKIMBaseModel
+
+@end
+
 
 NS_ASSUME_NONNULL_END

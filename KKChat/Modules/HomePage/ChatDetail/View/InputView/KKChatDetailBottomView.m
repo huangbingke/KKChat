@@ -77,6 +77,8 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
         make.bottom.mas_equalTo(self.mas_bottom).offset(-25/2);
         make.width.height.mas_equalTo(35);
     }];
+    self.moreBtn.selected = NO;
+    self.expressionBtn.selected = NO;
     [self.inputTextView becomeFirstResponder];
 }
 
@@ -86,8 +88,7 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
     sender.selected = !sender.selected;
     [self intoEditMode];
     if (sender.selected) {
-        self.moreBtn.selected = NO;
-        self.expressionBtn.selected = NO;
+
         self.inputType = KKInputTypeVoice;
         [self.inputTextView removeFromSuperview];
         self.inputTextView = nil;

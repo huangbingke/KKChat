@@ -19,5 +19,7 @@
 
     // Configure the view for the selected state
 }
-
+- (void)loadModel:(KKBaseCellModel *)baseModel {
+    [super loadModel:baseModel];
+}
 @end

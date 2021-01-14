@@ -1,13 +1,13 @@
 //
-//  KKIMRedBagCell.m
+//  KKIMReEditMsgCell.m
 //  KKChat
 //
-//  Created by KK on 23/12/2020.
+//  Created by q.zhang on 2021/1/14.
 //
 
-#import "KKIMRedBagMsgCell.h"
+#import "KKIMReEditMsgCell.h"
 
-@implementation KKIMRedBagMsgCell
+@implementation KKIMReEditMsgCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -21,10 +21,5 @@
 }
 - (void)loadModel:(KKBaseCellModel *)baseModel {
     [super loadModel:baseModel];
-}
-- (void)setupUI {
-    [super setupUI];
-    
-    
 }
 @end

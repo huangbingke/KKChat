@@ -184,6 +184,8 @@
 		8F5CDD0C25AFE31B005C71EA /* [NO]@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5CDC7A25AFE31B005C71EA /* [NO]@2x.png */; };
 		8F5CDD0D25AFE31B005C71EA /* [鄙视]@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5CDC7B25AFE31B005C71EA /* [鄙视]@2x.png */; };
 		8F5CDD0E25AFE31B005C71EA /* [惊恐]@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5CDC7C25AFE31B005C71EA /* [惊恐]@2x.png */; };
+		8F5CDD1225B005BD005C71EA /* icons_outlined_loading_light.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8F5CDD1125B005BD005C71EA /* icons_outlined_loading_light.svg */; };
+		8F5CDD1625B015D4005C71EA /* KKIMReEditMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5CDD1525B015D4005C71EA /* KKIMReEditMsgCell.m */; };
 		8F8080AA25A8484400A6D292 /* KKChatExpressionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8080A925A8484400A6D292 /* KKChatExpressionView.m */; };
 		8F8080AE25A849CB00A6D292 /* KKChatMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8080AD25A849CB00A6D292 /* KKChatMoreView.m */; };
 		8FB5358925AEDF9600B40877 /* KKIMInvitationMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB5358825AEDF9600B40877 /* KKIMInvitationMsgCell.m */; };
@@ -443,6 +445,9 @@
 		8F5CDC7A25AFE31B005C71EA /* [NO]@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "[NO]@2x.png"; sourceTree = "<group>"; };
 		8F5CDC7B25AFE31B005C71EA /* [鄙视]@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "[鄙视]@2x.png"; sourceTree = "<group>"; };
 		8F5CDC7C25AFE31B005C71EA /* [惊恐]@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "[惊恐]@2x.png"; sourceTree = "<group>"; };
+		8F5CDD1125B005BD005C71EA /* icons_outlined_loading_light.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_outlined_loading_light.svg; sourceTree = "<group>"; };
+		8F5CDD1425B015D4005C71EA /* KKIMReEditMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMReEditMsgCell.h; sourceTree = "<group>"; };
+		8F5CDD1525B015D4005C71EA /* KKIMReEditMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMReEditMsgCell.m; sourceTree = "<group>"; };
 		8F8080A825A8484400A6D292 /* KKChatExpressionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKChatExpressionView.h; sourceTree = "<group>"; };
 		8F8080A925A8484400A6D292 /* KKChatExpressionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKChatExpressionView.m; sourceTree = "<group>"; };
 		8F8080AC25A849CB00A6D292 /* KKChatMoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKChatMoreView.h; sourceTree = "<group>"; };
@@ -572,6 +577,8 @@
 				8FB5358825AEDF9600B40877 /* KKIMInvitationMsgCell.m */,
 				4B43F36525AF3DC70015557E /* KKIMChatRecordMsgCell.h */,
 				4B43F36625AF3DC70015557E /* KKIMChatRecordMsgCell.m */,
+				8F5CDD1425B015D4005C71EA /* KKIMReEditMsgCell.h */,
+				8F5CDD1525B015D4005C71EA /* KKIMReEditMsgCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -946,6 +953,7 @@
 		8FBE153625A5B21F008E49C0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8F5CDD1125B005BD005C71EA /* icons_outlined_loading_light.svg */,
 				4B43F36025AF2A090015557E /* chat_left_qipao.svg */,
 				4B43F36125AF2A090015557E /* chat_right_qipao.svg */,
 				8F169CE225A6D39A00949B40 /* expression.svg */,
@@ -998,10 +1006,10 @@
 				8FCF36D0259306FE0026412C /* Base */,
 				8FCF36F625930A3F0026412C /* Modules */,
 				8FCF36D1259307070026412C /* Category */,
-				8FCF36D22593073B0026412C /* Other */,
 				8F587AA225ABEB70006B4B2D /* Tools */,
 				8FBE150D25A5A1BF008E49C0 /* CostomView */,
 				8FBE150E25A5A1BF008E49C0 /* Resource */,
+				8FCF36D22593073B0026412C /* Other */,
 			);
 			path = KKChat;
 			sourceTree = "<group>";
@@ -1352,6 +1360,7 @@
 				8F5CDCA025AFE31B005C71EA /* [鞭炮]@2x.png in Resources */,
 				8F169CD725A6D1EC00949B40 /* icons_outlined_add2.svg in Resources */,
 				8F5CDC8825AFE31B005C71EA /* [酷]@2x.png in Resources */,
+				8F5CDD1225B005BD005C71EA /* icons_outlined_loading_light.svg in Resources */,
 				8F5CDCC725AFE31B005C71EA /* [汽车]@2x.png in Resources */,
 				8F5CDCA825AFE31B005C71EA /* [街舞]@2x.png in Resources */,
 				8F5CDCAD25AFE31B005C71EA /* [骷髅]@2x.png in Resources */,
@@ -1555,6 +1564,7 @@
 				8FCF36EB2593086B0026412C /* KKBaseCellModel.m in Sources */,
 				4B43F36725AF3DC70015557E /* KKIMChatRecordMsgCell.m in Sources */,
 				8FCF374825932F200026412C /* NSString+Category.m in Sources */,
+				8F5CDD1625B015D4005C71EA /* KKIMReEditMsgCell.m in Sources */,
 				8F8080AA25A8484400A6D292 /* KKChatExpressionView.m in Sources */,
 				8F169CC925A6C6B400949B40 /* KKChatDetailBottomView.m in Sources */,
 				8FBE152625A5A307008E49C0 /* UIImage+Category.m in Sources */,

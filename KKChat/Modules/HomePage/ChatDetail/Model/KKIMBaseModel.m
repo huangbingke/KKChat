@@ -57,3 +57,17 @@
 
 
 @end
+
+@implementation KKIMChatRecordMsgCellModel
+
+
+
+@end
+
+
+@implementation KKIMReEditMsgCellModel
+
+
+
+@end
+

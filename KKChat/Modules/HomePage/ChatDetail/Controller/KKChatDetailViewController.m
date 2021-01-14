@@ -20,6 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = kColor(0xf7f7f7);
+    
 }
 
 - (void)setupUI {
@@ -55,45 +56,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataArray.count;
 }
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    KKIMBaseModel *baseModel = self.dataArray[indexPath.row];
-    if ([baseModel isKindOfClass:KKIMTextMsgCellModel.class]) {
-        KKIMTextMsgCell *cell = [tableView dequeueReusableCellWithIdentifier:KKIMTextMsgCellID forIndexPath:indexPath];
-        [cell loadModel:baseModel];
-        return cell;
-    } else if ([baseModel isKindOfClass:KKIMVoiceMsgCellModel.class]) {
-        KKIMVoiceMsgCell *cell = [tableView dequeueReusableCellWithIdentifier:KKIMVoiceMsgCellID forIndexPath:indexPath];
-        [cell loadModel:baseModel];
-        return cell;
-    } else if ([baseModel isKindOfClass:KKIMImageMsgCellModel.class]) {
-        KKIMImageMsgCell *cell = [tableView dequeueReusableCellWithIdentifier:KKIMImageMsgCellID forIndexPath:indexPath];
-        [cell loadModel:baseModel];
-        return cell;
-    } else if ([baseModel isKindOfClass:KKIMRedBagMsgCellModel.class]) {
-        KKIMRedBagMsgCell *cell = [tableView dequeueReusableCellWithIdentifier:KKIMRedBagMsgCellID forIndexPath:indexPath];
-        [cell loadModel:baseModel];
-        return cell;
-    } else if ([baseModel isKindOfClass:KKIMTimeMsgCellModel.class]) {
-        KKIMTimeMsgCell *cell = [tableView dequeueReusableCellWithIdentifier:KKIMTimeMsgCellID forIndexPath:indexPath];
-        [cell loadModel:baseModel];
-        return cell;
-    } else if ([baseModel isKindOfClass:KKIMSmallAppMsgCellModel.class]) {
-        KKIMSmallAppMsgCell *cell = [tableView dequeueReusableCellWithIdentifier:KKIMSmallAppMsgCellID forIndexPath:indexPath];
-        [cell loadModel:baseModel];
-        return cell;
-    } else if ([baseModel isKindOfClass:KKIMCallMsgCellModel.class]) {
-        KKIMCallMsgCell *cell = [tableView dequeueReusableCellWithIdentifier:KKIMCallMsgCellID forIndexPath:indexPath];
-        [cell loadModel:baseModel];
-        return cell;
-    } else if ([baseModel isKindOfClass:KKIMInvitationMsgCellModel.class]) {
-        KKIMInvitationMsgCell *cell = [tableView dequeueReusableCellWithIdentifier:KKIMInvitationMsgCellID forIndexPath:indexPath];
-        [cell loadModel:baseModel];
-        return cell;
-    }
-    return UITableViewCell.new;
+- (UITableViewCell *)tableView:(KKChatTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [tableView cellForRowAtIndexPath:indexPath dataArray:self.dataArray];
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     KKIMBaseModel *baseModel = self.dataArray[indexPath.row];
     return baseModel.cellHeight;
@@ -102,7 +67,6 @@
     KKIMBaseModel *baseModel = self.dataArray[indexPath.row];
     return baseModel.cellHeight;
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.bottomView dismiss];
     KKIMBaseModel *baseModel = self.dataArray[indexPath.row];
@@ -112,7 +76,6 @@
         
     }
 }
-
 #pragma mark - KKChatDetailBottomViewDelegate -
 - (void)bottomViewSendMsgBtnAction:(NSString *)msg {
     NSLog(@"发送消息: %@", msg);
@@ -131,7 +94,6 @@
         _chatTableView = [[KKChatTableView alloc] initWithFrame:CGRectZero style:(UITableViewStylePlain)];
         _chatTableView.dataSource = self;
         _chatTableView.delegate = self;
-        _chatTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _chatTableView;
 }
@@ -145,10 +107,19 @@
 - (NSMutableArray<KKIMBaseModel *> *)dataArray {
     if (!_dataArray) {
         _dataArray = [NSMutableArray new];
-        for (int i = 0; i < 20; i++) {
-            KKIMBaseModel *model = [[KKIMBaseModel alloc] initWithCellHeight:40 cellIdentifier:@""];
-            [_dataArray addObject:model];
-        }
+        
+        KKIMTextMsgCellModel *model = [[KKIMTextMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMTextMsgCellID];
+        KKIMVoiceMsgCellModel *model1 = [[KKIMVoiceMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMVoiceMsgCellID];
+        KKIMImageMsgCellModel *model2 = [[KKIMImageMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMImageMsgCellID];
+        KKIMRedBagMsgCellModel *model3 = [[KKIMRedBagMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMRedBagMsgCellID];
+        KKIMTimeMsgCellModel *model4 = [[KKIMTimeMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMTimeMsgCellID];
+        KKIMSmallAppMsgCellModel *model5 = [[KKIMSmallAppMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMSmallAppMsgCellID];
+        KKIMCallMsgCellModel *model6 = [[KKIMCallMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMCallMsgCellID];
+        KKIMInvitationMsgCellModel *model7 = [[KKIMInvitationMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMInvitationMsgCellID];
+        KKIMChatRecordMsgCellModel *model8 = [[KKIMChatRecordMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMChatRecordMsgCellID];
+        KKIMReEditMsgCellModel *model9 = [[KKIMReEditMsgCellModel alloc] initWithCellHeight:50 cellIdentifier:KKIMReEditMsgCellID];
+        [_dataArray addObjectsFromArray:@[model, model1, model2, model3, model4, model5, model6, model7, model8, model9]];
+        
     }
     return _dataArray;
 }

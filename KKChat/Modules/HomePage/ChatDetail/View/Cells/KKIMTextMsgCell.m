@@ -33,6 +33,11 @@
     
 }
 
+- (void)loadModel:(KKBaseCellModel *)baseModel {
+    [super loadModel:baseModel];
+}
+
+
 #pragma mark - Getter -
 - (UIImageView *)bgImageView {
     if (!_bgImageView) {

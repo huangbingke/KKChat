@@ -6,6 +6,7 @@
 //
 //聊天记录cell(多选聊天记录分享给别人)
 #import "KKIMBaseCell.h"
+#import "KKIMBaseModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
