@@ -6,8 +6,7 @@
 //
 //文字消息cell
 #import "KKIMBaseCell.h"
-#import "KKIMBaseModel.h"
-
+#import "KKIMTextMsgCellModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KKIMTextMsgCell : KKIMBaseCell

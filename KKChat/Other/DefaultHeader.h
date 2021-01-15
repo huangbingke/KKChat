@@ -41,6 +41,8 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 
 #define kBgColor            kColor(0xEFEFF4)
 
+#define kQiPaoColor         kColor(0x7fe967)
+
 #ifndef weakify
     #if DEBUG
         #if __has_feature(objc_arc)

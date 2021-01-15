@@ -7,7 +7,7 @@
 //群聊邀请cell
 
 #import "KKIMBaseCell.h"
-#import "KKIMBaseModel.h"
+#import "KKIMInvitationMsgCellModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

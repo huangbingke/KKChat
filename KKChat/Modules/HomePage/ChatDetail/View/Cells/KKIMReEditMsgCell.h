@@ -7,7 +7,7 @@
 //撤回 重新编辑cell
 //
 #import "KKIMBaseCell.h"
-#import "KKIMBaseModel.h"
+#import "KKIMReEditMsgCellModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

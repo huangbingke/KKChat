@@ -7,7 +7,7 @@
 //
 //红包cell
 #import "KKIMBaseCell.h"
-#import "KKIMBaseModel.h"
+#import "KKIMRedBagMsgCellModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

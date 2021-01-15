@@ -6,7 +6,7 @@
 //
 //小程序cell
 #import "KKIMBaseCell.h"
-#import "KKIMBaseModel.h"
+#import "KKIMSmallAppMsgCellModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

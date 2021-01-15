@@ -6,7 +6,7 @@
 //
 //日期cell
 #import "KKIMBaseCell.h"
-#import "KKIMBaseModel.h"
+#import "KKIMTimeMsgCellModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

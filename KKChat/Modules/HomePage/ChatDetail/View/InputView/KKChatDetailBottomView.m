@@ -216,7 +216,7 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
 //    NSLog(@"计算文字高度: %@", textView.text);
     self.inputContent = textView.text;
     CGFloat height = 40;
-    CGSize size = [textView.text boundingALLRectWithText:textView.text Font:[UIFont systemFontOfSize:18] Size:CGSizeMake(kScreenWidth-(10*4+15+35*3), CGFLOAT_MAX)];
+    CGSize size = [NSString boundingALLRectWithText:textView.text Font:[UIFont systemFontOfSize:18] Size:CGSizeMake(kScreenWidth-(10*4+15+35*3), CGFLOAT_MAX)];
     if (size.height > 40) {
         height = size.height;
         if (size.height >= 150) {
@@ -230,13 +230,15 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
 }
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if ([@"\n" isEqualToString:text]) {
-        NSLog(@"===========> 发送");
+        if (!textView.text.length) {
+            textView.text = @"";
+            return NO;
+        }
         if ([self.delegate respondsToSelector:@selector(bottomViewSendMsgBtnAction:)]) {
             [self.delegate bottomViewSendMsgBtnAction:textView.text];
         }
         textView.text = @"";
         [self textViewDidChange:textView];
-        [textView resignFirstResponder];
         return NO;
     }
     return YES;

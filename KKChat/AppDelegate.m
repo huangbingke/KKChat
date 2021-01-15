@@ -21,6 +21,8 @@
     [self.window makeKeyAndVisible];
     self.window.rootViewController = [NSClassFromString(@"KKTabBarViewController") new];
     
+    
+    
     return YES;
 }
 

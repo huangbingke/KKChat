@@ -6,7 +6,7 @@
 //
 //语音, 视频通话cell
 #import "KKIMBaseCell.h"
-#import "KKIMBaseModel.h"
+#import "KKIMCallMsgCellModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

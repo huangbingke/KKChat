@@ -6,7 +6,7 @@
 //
 //语音消息cell
 #import "KKIMBaseCell.h"
-#import "KKIMBaseModel.h"
+#import "KKIMVoiceMsgCellModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

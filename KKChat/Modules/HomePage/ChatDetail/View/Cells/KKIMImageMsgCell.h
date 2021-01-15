@@ -6,7 +6,7 @@
 //
 //图片消息cell
 #import "KKIMBaseCell.h"
-#import "KKIMBaseModel.h"
+#import "KKIMImageMsgCellModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

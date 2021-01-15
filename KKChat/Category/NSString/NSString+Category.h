@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 //计算文字高度
-- (CGSize)boundingALLRectWithText:(NSString*)text
++ (CGSize)boundingALLRectWithText:(NSString*)text
                              Font:(UIFont*)font
                              Size:(CGSize)size;
 

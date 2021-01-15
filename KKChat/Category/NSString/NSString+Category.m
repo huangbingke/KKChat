@@ -12,7 +12,7 @@
 
 
 
-- (CGSize)boundingALLRectWithText:(NSString*)text
++ (CGSize)boundingALLRectWithText:(NSString*)text
                              Font:(UIFont*)font
                              Size:(CGSize)size {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:text];
