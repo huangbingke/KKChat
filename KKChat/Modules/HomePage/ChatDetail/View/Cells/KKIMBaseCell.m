@@ -31,10 +31,6 @@ NSString * const KKIMCellMsgLongPressGestureNotificationName = @"KKIMCellMsgLong
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
 }
-- (void)loadModel:(KKIMBaseModel *)baseModel {
-
-    
-}
 
 - (void)layoutUIForMe:(KKIMBaseModel *)baseModel {
     [self.headBtn mas_remakeConstraints:^(MASConstraintMaker *make) {

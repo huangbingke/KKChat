@@ -29,11 +29,6 @@
     // Configure the view for the selected state
 }
 
-- (void)setupUI {
-    [super setupUI];
-    
-}
-
 - (void)loadModel:(KKIMBaseModel *)baseModel {
     KKIMTextMsgCellModel *model = (KKIMTextMsgCellModel *)baseModel;
     self.textMsgLabel.attributedText = model.contentAttributedText;

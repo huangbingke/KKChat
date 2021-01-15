@@ -11,6 +11,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface KKIMImageMsgCellModel : KKIMBaseModel
 
+@property (nonatomic, copy) NSString *imageUrl;
+@property (nonatomic, strong) UIImage *locationImage;
+
+@property (nonatomic, assign) CGSize imageSize;
+
+- (instancetype)initWithImage:(id)image isMe:(BOOL)isMe;
+
 @end
 
 NS_ASSUME_NONNULL_END

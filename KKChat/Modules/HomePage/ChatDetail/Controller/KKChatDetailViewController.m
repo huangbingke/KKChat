@@ -22,7 +22,6 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = kColor(0xf7f7f7);
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cellMsgLongGestureAction:) name:KKIMCellMsgLongPressGestureNotificationName object:nil];
-    
 }
 
 - (void)setupUI {
@@ -136,20 +135,20 @@
     if (!_dataArray) {
         _dataArray = [NSMutableArray new];
         
-//        KKIMTextMsgCellModel *leftTextModel = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
-        KKIMTextMsgCellModel *leftTextModel1 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
-        KKIMTextMsgCellModel *rightTextModel = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
-        KKIMTextMsgCellModel *rightTextModel1 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄"] isMe:YES];
-        KKIMTextMsgCellModel *rightTextMode2 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄"] isMe:NO];
-        KKIMTextMsgCellModel *rightTextMode3 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:YES];
-        KKIMTextMsgCellModel *rightTextMode4 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄"] isMe:NO];
-        KKIMTextMsgCellModel *rightTextMode5 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
-        KKIMTextMsgCellModel *rightTextMode6 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:YES];
-        KKIMTextMsgCellModel *rightTextMode7 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄"] isMe:NO];
-        KKIMTextMsgCellModel *rightTextMode8 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
-        KKIMTextMsgCellModel *rightTextMode9 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄"] isMe:NO];
-
-        [_dataArray addObjectsFromArray:@[leftTextModel1, rightTextModel, rightTextModel1, rightTextMode2, rightTextMode3, rightTextMode4, rightTextMode5, rightTextMode6, rightTextMode7, rightTextMode8, rightTextMode9]];
+        KKIMTextMsgCellModel *leftTextModel = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
+        KKIMTextMsgCellModel *rightTextModel = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:YES];
+        [_dataArray addObjectsFromArray:@[leftTextModel, rightTextModel]];
+        
+        KKIMImageMsgCellModel *leftImageModel = [[KKIMImageMsgCellModel alloc] initWithImage:[UIImage imageNamed:@"1-1.png"] isMe:NO];
+        KKIMImageMsgCellModel *leftImageModel1 = [[KKIMImageMsgCellModel alloc] initWithImage:[UIImage imageNamed:@"2-3.png"] isMe:NO];
+        KKIMImageMsgCellModel *leftImageModel2 = [[KKIMImageMsgCellModel alloc] initWithImage:[UIImage imageNamed:@"3-2.png"] isMe:NO];
+        [_dataArray addObjectsFromArray:@[leftImageModel, leftImageModel1, leftImageModel2]];
+        
+        KKIMImageMsgCellModel *rightImageModel = [[KKIMImageMsgCellModel alloc] initWithImage:[UIImage imageNamed:@"1-1.png"] isMe:YES];
+        KKIMImageMsgCellModel *rightImageModel1 = [[KKIMImageMsgCellModel alloc] initWithImage:[UIImage imageNamed:@"2-3.png"] isMe:YES];
+        KKIMImageMsgCellModel *rightImageModel2 = [[KKIMImageMsgCellModel alloc] initWithImage:[UIImage imageNamed:@"3-2.png"] isMe:YES];
+        [_dataArray addObjectsFromArray:@[rightImageModel, rightImageModel1, rightImageModel2]];
+        
         
 //        KKIMVoiceMsgCellModel *model1 = [[KKIMVoiceMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMVoiceMsgCellID];
 //        KKIMImageMsgCellModel *model2 = [[KKIMImageMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMImageMsgCellID];
