@@ -127,7 +127,7 @@
     if (!_dataArray) {
         _dataArray = [NSMutableArray new];
         
-        KKIMTextMsgCellModel *leftTextModel = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
+//        KKIMTextMsgCellModel *leftTextModel = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
         KKIMTextMsgCellModel *leftTextModel1 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
         KKIMTextMsgCellModel *rightTextModel = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:YES];
         KKIMTextMsgCellModel *rightTextModel1 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄"] isMe:YES];
@@ -140,7 +140,7 @@
         KKIMTextMsgCellModel *rightTextMode8 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:YES];
         KKIMTextMsgCellModel *rightTextMode9 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄"] isMe:YES];
 
-        [_dataArray addObjectsFromArray:@[leftTextModel, leftTextModel1, rightTextModel, rightTextModel1, rightTextMode2, rightTextMode3, rightTextMode4, rightTextMode5, rightTextMode6, rightTextMode7, rightTextMode8, rightTextMode9]];
+        [_dataArray addObjectsFromArray:@[rightTextModel, rightTextModel1, rightTextMode2, rightTextMode3, rightTextMode4, rightTextMode5, rightTextMode6, rightTextMode7, rightTextMode8, rightTextMode9]];
         
 //        KKIMVoiceMsgCellModel *model1 = [[KKIMVoiceMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMVoiceMsgCellID];
 //        KKIMImageMsgCellModel *model2 = [[KKIMImageMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMImageMsgCellID];

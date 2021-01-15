@@ -35,7 +35,6 @@
 }
 
 - (void)loadModel:(KKIMBaseModel *)baseModel {
-    [super loadModel:baseModel];
     KKIMTextMsgCellModel *model = (KKIMTextMsgCellModel *)baseModel;
     self.textMsgLabel.attributedText = model.contentAttributedText;
     if (model.isMe) {
@@ -49,7 +48,7 @@
     [super layoutUIForMe:baseModel];
 
     self.arrowView.backgroundColor = kColor(0x7fe967);
-    [self.arrowView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.arrowView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(self.headBtn.mas_left).offset(-5);
         make.centerY.mas_equalTo(self.headBtn.mas_centerY);
         make.width.mas_equalTo(8);
@@ -66,14 +65,14 @@
 
     self.textMsgLabel.backgroundColor = kColor(0x7fe967);
     if (baseModel.cellHeight <= 60) {
-        [self.textMsgLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(self.arrowView.mas_left).offset(0);
             make.width.mas_equalTo(baseModel.oneLineWidth + 13);
             make.top.mas_equalTo(self.headBtn.mas_top).offset(0);
             make.bottom.mas_equalTo(self.headBtn.mas_bottom).offset(0);
         }];
     } else {
-        [self.textMsgLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(self.arrowView.mas_left).offset(0);
             make.left.mas_equalTo(self.contentView.mas_left).offset(71);
             make.top.mas_equalTo(self.headBtn.mas_top);
@@ -86,7 +85,7 @@
     [super layoutUIForOther:baseModel];
     self.arrowView.backgroundColor = UIColor.whiteColor;
     [self.contentView addSubview:self.arrowView];
-    [self.arrowView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.arrowView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.headBtn.mas_right).offset(5);
         make.centerY.mas_equalTo(self.headBtn.mas_centerY);
         make.width.mas_equalTo(8);
@@ -103,14 +102,14 @@
     
     self.textMsgLabel.backgroundColor = UIColor.whiteColor;
     if (baseModel.cellHeight <= 60) {
-        [self.textMsgLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.arrowView.mas_right).offset(0);
             make.width.mas_equalTo(baseModel.oneLineWidth + 13);
             make.top.mas_equalTo(self.headBtn.mas_top);
             make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-12);
         }];
     } else {
-        [self.textMsgLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.arrowView.mas_right).offset(0);
             make.right.mas_equalTo(self.contentView.mas_right).offset(-71);
             make.top.mas_equalTo(self.headBtn.mas_top);
@@ -145,6 +144,12 @@
         longGest.minimumPressDuration = 1.5;
         [_textMsgLabel addGestureRecognizer: longGest];
         [self.contentView addSubview:_textMsgLabel];
+        [_textMsgLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(self.arrowView.mas_left).offset(0);
+            make.left.mas_equalTo(self.contentView.mas_left).offset(71);
+            make.top.mas_equalTo(self.headBtn.mas_top);
+            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-12);
+        }];
     }
     return _textMsgLabel;
 }
@@ -160,6 +165,12 @@
     if (!_arrowView) {
         _arrowView = [[UIView alloc] init];
         [self.contentView addSubview:_arrowView];
+        [_arrowView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(self.headBtn.mas_left).offset(-5);
+            make.centerY.mas_equalTo(self.headBtn.mas_centerY);
+            make.width.mas_equalTo(8);
+            make.height.mas_equalTo(12);
+        }];
     }
     return _arrowView;
 }
