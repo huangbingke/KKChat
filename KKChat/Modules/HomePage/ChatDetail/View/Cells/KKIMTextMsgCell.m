@@ -42,11 +42,11 @@
     } else {
         [self layoutUIForOther:model];
     }
+//    [self.contentView layoutIfNeeded];
 }
 
 - (void)layoutUIForMe:(KKIMTextMsgCellModel *)baseModel {
     [super layoutUIForMe:baseModel];
-
     self.arrowView.backgroundColor = kColor(0x7fe967);
     [self.arrowView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(self.headBtn.mas_left).offset(-5);
@@ -79,12 +79,10 @@
             make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-12);
         }];
     }
-//    [self.contentView layoutIfNeeded];
 }
 - (void)layoutUIForOther:(KKIMTextMsgCellModel *)baseModel {
     [super layoutUIForOther:baseModel];
     self.arrowView.backgroundColor = UIColor.whiteColor;
-    [self.contentView addSubview:self.arrowView];
     [self.arrowView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.headBtn.mas_right).offset(5);
         make.centerY.mas_equalTo(self.headBtn.mas_centerY);
