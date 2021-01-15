@@ -8,7 +8,7 @@
 #import "KKIMTextMsgCellModel.h"
 #import "NSString+Category.h"
 #import <YYText/YYTextLayout.h>
-NSInteger const KKIMTextMsgFont = 16;
+NSInteger const KKIMTextMsgFont = 18;
 @implementation KKIMTextMsgCellModel
 - (CGFloat)oneLineHeight {
     YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:CGSizeMake(kScreenWidth - 134-13, CGFLOAT_MAX) text:[[NSAttributedString alloc] initWithString:@"哈😄"]];

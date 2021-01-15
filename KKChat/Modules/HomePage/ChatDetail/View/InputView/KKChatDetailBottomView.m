@@ -358,7 +358,12 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
     return _expressionView;
 }
 
-
+- (BOOL)isOpen {
+    if (self.keyboardHeight > kIPhoneXBottomHeight) {
+        return YES;
+    }
+    return NO;
+}
 
 #pragma mark - dealloc -
 - (void)dealloc {

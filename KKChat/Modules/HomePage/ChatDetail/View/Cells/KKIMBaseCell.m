@@ -90,49 +90,11 @@ NSString * const KKIMCellMsgLongPressGestureNotificationName = @"KKIMCellMsgLong
         [_headBtn addTarget:self action:@selector(clickHeadAction:) forControlEvents:(UIControlEventTouchUpInside)];
         _headBtn.backgroundColor = kRandomColor;
         [self.contentView addSubview:_headBtn];
-        [_headBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(self.contentView.mas_right).offset(-12);
-            make.top.mas_equalTo(self.contentView.mas_top).offset(12);
-            make.width.height.mas_equalTo(36);
-        }];
         _headBtn.layer.cornerRadius = 5;
         _headBtn.layer.masksToBounds = YES;
     }
     return _headBtn;
 }
-
-//- (UIButton *)rightHeadBtn {
-//    if (!_rightHeadBtn) {
-//        _rightHeadBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-//        [_rightHeadBtn addTarget:self action:@selector(clickHeadAction:) forControlEvents:(UIControlEventTouchUpInside)];
-//        _rightHeadBtn.backgroundColor = kRandomColor;
-//        [self.contentView addSubview:_rightHeadBtn];
-//        [_rightHeadBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.right.mas_equalTo(self.contentView.mas_right).offset(-12);
-//            make.top.mas_equalTo(self.contentView.mas_top).offset(12);
-//            make.width.height.mas_equalTo(36);
-//        }];
-//        _rightHeadBtn.layer.cornerRadius = 5;
-//        _rightHeadBtn.layer.masksToBounds = YES;
-//    }
-//    return _rightHeadBtn;
-//}
-//- (UIButton *)leftHeadBtn {
-//    if (!_leftHeadBtn) {
-//        _leftHeadBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-//        [_leftHeadBtn addTarget:self action:@selector(clickHeadAction:) forControlEvents:(UIControlEventTouchUpInside)];
-//        _leftHeadBtn.backgroundColor = kRandomColor;
-//        [self.contentView addSubview:_leftHeadBtn];
-//        [_leftHeadBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.left.mas_equalTo(self.contentView.mas_left).offset(12);
-//            make.top.mas_equalTo(self.contentView.mas_top).offset(12);
-//            make.width.height.mas_equalTo(36);
-//        }];
-//        _leftHeadBtn.layer.cornerRadius = 5;
-//        _leftHeadBtn.layer.masksToBounds = YES;
-//    }
-//    return _leftHeadBtn;
-//}
 
 
 @end

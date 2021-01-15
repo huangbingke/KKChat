@@ -27,6 +27,7 @@ typedef NS_ENUM(NSUInteger, KKInputType) {
 @interface KKChatDetailBottomView : UIView
 
 @property (nonatomic, weak) id<KKChatDetailBottomViewDelegate>delegate;
+@property (nonatomic, assign) BOOL isOpen; //弹出状态
 
 - (instancetype)initWithInputType:(KKInputType)type;
 

@@ -42,22 +42,21 @@
     } else {
         [self layoutUIForOther:model];
     }
-//    [self.contentView layoutIfNeeded];
 }
 
 - (void)layoutUIForMe:(KKIMTextMsgCellModel *)baseModel {
     [super layoutUIForMe:baseModel];
     self.arrowView.backgroundColor = kColor(0x7fe967);
     [self.arrowView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self.headBtn.mas_left).offset(-5);
-        make.centerY.mas_equalTo(self.headBtn.mas_centerY);
+        make.right.mas_equalTo(self.contentView.mas_right).offset(-53);
+        make.top.mas_equalTo(self.contentView.mas_top).offset(24);
         make.width.mas_equalTo(8);
         make.height.mas_equalTo(12);
     }];
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path moveToPoint:CGPointMake(0, 0)];
     [path addLineToPoint:CGPointMake(0, 12)];
-    [path addLineToPoint:CGPointMake(4, 6)];
+    [path addLineToPoint:CGPointMake(6, 6)];
     [path closePath];
     CAShapeLayer *layer = [CAShapeLayer layer];
     layer.path = path.CGPath;
@@ -66,16 +65,16 @@
     self.textMsgLabel.backgroundColor = kColor(0x7fe967);
     if (baseModel.cellHeight <= 60) {
         [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(self.arrowView.mas_left).offset(0);
-            make.width.mas_equalTo(baseModel.oneLineWidth + 13);
-            make.top.mas_equalTo(self.headBtn.mas_top).offset(0);
-            make.bottom.mas_equalTo(self.headBtn.mas_bottom).offset(0);
+            make.right.mas_equalTo(self.contentView.mas_right).offset(-61);
+            make.left.mas_equalTo(self.contentView.mas_left).offset(kScreenWidth-(74+baseModel.oneLineWidth));
+            make.top.mas_equalTo(self.contentView.mas_top).offset(12);
+            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-12);
         }];
     } else {
         [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(self.arrowView.mas_left).offset(0);
-            make.left.mas_equalTo(self.contentView.mas_left).offset(71);
-            make.top.mas_equalTo(self.headBtn.mas_top);
+            make.right.mas_equalTo(self.contentView.mas_right).offset(-61);
+            make.left.mas_equalTo(self.contentView.mas_left).offset(61);
+            make.top.mas_equalTo(self.contentView.mas_top).offset(12);
             make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-12);
         }];
     }
@@ -84,13 +83,13 @@
     [super layoutUIForOther:baseModel];
     self.arrowView.backgroundColor = UIColor.whiteColor;
     [self.arrowView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.headBtn.mas_right).offset(5);
-        make.centerY.mas_equalTo(self.headBtn.mas_centerY);
+        make.left.mas_equalTo(self.contentView.mas_left).offset(53);
+        make.top.mas_equalTo(self.contentView.mas_top).offset(24);
         make.width.mas_equalTo(8);
         make.height.mas_equalTo(12);
     }];
     UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:CGPointMake(0, 6)];
+    [path moveToPoint:CGPointMake(2, 6)];
     [path addLineToPoint:CGPointMake(8, 0)];
     [path addLineToPoint:CGPointMake(8, 12)];
     [path closePath];
@@ -101,15 +100,15 @@
     self.textMsgLabel.backgroundColor = UIColor.whiteColor;
     if (baseModel.cellHeight <= 60) {
         [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.arrowView.mas_right).offset(0);
-            make.width.mas_equalTo(baseModel.oneLineWidth + 13);
+            make.left.mas_equalTo(self.contentView.mas_left).offset(61);
+            make.right.mas_equalTo(self.contentView.mas_right).offset(74+baseModel.oneLineWidth- kScreenWidth);
             make.top.mas_equalTo(self.headBtn.mas_top);
             make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-12);
         }];
     } else {
         [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.arrowView.mas_right).offset(0);
-            make.right.mas_equalTo(self.contentView.mas_right).offset(-71);
+            make.left.mas_equalTo(self.contentView.mas_left).offset(61);
+            make.right.mas_equalTo(self.contentView.mas_right).offset(-61);
             make.top.mas_equalTo(self.headBtn.mas_top);
             make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-12);
         }];
@@ -142,12 +141,6 @@
         longGest.minimumPressDuration = 1.5;
         [_textMsgLabel addGestureRecognizer: longGest];
         [self.contentView addSubview:_textMsgLabel];
-        [_textMsgLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(self.arrowView.mas_left).offset(0);
-            make.left.mas_equalTo(self.contentView.mas_left).offset(71);
-            make.top.mas_equalTo(self.headBtn.mas_top);
-            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-12);
-        }];
     }
     return _textMsgLabel;
 }
@@ -163,12 +156,6 @@
     if (!_arrowView) {
         _arrowView = [[UIView alloc] init];
         [self.contentView addSubview:_arrowView];
-        [_arrowView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(self.headBtn.mas_left).offset(-5);
-            make.centerY.mas_equalTo(self.headBtn.mas_centerY);
-            make.width.mas_equalTo(8);
-            make.height.mas_equalTo(12);
-        }];
     }
     return _arrowView;
 }

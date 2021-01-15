@@ -63,7 +63,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     KKIMBaseModel *baseModel = self.dataArray[indexPath.row];
-    NSLog(@"坐标: %ld====%f", indexPath.row, baseModel.cellHeight);
+//    NSLog(@"坐标: %ld====%f", indexPath.row, baseModel.cellHeight);
     return baseModel.cellHeight;
 }
 
@@ -81,7 +81,14 @@
         [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationNone)];
     }
 }
-
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.bottomView.isOpen) {
+        if (!self.chatModel.openSelectStatus) {//没有开启多选, return
+            [self.bottomView dismiss];
+            return;
+        }
+    }
+}
 #pragma mark - Action -
 - (void)cellMsgLongGestureAction:(NSNotification *)notification {
     NSLog(@"长按啦");
@@ -103,6 +110,8 @@
         make.bottom.mas_equalTo(self.view).offset(-bottomMargin);
         make.height.mas_equalTo(height);
     }];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.dataArray.count-1 inSection:0];
+    [self.chatTableView scrollToRowAtIndexPath:indexPath atScrollPosition:(UITableViewScrollPositionBottom) animated:NO];
 }
 
 
@@ -130,12 +139,12 @@
 //        KKIMTextMsgCellModel *leftTextModel = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
         KKIMTextMsgCellModel *leftTextModel1 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
         KKIMTextMsgCellModel *rightTextModel = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
-        KKIMTextMsgCellModel *rightTextModel1 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄"] isMe:NO];
+        KKIMTextMsgCellModel *rightTextModel1 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄"] isMe:YES];
         KKIMTextMsgCellModel *rightTextMode2 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄"] isMe:NO];
-        KKIMTextMsgCellModel *rightTextMode3 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
+        KKIMTextMsgCellModel *rightTextMode3 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:YES];
         KKIMTextMsgCellModel *rightTextMode4 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄"] isMe:NO];
         KKIMTextMsgCellModel *rightTextMode5 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
-        KKIMTextMsgCellModel *rightTextMode6 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
+        KKIMTextMsgCellModel *rightTextMode6 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:YES];
         KKIMTextMsgCellModel *rightTextMode7 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄"] isMe:NO];
         KKIMTextMsgCellModel *rightTextMode8 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
         KKIMTextMsgCellModel *rightTextMode9 = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄😄"] isMe:NO];
