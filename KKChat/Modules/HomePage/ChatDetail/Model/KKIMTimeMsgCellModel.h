@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *showDate;//展示的时间
 
+- (instancetype)initWithCellHeight:(CGFloat)cellHeight showDate:(NSString *)showDate;
+
 @end
 
 NS_ASSUME_NONNULL_END

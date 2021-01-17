@@ -5,7 +5,7 @@
 //
 //  Created by KK on 23/12/2020.
 //
-//红包cell
+//红包和转账用同一个cell
 #import "KKIMBaseCell.h"
 #import "KKIMRedBagMsgCellModel.h"
 

@@ -14,6 +14,8 @@
 		4B43F37F25B1D5CA0015557E /* 1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B43F37C25B1D5CA0015557E /* 1-1.png */; };
 		4B43F38025B1D5CA0015557E /* 3-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B43F37D25B1D5CA0015557E /* 3-2.png */; };
 		4B43F38125B1D5CA0015557E /* 2-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B43F37E25B1D5CA0015557E /* 2-3.png */; };
+		4B43F38625B1EF2A0015557E /* KKSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B43F38525B1EF2A0015557E /* KKSocketManager.m */; };
+		4B43F39F25B296530015557E /* KKDarkModeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B43F39E25B296530015557E /* KKDarkModeManager.m */; };
 		4B4CCA9F2594C30B00CB3929 /* KKHomeSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CCA9E2594C30B00CB3929 /* KKHomeSearchCell.m */; };
 		4B4CCAA32594C34A00CB3929 /* KKHomeThridDeviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CCAA22594C34A00CB3929 /* KKHomeThridDeviceCell.m */; };
 		4B4CCAAB2594C38200CB3929 /* KKHomeNoNetworkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CCAAA2594C38200CB3929 /* KKHomeNoNetworkCell.m */; };
@@ -272,6 +274,10 @@
 		4B43F37C25B1D5CA0015557E /* 1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1-1.png"; sourceTree = "<group>"; };
 		4B43F37D25B1D5CA0015557E /* 3-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3-2.png"; sourceTree = "<group>"; };
 		4B43F37E25B1D5CA0015557E /* 2-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2-3.png"; sourceTree = "<group>"; };
+		4B43F38425B1EF2A0015557E /* KKSocketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSocketManager.h; sourceTree = "<group>"; };
+		4B43F38525B1EF2A0015557E /* KKSocketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSocketManager.m; sourceTree = "<group>"; };
+		4B43F39D25B296530015557E /* KKDarkModeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKDarkModeManager.h; sourceTree = "<group>"; };
+		4B43F39E25B296530015557E /* KKDarkModeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKDarkModeManager.m; sourceTree = "<group>"; };
 		4B4CCA9D2594C30B00CB3929 /* KKHomeSearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeSearchCell.h; sourceTree = "<group>"; };
 		4B4CCA9E2594C30B00CB3929 /* KKHomeSearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeSearchCell.m; sourceTree = "<group>"; };
 		4B4CCAA12594C34A00CB3929 /* KKHomeThridDeviceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeThridDeviceCell.h; sourceTree = "<group>"; };
@@ -637,6 +643,24 @@
 			path = test;
 			sourceTree = "<group>";
 		};
+		4B43F38325B1EF030015557E /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				4B43F38425B1EF2A0015557E /* KKSocketManager.h */,
+				4B43F38525B1EF2A0015557E /* KKSocketManager.m */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
+		4B43F39C25B2963A0015557E /* DarkMode */ = {
+			isa = PBXGroup;
+			children = (
+				4B43F39D25B296530015557E /* KKDarkModeManager.h */,
+				4B43F39E25B296530015557E /* KKDarkModeManager.m */,
+			);
+			path = DarkMode;
+			sourceTree = "<group>";
+		};
 		4B4CCAB42594C3DC00CB3929 /* ChatList */ = {
 			isa = PBXGroup;
 			children = (
@@ -737,12 +761,14 @@
 		8F587AA225ABEB70006B4B2D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				8F587AA725ABEC34006B4B2D /* FMDBManager */,
+				4B43F39C25B2963A0015557E /* DarkMode */,
+				4B43F38325B1EF030015557E /* Socket */,
+				8F587AA725ABEC34006B4B2D /* FMDB */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
 		};
-		8F587AA725ABEC34006B4B2D /* FMDBManager */ = {
+		8F587AA725ABEC34006B4B2D /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
 				8F587ABA25ABEEF2006B4B2D /* KKDBHelper.h */,
@@ -754,7 +780,7 @@
 				8F587AB625ABEE27006B4B2D /* KKUserInfoDBHelper.h */,
 				8F587AB725ABEE27006B4B2D /* KKUserInfoDBHelper.m */,
 			);
-			path = FMDBManager;
+			path = FMDB;
 			sourceTree = "<group>";
 		};
 		8F587AC425ABEFFD006B4B2D /* Model */ = {
@@ -1626,6 +1652,7 @@
 				8F587ABC25ABEEF2006B4B2D /* KKDBHelper.m in Sources */,
 				8FCF36E32593084D0026412C /* KKBaseViewController.m in Sources */,
 				8FCF36E7259308610026412C /* KKBaseModel.m in Sources */,
+				4B43F39F25B296530015557E /* KKDarkModeManager.m in Sources */,
 				8FCF36DD2593078B0026412C /* KKNavigationController.m in Sources */,
 				8F5CDD1B25B03E85005C71EA /* KKIMVideoMsgCell.m in Sources */,
 				4B4CCAAB2594C38200CB3929 /* KKHomeNoNetworkCell.m in Sources */,
@@ -1662,6 +1689,7 @@
 				8F284FAF25A443A400FC56B0 /* UIView+Category.m in Sources */,
 				8FCF374C25932F480026412C /* KKIMBaseModel.m in Sources */,
 				8F19F15025B133C1002435DE /* KKIMTimeMsgCellModel.m in Sources */,
+				4B43F38625B1EF2A0015557E /* KKSocketManager.m in Sources */,
 				8FCF371625930BF70026412C /* KKMeViewController.m in Sources */,
 				8F19F16425B1340C002435DE /* KKIMReEditMsgCellModel.m in Sources */,
 				4B4CCAAF2594C3A300CB3929 /* KKHomeChatCell.m in Sources */,

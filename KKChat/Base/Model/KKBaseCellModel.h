@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithCellHeight:(CGFloat)cellHeight
                     cellIdentifier:(NSString *)cellIdentifier;
-
+- (instancetype)initWithCellHeight:(CGFloat)cellHeight;
 
 @end
 

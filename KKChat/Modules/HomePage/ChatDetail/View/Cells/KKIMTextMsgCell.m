@@ -10,7 +10,6 @@
 
 @interface KKIMTextMsgCell ()
 
-@property (nonatomic, strong) UIView *arrowView;
 @property (nonatomic, strong) YYLabel *textMsgLabel;
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UIButton *errorBtn;
@@ -41,71 +40,39 @@
 
 - (void)layoutUIForMe:(KKIMTextMsgCellModel *)baseModel {
     [super layoutUIForMe:baseModel];
-    self.arrowView.backgroundColor = kColor(0x7fe967);
-    [self.arrowView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self.contentView.mas_right).offset(-53);
-        make.top.mas_equalTo(self.contentView.mas_top).offset(24);
-        make.width.mas_equalTo(8);
-        make.height.mas_equalTo(12);
-    }];
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:CGPointMake(0, 0)];
-    [path addLineToPoint:CGPointMake(0, 12)];
-    [path addLineToPoint:CGPointMake(6, 6)];
-    [path closePath];
-    CAShapeLayer *layer = [CAShapeLayer layer];
-    layer.path = path.CGPath;
-    self.arrowView.layer.mask = layer;
-
     self.textMsgLabel.backgroundColor = kColor(0x7fe967);
     if (baseModel.cellHeight <= 60) {
         [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(self.contentView.mas_right).offset(-61);
+            make.right.mas_equalTo(self.contentView.mas_right).offset(-kMsgLeftRightMargin);
             make.left.mas_equalTo(self.contentView.mas_left).offset(kScreenWidth-(74+baseModel.oneLineWidth));
-            make.top.mas_equalTo(self.contentView.mas_top).offset(12);
-            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-12);
+            make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin);
+            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-kTopBottomMargin);
         }];
     } else {
         [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(self.contentView.mas_right).offset(-61);
-            make.left.mas_equalTo(self.contentView.mas_left).offset(61);
-            make.top.mas_equalTo(self.contentView.mas_top).offset(12);
-            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-12);
+            make.right.mas_equalTo(self.contentView.mas_right).offset(-kMsgLeftRightMargin);
+            make.left.mas_equalTo(self.contentView.mas_left).offset(kMsgLeftRightMargin);
+            make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin);
+            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-kTopBottomMargin);
         }];
     }
 }
 - (void)layoutUIForOther:(KKIMTextMsgCellModel *)baseModel {
     [super layoutUIForOther:baseModel];
-    self.arrowView.backgroundColor = UIColor.whiteColor;
-    [self.arrowView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.contentView.mas_left).offset(53);
-        make.top.mas_equalTo(self.contentView.mas_top).offset(24);
-        make.width.mas_equalTo(8);
-        make.height.mas_equalTo(12);
-    }];
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:CGPointMake(2, 6)];
-    [path addLineToPoint:CGPointMake(8, 0)];
-    [path addLineToPoint:CGPointMake(8, 12)];
-    [path closePath];
-    CAShapeLayer *layer = [CAShapeLayer layer];
-    layer.path = path.CGPath;
-    self.arrowView.layer.mask = layer;
-    
     self.textMsgLabel.backgroundColor = UIColor.whiteColor;
     if (baseModel.cellHeight <= 60) {
         [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.contentView.mas_left).offset(61);
+            make.left.mas_equalTo(self.contentView.mas_left).offset(kMsgLeftRightMargin);
             make.right.mas_equalTo(self.contentView.mas_right).offset(74+baseModel.oneLineWidth- kScreenWidth);
-            make.top.mas_equalTo(self.headBtn.mas_top);
-            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-12);
+            make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin);
+            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-kTopBottomMargin);
         }];
     } else {
         [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.contentView.mas_left).offset(61);
-            make.right.mas_equalTo(self.contentView.mas_right).offset(-61);
-            make.top.mas_equalTo(self.headBtn.mas_top);
-            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-12);
+            make.left.mas_equalTo(self.contentView.mas_left).offset(kMsgLeftRightMargin);
+            make.right.mas_equalTo(self.contentView.mas_right).offset(-kMsgLeftRightMargin);
+            make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin);
+            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-kTopBottomMargin);
         }];
     }
 }
@@ -122,7 +89,7 @@
         _textMsgLabel.font = [UIFont systemFontOfSize:KKIMTextMsgFont];
         _textMsgLabel.numberOfLines = 0;
         _textMsgLabel.layer.masksToBounds = YES;
-        _textMsgLabel.layer.cornerRadius = 5;
+        _textMsgLabel.layer.cornerRadius = kCornerRadius;
         _textMsgLabel.textContainerInset = UIEdgeInsetsMake(5, 8, 5, 5);
         __block int i = 0;
         [_textMsgLabel setTextTapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
@@ -147,12 +114,5 @@
     return _nameLabel;
 }
 
-- (UIView *)arrowView {
-    if (!_arrowView) {
-        _arrowView = [[UIView alloc] init];
-        [self.contentView addSubview:_arrowView];
-    }
-    return _arrowView;
-}
 
 @end

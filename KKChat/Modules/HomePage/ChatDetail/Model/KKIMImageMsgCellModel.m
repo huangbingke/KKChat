@@ -32,7 +32,7 @@
         if (height >= width) {
             return 150;
         } else {
-            return (kScreenWidth-60)/2 * (height/width) + 24;
+            return (kScreenWidth-60)/2 * (height/width) + kTopBottomMargin*2;
         }
     }
     return 0;

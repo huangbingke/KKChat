@@ -43,9 +43,9 @@ NSInteger const KKIMTextMsgFont = 18;
         CGFloat textHeight = [self heightForText:self.contentAttributedText];
         CGFloat oneLineHeight = [self oneLineHeight];
         if (textHeight <= oneLineHeight) {
-            return 60;
+            return 36+kTopBottomMargin*2;
         } else {
-            return ceil(textHeight) + 10 + 24;
+            return ceil(textHeight) + 10 + kTopBottomMargin*2;
         }
         return 0;
     }

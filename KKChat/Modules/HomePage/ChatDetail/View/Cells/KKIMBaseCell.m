@@ -8,8 +8,8 @@
 #import "KKIMBaseCell.h"
 
 NSString * const KKIMCellMsgLongPressGestureNotificationName = @"KKIMCellMsgLongPressGestureNotificationName";
-@interface KKIMBaseCell ()
 
+@interface KKIMBaseCell ()
 
 @end
 
@@ -35,16 +35,51 @@ NSString * const KKIMCellMsgLongPressGestureNotificationName = @"KKIMCellMsgLong
 - (void)layoutUIForMe:(KKIMBaseModel *)baseModel {
     [self.headBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(self.contentView.mas_right).offset(-12);
-        make.top.mas_equalTo(self.contentView.mas_top).offset(12);
+        make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin);
         make.width.height.mas_equalTo(36);
     }];
+    if ([[self showArrowViewClass] containsObject:NSStringFromClass(baseModel.class)]) {
+        self.arrowView.backgroundColor = kColor(0x7fe967);
+        [self.arrowView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(self.contentView.mas_right).offset(-53);
+            make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin+36/2-12/2);
+            make.width.mas_equalTo(8);
+            make.height.mas_equalTo(12);
+        }];
+        UIBezierPath *path = [UIBezierPath bezierPath];
+        [path moveToPoint:CGPointMake(0, 0)];
+        [path addLineToPoint:CGPointMake(0, 12)];
+        [path addLineToPoint:CGPointMake(6, 6)];
+        [path closePath];
+        CAShapeLayer *layer = [CAShapeLayer layer];
+        layer.path = path.CGPath;
+        self.arrowView.layer.mask = layer;
+    }
 }
 - (void)layoutUIForOther:(KKIMBaseModel *)baseModel {
     [self.headBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.contentView.mas_left).offset(12);
-        make.top.mas_equalTo(self.contentView.mas_top).offset(12);
+        make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin);
         make.width.height.mas_equalTo(36);
     }];
+    
+    if ([[self showArrowViewClass] containsObject:NSStringFromClass(baseModel.class)]) {
+        self.arrowView.backgroundColor = UIColor.whiteColor;
+        [self.arrowView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(self.contentView.mas_left).offset(53);
+            make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin+36/2-12/2);
+            make.width.mas_equalTo(8);
+            make.height.mas_equalTo(12);
+        }];
+        UIBezierPath *path = [UIBezierPath bezierPath];
+        [path moveToPoint:CGPointMake(2, 6)];
+        [path addLineToPoint:CGPointMake(8, 0)];
+        [path addLineToPoint:CGPointMake(8, 12)];
+        [path closePath];
+        CAShapeLayer *layer = [CAShapeLayer layer];
+        layer.path = path.CGPath;
+        self.arrowView.layer.mask = layer;
+    }
 }
 
 
@@ -52,6 +87,12 @@ NSString * const KKIMCellMsgLongPressGestureNotificationName = @"KKIMCellMsgLong
 - (void)clickHeadAction:(UIButton *)sender {
     
     
+}
+
+//展示消息三角箭头的类
+- (NSArray *)showArrowViewClass {
+    NSArray *classes = @[@"KKIMTextMsgCellModel", @"KKIMCallMsgCellModel", @"KKIMRedBagMsgCellModel"];
+    return classes;
 }
 
 #pragma mark - Getter -
@@ -86,10 +127,18 @@ NSString * const KKIMCellMsgLongPressGestureNotificationName = @"KKIMCellMsgLong
         [_headBtn addTarget:self action:@selector(clickHeadAction:) forControlEvents:(UIControlEventTouchUpInside)];
         _headBtn.backgroundColor = kRandomColor;
         [self.contentView addSubview:_headBtn];
-        _headBtn.layer.cornerRadius = 5;
+        _headBtn.layer.cornerRadius = kCornerRadius;
         _headBtn.layer.masksToBounds = YES;
     }
     return _headBtn;
+}
+
+- (UIView *)arrowView {
+    if (!_arrowView) {
+        _arrowView = [[UIView alloc] init];
+        [self.contentView addSubview:_arrowView];
+    }
+    return _arrowView;
 }
 
 

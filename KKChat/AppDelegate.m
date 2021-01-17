@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import "KKSocketManager.h"
 @interface AppDelegate ()
 
 @end
@@ -21,7 +22,15 @@
     [self.window makeKeyAndVisible];
     self.window.rootViewController = [NSClassFromString(@"KKTabBarViewController") new];
     
-    
+//    [[KKSocketManager shareManager] connect];
+    if (@available(iOS 13.0, *)) {
+        self.window.rootViewController.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
+    }
+    if (self.window.rootViewController.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+        NSLog(@"暗黑模式");
+    } else {
+        NSLog(@"非暗黑模式");
+    }
     
     return YES;
 }

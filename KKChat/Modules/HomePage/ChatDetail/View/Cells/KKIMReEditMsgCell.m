@@ -6,7 +6,12 @@
 //
 
 #import "KKIMReEditMsgCell.h"
+#import <YYText.h>
+@interface KKIMReEditMsgCell ()
 
+@property (nonatomic, strong) YYLabel *tipLabel;
+
+@end
 @implementation KKIMReEditMsgCell
 
 - (void)awakeFromNib {

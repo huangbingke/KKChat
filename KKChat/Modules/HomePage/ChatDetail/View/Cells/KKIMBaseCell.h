@@ -16,8 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIButton *selectBtn; //多选消息
 @property (nonatomic, strong) UIButton *loadingBtn;//加载图片, 发送失败显示红色叹号"❕"
-//@property (nonatomic, strong) UIButton *leftHeadBtn;//左边头像
-//@property (nonatomic, strong) UIButton *rightHeadBtn;//左边头像
+@property (nonatomic, strong) UIView *arrowView;//三角箭头
 @property (nonatomic, strong) UIButton *headBtn;//头像
 
 //自己发送的消息, 和收到别人的消息, 同一种类型的消息用的同一种cell, 区分自己和别人, 左右相反的布局

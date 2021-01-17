@@ -20,7 +20,12 @@
     return self;
 }
 
-
+- (instancetype)initWithCellHeight:(CGFloat)cellHeight {
+    if (self = [super init]) {
+        self.cellHeight = cellHeight;
+    }
+    return self;
+}
 
 
 

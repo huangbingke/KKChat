@@ -9,6 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern CGFloat const kTopBottomMargin;
+extern CGFloat const kCornerRadius;
+extern CGFloat const kMsgLeftRightMargin;
 typedef NS_ENUM(NSUInteger, KKIMMsgType) {
     KKIMMsgTypeNone,
     KKIMMsgTypeCallVoice,//语音通话

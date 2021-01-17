@@ -22,6 +22,8 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = kColor(0xf7f7f7);
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cellMsgLongGestureAction:) name:KKIMCellMsgLongPressGestureNotificationName object:nil];
+
+
 }
 
 - (void)setupUI {
@@ -135,6 +137,15 @@
     if (!_dataArray) {
         _dataArray = [NSMutableArray new];
         
+     
+        
+
+        KKIMRedBagMsgCellModel *leftTranModel = [[KKIMRedBagMsgCellModel alloc] initWithCellHeight:80 transferType:(KKIMMsgTransferTypeTransfer) reamrk:@"测试" amount:0.01 isMe:NO];
+        KKIMRedBagMsgCellModel *leftRedModel = [[KKIMRedBagMsgCellModel alloc] initWithCellHeight:80 transferType:(KKIMMsgTransferTypeRedBag) reamrk:@"恭喜发财, 大吉大利" amount:0.01 isMe:NO];
+        KKIMRedBagMsgCellModel *rightTranModel = [[KKIMRedBagMsgCellModel alloc] initWithCellHeight:80 transferType:(KKIMMsgTransferTypeRedBag) reamrk:@"恭喜发财, 大吉大利" amount:0.01 isMe:YES];
+        KKIMRedBagMsgCellModel *rightRedModel = [[KKIMRedBagMsgCellModel alloc] initWithCellHeight:80 transferType:(KKIMMsgTransferTypeTransfer) reamrk:@"拿去花" amount:0.01 isMe:YES];
+        [_dataArray addObjectsFromArray:@[leftTranModel, leftRedModel, rightTranModel, rightRedModel]];
+        
         KKIMTextMsgCellModel *leftTextModel = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
         KKIMTextMsgCellModel *rightTextModel = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:YES];
         [_dataArray addObjectsFromArray:@[leftTextModel, rightTextModel]];
@@ -144,11 +155,12 @@
         KKIMImageMsgCellModel *leftImageModel2 = [[KKIMImageMsgCellModel alloc] initWithImage:[UIImage imageNamed:@"3-2.png"] isMe:NO];
         [_dataArray addObjectsFromArray:@[leftImageModel, leftImageModel1, leftImageModel2]];
         
+        KKIMTimeMsgCellModel *timeModel = [[KKIMTimeMsgCellModel alloc] initWithCellHeight:40 showDate:@"昨天 18:00"];
+        [_dataArray addObject:timeModel];
         KKIMImageMsgCellModel *rightImageModel = [[KKIMImageMsgCellModel alloc] initWithImage:[UIImage imageNamed:@"1-1.png"] isMe:YES];
         KKIMImageMsgCellModel *rightImageModel1 = [[KKIMImageMsgCellModel alloc] initWithImage:[UIImage imageNamed:@"2-3.png"] isMe:YES];
         KKIMImageMsgCellModel *rightImageModel2 = [[KKIMImageMsgCellModel alloc] initWithImage:[UIImage imageNamed:@"3-2.png"] isMe:YES];
         [_dataArray addObjectsFromArray:@[rightImageModel, rightImageModel1, rightImageModel2]];
-        
         
 //        KKIMVoiceMsgCellModel *model1 = [[KKIMVoiceMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMVoiceMsgCellID];
 //        KKIMImageMsgCellModel *model2 = [[KKIMImageMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMImageMsgCellID];

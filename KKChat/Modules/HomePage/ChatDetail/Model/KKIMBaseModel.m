@@ -6,7 +6,9 @@
 //
 
 #import "KKIMBaseModel.h"
-
+CGFloat const kTopBottomMargin = 6.f;
+CGFloat const kCornerRadius = 3;
+CGFloat const kMsgLeftRightMargin = 61;
 @implementation KKIMBaseModel
 
 

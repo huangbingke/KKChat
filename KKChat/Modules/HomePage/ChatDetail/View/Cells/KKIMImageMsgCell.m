@@ -41,14 +41,14 @@
     CGFloat imageWidth = 0;
     if (height >= width) {
         
-        imageWidth = (150-24)*(width/height);
+        imageWidth = (150-kTopBottomMargin*2)*(width/height);
     } else {
         imageWidth = (kScreenWidth-60)/2;
     }
     [self.picImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self.contentView.mas_right).offset(-61);
-        make.top.mas_equalTo(self.contentView.mas_top).offset(12);
-        make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-12);
+        make.right.mas_equalTo(self.contentView.mas_right).offset(-kMsgLeftRightMargin);
+        make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin);
+        make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-kTopBottomMargin);
         make.width.mas_equalTo(imageWidth);
     }];
 }
@@ -59,14 +59,14 @@
     CGFloat imageWidth = 0;
     if (height >= width) {
         
-        imageWidth = (150-24)*(width/height);
+        imageWidth = (150-kTopBottomMargin*2)*(width/height);
     } else {
         imageWidth = (kScreenWidth-60)/2;
     }
     [self.picImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.contentView.mas_left).offset(61);
-        make.top.mas_equalTo(self.contentView.mas_top).offset(12);
-        make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-12);
+        make.left.mas_equalTo(self.contentView.mas_left).offset(kMsgLeftRightMargin);
+        make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin);
+        make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-kTopBottomMargin);
         make.width.mas_equalTo(imageWidth);
     }];
 
@@ -78,7 +78,7 @@
         _picImageView = [[UIImageView alloc] init];
         [self.contentView addSubview:_picImageView];
         _picImageView.contentMode = UIViewContentModeScaleAspectFit;
-        _picImageView.layer.cornerRadius = 5;
+        _picImageView.layer.cornerRadius = kCornerRadius;
         _picImageView.layer.masksToBounds = YES;
     }
     return _picImageView;
