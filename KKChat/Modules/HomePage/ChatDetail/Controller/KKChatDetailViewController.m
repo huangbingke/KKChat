@@ -100,7 +100,7 @@
 - (void)bottomViewSendMsgBtnAction:(NSString *)msg {
     NSLog(@"发送消息: %@", msg);
     NSAttributedString *att = [[NSAttributedString alloc] initWithString:msg];
-    KKIMTextMsgCellModel *model = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:att isMe:YES];
+    KKIMTextMsgCellModel *model = [[KKIMTextMsgCellModel alloc] initWithIsMe:YES contentAttributedText:att];
     [self.dataArray addObject:model];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.dataArray.count-1 inSection:0];
     [self.chatTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationNone)];
@@ -137,7 +137,9 @@
     if (!_dataArray) {
         _dataArray = [NSMutableArray new];
         
-     
+        KKIMCallMsgCellModel *leftVoiceCallmodel = [[KKIMCallMsgCellModel alloc] initWithIsMe:NO duration:100 callType:(KKIMCallTypeVoice) status:(KKIMCallStatusEnd)];
+        KKIMCallMsgCellModel *rightVoiceCallmodel = [[KKIMCallMsgCellModel alloc] initWithIsMe:YES duration:100 callType:(KKIMCallTypeVoice) status:(KKIMCallStatusEnd)];
+        [_dataArray addObjectsFromArray:@[leftVoiceCallmodel, rightVoiceCallmodel]];
         
 
         KKIMRedBagMsgCellModel *leftTranModel = [[KKIMRedBagMsgCellModel alloc] initWithCellHeight:80 transferType:(KKIMMsgTransferTypeTransfer) reamrk:@"测试" amount:0.01 isMe:NO];
@@ -146,20 +148,20 @@
         KKIMRedBagMsgCellModel *rightRedModel = [[KKIMRedBagMsgCellModel alloc] initWithCellHeight:80 transferType:(KKIMMsgTransferTypeTransfer) reamrk:@"拿去花" amount:0.01 isMe:YES];
         [_dataArray addObjectsFromArray:@[leftTranModel, leftRedModel, rightTranModel, rightRedModel]];
         
-        KKIMTextMsgCellModel *leftTextModel = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:NO];
-        KKIMTextMsgCellModel *rightTextModel = [[KKIMTextMsgCellModel alloc] initWithContentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"] isMe:YES];
+        KKIMTextMsgCellModel *leftTextModel = [[KKIMTextMsgCellModel alloc] initWithIsMe: NO contentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"]];
+        KKIMTextMsgCellModel *rightTextModel = [[KKIMTextMsgCellModel alloc] initWithIsMe:YES contentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"]];
         [_dataArray addObjectsFromArray:@[leftTextModel, rightTextModel]];
         
-        KKIMImageMsgCellModel *leftImageModel = [[KKIMImageMsgCellModel alloc] initWithImage:[UIImage imageNamed:@"1-1.png"] isMe:NO];
-        KKIMImageMsgCellModel *leftImageModel1 = [[KKIMImageMsgCellModel alloc] initWithImage:[UIImage imageNamed:@"2-3.png"] isMe:NO];
-        KKIMImageMsgCellModel *leftImageModel2 = [[KKIMImageMsgCellModel alloc] initWithImage:[UIImage imageNamed:@"3-2.png"] isMe:NO];
+        KKIMImageMsgCellModel *leftImageModel = [[KKIMImageMsgCellModel alloc] initWithIsMe:NO image:[UIImage imageNamed:@"1-1.png"]];
+        KKIMImageMsgCellModel *leftImageModel1 = [[KKIMImageMsgCellModel alloc] initWithIsMe:NO image:[UIImage imageNamed:@"2-3.png"]];
+        KKIMImageMsgCellModel *leftImageModel2 = [[KKIMImageMsgCellModel alloc] initWithIsMe:NO image:[UIImage imageNamed:@"3-2.png"]];
         [_dataArray addObjectsFromArray:@[leftImageModel, leftImageModel1, leftImageModel2]];
         
         KKIMTimeMsgCellModel *timeModel = [[KKIMTimeMsgCellModel alloc] initWithCellHeight:40 showDate:@"昨天 18:00"];
         [_dataArray addObject:timeModel];
-        KKIMImageMsgCellModel *rightImageModel = [[KKIMImageMsgCellModel alloc] initWithImage:[UIImage imageNamed:@"1-1.png"] isMe:YES];
-        KKIMImageMsgCellModel *rightImageModel1 = [[KKIMImageMsgCellModel alloc] initWithImage:[UIImage imageNamed:@"2-3.png"] isMe:YES];
-        KKIMImageMsgCellModel *rightImageModel2 = [[KKIMImageMsgCellModel alloc] initWithImage:[UIImage imageNamed:@"3-2.png"] isMe:YES];
+        KKIMImageMsgCellModel *rightImageModel = [[KKIMImageMsgCellModel alloc] initWithIsMe:NO image:[UIImage imageNamed:@"1-1.png"]];
+        KKIMImageMsgCellModel *rightImageModel1 = [[KKIMImageMsgCellModel alloc] initWithIsMe:NO image:[UIImage imageNamed:@"2-3.png"]];
+        KKIMImageMsgCellModel *rightImageModel2 = [[KKIMImageMsgCellModel alloc] initWithIsMe:NO image:[UIImage imageNamed:@"3-2.png"]];
         [_dataArray addObjectsFromArray:@[rightImageModel, rightImageModel1, rightImageModel2]];
         
 //        KKIMVoiceMsgCellModel *model1 = [[KKIMVoiceMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMVoiceMsgCellID];

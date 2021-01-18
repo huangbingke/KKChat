@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) CGSize imageSize;
 
-- (instancetype)initWithImage:(id)image isMe:(BOOL)isMe;
+- (instancetype)initWithIsMe:(BOOL)isMe image:(id)image;
 
 @end
 

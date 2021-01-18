@@ -32,6 +32,9 @@ typedef NS_ENUM(NSUInteger, KKIMMsgType) {
 @property (nonatomic, assign) BOOL sendSuccess;//是否发送成功
 @property (nonatomic, assign) BOOL isSelect;
 
+- (instancetype)initWithIsMe:(BOOL)isMe;
+- (instancetype)initWithIsMe:(BOOL)isMe cellHeight:(CGFloat)cellHeight;
+
 @end
 
 NS_ASSUME_NONNULL_END

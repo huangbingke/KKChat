@@ -73,6 +73,12 @@
 }
 
 #pragma mark - Getter -
+- (void)bigImageMode:(UITapGestureRecognizer *)sender {
+    NSLog(@"点击图片啦");
+    
+}
+
+#pragma mark - Getter -
 - (UIImageView *)picImageView {
     if (!_picImageView) {
         _picImageView = [[UIImageView alloc] init];
@@ -80,6 +86,8 @@
         _picImageView.contentMode = UIViewContentModeScaleAspectFit;
         _picImageView.layer.cornerRadius = kCornerRadius;
         _picImageView.layer.masksToBounds = YES;
+        _picImageView.userInteractionEnabled = YES;
+        [_picImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bigImageMode:)]];
     }
     return _picImageView;
 }

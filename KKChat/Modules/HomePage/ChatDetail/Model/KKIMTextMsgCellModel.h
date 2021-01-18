@@ -16,9 +16,8 @@ extern NSInteger const KKIMTextMsgFont;
 
 @property (nonatomic, assign) CGFloat oneLineWidth;
 
-- (instancetype)initWithContentAttributedText:(NSAttributedString *)contentAttributedText
-                                         isMe:(BOOL)isMe;
-
+- (instancetype)initWithIsMe:(BOOL)isMe
+       contentAttributedText:(NSAttributedString *)contentAttributedText;
 
 @end
 
