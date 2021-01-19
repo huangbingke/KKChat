@@ -8,18 +8,22 @@
 #import "KKIMRedBagMsgCellModel.h"
 
 @implementation KKIMRedBagMsgCellModel
-- (instancetype)initWithCellHeight:(CGFloat)cellHeight
-                      transferType:(KKIMMsgTransferType)transferType
-                            reamrk:(NSString *)remark
-                            amount:(CGFloat)amount
-                              isMe:(BOOL)isMe {
-    if (self = [super initWithCellHeight:cellHeight]) {
+
+- (instancetype)initWithIsMe:(BOOL)isMe
+                transferType:(KKIMMsgTransferType)transferType
+                      reamrk:(NSString *)remark
+                      amount:(CGFloat)amount {
+    if (self = [super initWithIsMe:isMe]) {
         self.transferType = transferType;
         self.remark = remark;
         self.amount = amount;
-        self.cellHeight = cellHeight;
-        self.isMe = isMe;
     }
     return self;
 }
+
+- (CGFloat)cellHeight {
+    return 80;
+}
+
+
 @end

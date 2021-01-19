@@ -18,13 +18,7 @@ CGFloat const kMsgLeftRightMargin = 61;
     }
     return self;
 }
-- (instancetype)initWithIsMe:(BOOL)isMe cellHeight:(CGFloat)cellHeight {
-    if (self = [super init]) {
-        self.isMe = isMe;
-        self.cellHeight = cellHeight;
-    }
-    return self;
-}
+
 
 
 

@@ -28,7 +28,6 @@
 - (void)loadModel:(KKBaseCellModel *)baseModel {
     [super loadModel:baseModel];
     KKIMCallMsgCellModel *model = (KKIMCallMsgCellModel *)baseModel;
-
     
     if (model.callType == KKIMCallTypeVoice) {
         if (model.status == KKIMCallStatusCalling) {

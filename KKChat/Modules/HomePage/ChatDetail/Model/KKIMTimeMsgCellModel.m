@@ -10,17 +10,17 @@
 @implementation KKIMTimeMsgCellModel
 
 
-- (instancetype)initWithCellHeight:(CGFloat)cellHeight
-                          showDate:(NSString *)showDate {
-    if (self = [super initWithCellHeight:cellHeight]) {
+- (instancetype)initWithShowDate:(NSString *)showDate {
+    if (self = [super init]) {
         self.showDate = showDate;
-        self.cellHeight = cellHeight;
     }
     return self;
 }
 
 
-
+- (CGFloat)cellHeight {
+    return 40;
+}
 
 
 

@@ -14,7 +14,7 @@
 @implementation KKIMImageMsgCellModel
 
 - (instancetype)initWithIsMe:(BOOL)isMe image:(id)image {
-    if (self = [super init]) {
+    if (self = [super initWithIsMe:isMe]) {
         if ([image isKindOfClass:UIImage.class]) {
             self.locationImage = image;
         } else {

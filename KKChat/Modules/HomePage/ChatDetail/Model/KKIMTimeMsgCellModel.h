@@ -12,9 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface KKIMTimeMsgCellModel : KKIMBaseModel
 
 @property (nonatomic, copy) NSString *showDate;//展示的时间
-
-- (instancetype)initWithCellHeight:(CGFloat)cellHeight showDate:(NSString *)showDate;
-
+- (instancetype)initWithShowDate:(NSString *)showDate;
 @end
 
 NS_ASSUME_NONNULL_END
