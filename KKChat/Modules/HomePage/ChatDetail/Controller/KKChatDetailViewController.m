@@ -157,7 +157,7 @@
         KKIMImageMsgCellModel *leftImageModel2 = [[KKIMImageMsgCellModel alloc] initWithIsMe:NO image:[UIImage imageNamed:@"3-2.png"]];
         [_dataArray addObjectsFromArray:@[leftImageModel, leftImageModel1, leftImageModel2]];
         
-        KKIMTimeMsgCellModel *timeModel = [[KKIMTimeMsgCellModel alloc] initWithShowDate:@"昨天 18:00"];
+        KKIMTimeMsgCellModel *timeModel = [[KKIMTimeMsgCellModel alloc] init];
         [_dataArray addObject:timeModel];
         KKIMImageMsgCellModel *rightImageModel = [[KKIMImageMsgCellModel alloc] initWithIsMe:YES image:[UIImage imageNamed:@"1-1.png"]];
         KKIMImageMsgCellModel *rightImageModel1 = [[KKIMImageMsgCellModel alloc] initWithIsMe:YES image:[UIImage imageNamed:@"2-3.png"]];
