@@ -24,7 +24,8 @@
 
 
 - (CGFloat)width {
-    return 100;
+    //这里需要根据不同状态, 展示不同宽度, 计算出响应的宽度, 这里先固定写死, 后期优化
+    return 120;
 }
 
 - (CGFloat)cellHeight {

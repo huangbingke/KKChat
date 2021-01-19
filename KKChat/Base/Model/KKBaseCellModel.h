@@ -14,9 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *cellIdentifier;
 @property (nonatomic, assign) CGFloat cellHeight;
 
+- (instancetype)initWithCellHeight:(CGFloat)cellHeight;
+
 - (instancetype)initWithCellHeight:(CGFloat)cellHeight
                     cellIdentifier:(NSString *)cellIdentifier;
-- (instancetype)initWithCellHeight:(CGFloat)cellHeight;
+
 
 @end
 

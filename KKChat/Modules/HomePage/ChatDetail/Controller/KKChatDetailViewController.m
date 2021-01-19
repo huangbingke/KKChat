@@ -142,10 +142,10 @@
         [_dataArray addObjectsFromArray:@[leftVoiceCallmodel, rightVoiceCallmodel]];
         
 
-        KKIMRedBagMsgCellModel *leftTranModel = [[KKIMRedBagMsgCellModel alloc] initWithCellHeight:80 transferType:(KKIMMsgTransferTypeTransfer) reamrk:@"测试" amount:0.01 isMe:NO];
-        KKIMRedBagMsgCellModel *leftRedModel = [[KKIMRedBagMsgCellModel alloc] initWithCellHeight:80 transferType:(KKIMMsgTransferTypeRedBag) reamrk:@"恭喜发财, 大吉大利" amount:0.01 isMe:NO];
-        KKIMRedBagMsgCellModel *rightTranModel = [[KKIMRedBagMsgCellModel alloc] initWithCellHeight:80 transferType:(KKIMMsgTransferTypeRedBag) reamrk:@"恭喜发财, 大吉大利" amount:0.01 isMe:YES];
-        KKIMRedBagMsgCellModel *rightRedModel = [[KKIMRedBagMsgCellModel alloc] initWithCellHeight:80 transferType:(KKIMMsgTransferTypeTransfer) reamrk:@"拿去花" amount:0.01 isMe:YES];
+        KKIMRedBagMsgCellModel *leftTranModel = [[KKIMRedBagMsgCellModel alloc] initWithIsMe:NO transferType:(KKIMMsgTransferTypeTransfer) reamrk:@"测试" amount:0.01];
+        KKIMRedBagMsgCellModel *leftRedModel = [[KKIMRedBagMsgCellModel alloc] initWithIsMe:NO  transferType:(KKIMMsgTransferTypeRedBag) reamrk:@"恭喜发财, 大吉大利" amount:0.01];
+        KKIMRedBagMsgCellModel *rightTranModel = [[KKIMRedBagMsgCellModel alloc] initWithIsMe:YES transferType:(KKIMMsgTransferTypeRedBag) reamrk:@"恭喜发财, 大吉大利" amount:0.01];
+        KKIMRedBagMsgCellModel *rightRedModel = [[KKIMRedBagMsgCellModel alloc] initWithIsMe:YES transferType:(KKIMMsgTransferTypeTransfer) reamrk:@"拿去花" amount:0.01];
         [_dataArray addObjectsFromArray:@[leftTranModel, leftRedModel, rightTranModel, rightRedModel]];
         
         KKIMTextMsgCellModel *leftTextModel = [[KKIMTextMsgCellModel alloc] initWithIsMe: NO contentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"]];
@@ -157,11 +157,11 @@
         KKIMImageMsgCellModel *leftImageModel2 = [[KKIMImageMsgCellModel alloc] initWithIsMe:NO image:[UIImage imageNamed:@"3-2.png"]];
         [_dataArray addObjectsFromArray:@[leftImageModel, leftImageModel1, leftImageModel2]];
         
-        KKIMTimeMsgCellModel *timeModel = [[KKIMTimeMsgCellModel alloc] initWithCellHeight:40 showDate:@"昨天 18:00"];
+        KKIMTimeMsgCellModel *timeModel = [[KKIMTimeMsgCellModel alloc] init];
         [_dataArray addObject:timeModel];
-        KKIMImageMsgCellModel *rightImageModel = [[KKIMImageMsgCellModel alloc] initWithIsMe:NO image:[UIImage imageNamed:@"1-1.png"]];
-        KKIMImageMsgCellModel *rightImageModel1 = [[KKIMImageMsgCellModel alloc] initWithIsMe:NO image:[UIImage imageNamed:@"2-3.png"]];
-        KKIMImageMsgCellModel *rightImageModel2 = [[KKIMImageMsgCellModel alloc] initWithIsMe:NO image:[UIImage imageNamed:@"3-2.png"]];
+        KKIMImageMsgCellModel *rightImageModel = [[KKIMImageMsgCellModel alloc] initWithIsMe:YES image:[UIImage imageNamed:@"1-1.png"]];
+        KKIMImageMsgCellModel *rightImageModel1 = [[KKIMImageMsgCellModel alloc] initWithIsMe:YES image:[UIImage imageNamed:@"2-3.png"]];
+        KKIMImageMsgCellModel *rightImageModel2 = [[KKIMImageMsgCellModel alloc] initWithIsMe:YES image:[UIImage imageNamed:@"3-2.png"]];
         [_dataArray addObjectsFromArray:@[rightImageModel, rightImageModel1, rightImageModel2]];
         
 //        KKIMVoiceMsgCellModel *model1 = [[KKIMVoiceMsgCellModel alloc] initWithCellHeight:60 cellIdentifier:KKIMVoiceMsgCellID];

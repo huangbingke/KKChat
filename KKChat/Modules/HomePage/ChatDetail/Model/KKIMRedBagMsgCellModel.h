@@ -21,11 +21,11 @@ typedef NS_ENUM(NSUInteger, KKIMMsgTransferType) {
 @property (nonatomic, copy) NSString *remark; //备注
 @property (nonatomic, assign) CGFloat amount; //金额
 @property (nonatomic, assign) BOOL isReceive;//是否领取
-- (instancetype)initWithCellHeight:(CGFloat)cellHeight
-                      transferType:(KKIMMsgTransferType)transferType
-                            reamrk:(NSString *)remark
-                            amount:(CGFloat)amount
-                              isMe:(BOOL)isMe;
+
+- (instancetype)initWithIsMe:(BOOL)isMe
+                transferType:(KKIMMsgTransferType)transferType
+                      reamrk:(NSString *)remark
+                      amount:(CGFloat)amount;
 
 @end
 

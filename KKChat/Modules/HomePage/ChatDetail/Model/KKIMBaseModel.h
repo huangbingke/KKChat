@@ -33,7 +33,6 @@ typedef NS_ENUM(NSUInteger, KKIMMsgType) {
 @property (nonatomic, assign) BOOL isSelect;
 
 - (instancetype)initWithIsMe:(BOOL)isMe;
-- (instancetype)initWithIsMe:(BOOL)isMe cellHeight:(CGFloat)cellHeight;
 
 @end
 

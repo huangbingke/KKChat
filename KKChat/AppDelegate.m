@@ -22,7 +22,8 @@
     [self.window makeKeyAndVisible];
     self.window.rootViewController = [NSClassFromString(@"KKTabBarViewController") new];
     
-//    [[KKSocketManager shareManager] connect];
+    [[KKSocketManager shareManager] connect];
+    
     if (@available(iOS 13.0, *)) {
         self.window.rootViewController.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
     }

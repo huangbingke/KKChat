@@ -10,20 +10,14 @@
 @implementation KKIMTimeMsgCellModel
 
 
-- (instancetype)initWithCellHeight:(CGFloat)cellHeight
-                          showDate:(NSString *)showDate {
-    if (self = [super initWithCellHeight:cellHeight]) {
-        self.showDate = showDate;
-        self.cellHeight = cellHeight;
-    }
-    return self;
+- (CGFloat)cellHeight {
+    return 40;
 }
 
-
-
-
-
-
+//此处需要处理一下 当前时间与消息发送时间的时间差, 这里先固定写死
+- (NSString *)showDate {
+    return @"18:30";
+}
 
 
 @end
