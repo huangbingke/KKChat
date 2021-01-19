@@ -20,15 +20,6 @@ typedef NS_ENUM(NSUInteger, KKSocketStatus) {
 
 @interface KKSocketManager : NSObject
 
-/**
- 重连时间间隔，默认3秒钟
- */
-@property(nonatomic, assign) NSTimeInterval overtime;
- 
-/**
- 重连次数，默认无限次 -- NSUIntegerMax
- */
-@property(nonatomic, assign) NSUInteger reconnectCount;
 + (instancetype)shareManager;
 
 - (void)connect;
