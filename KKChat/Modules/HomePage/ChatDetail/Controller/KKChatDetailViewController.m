@@ -64,7 +64,6 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     KKIMBaseModel *baseModel = self.dataArray[indexPath.row];
-//    NSLog(@"坐标: %ld====%f", indexPath.row, baseModel.cellHeight);
     return baseModel.cellHeight;
 }
 

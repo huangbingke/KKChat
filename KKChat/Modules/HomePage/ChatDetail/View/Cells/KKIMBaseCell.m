@@ -28,6 +28,11 @@ NSString * const KKIMCellMsgLongPressGestureNotificationName = @"KKIMCellMsgLong
     // Configure the view for the selected state
 }
 
+- (void)loadModel:(KKBaseCellModel *)baseModel indexPath:(NSIndexPath *)indexPath {
+    [super loadModel:baseModel];
+    
+}
+
 - (void)setupUI {
     self.backgroundColor = [UIColor clearColor];
     self.selectionStyle = UITableViewCellSelectionStyleNone;

@@ -8,7 +8,7 @@
 #import "KKChatDetailBottomView.h"
 #import "NSString+Category.h"
 #import "KKChatMoreView.h"
-#import "KKChatExpressionView.h"
+#import "KKChatExpressionMainView.h"
 
 #define kMoreViewHeight   (kScreenWidth/4*2+20)
 #define kExpressionViewHeight 300
@@ -23,7 +23,7 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
 @property (nonatomic, strong) UITextView *inputTextView; //输入框
 
 @property (nonatomic, strong) KKChatMoreView *moreView; //
-@property (nonatomic, strong) KKChatExpressionView *expressionView; //表情输入
+@property (nonatomic, strong) KKChatExpressionMainView *expressionView; //表情输入
 
 //@property (nonatomic, strong) UIButton *coverBtn;//覆盖在textView上的button
 
@@ -345,15 +345,16 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
     }
     return _moreView;
 }
-- (KKChatExpressionView *)expressionView {
+- (KKChatExpressionMainView *)expressionView {
     if (!_expressionView) {
-        _expressionView = [[KKChatExpressionView alloc] init];
+        _expressionView = [[KKChatExpressionMainView alloc] init];
         _expressionView.backgroundColor = [UIColor greenColor];
         [self addSubview:_expressionView];
         [_expressionView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.bottom.mas_equalTo(self);
             make.height.mas_equalTo(kExpressionViewHeight);
         }];
+        [_expressionView layoutIfNeeded];
     }
     return _expressionView;
 }

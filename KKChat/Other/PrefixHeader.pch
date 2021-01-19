@@ -15,5 +15,7 @@
 #import <SDWebImage.h>
 #import "UIImage+Category.h"
 #import "KKNavigationBar.h"
+#import <MJExtension.h>
+
 
 #endif /* PrefixHeader_pch */

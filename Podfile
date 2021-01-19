@@ -11,4 +11,5 @@ target 'KKChat' do
   pod 'FMDB'
   pod 'YYText'
   pod 'SocketRocket'
+  pod 'MJExtension'
 end
