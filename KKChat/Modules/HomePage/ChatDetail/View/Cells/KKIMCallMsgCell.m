@@ -72,7 +72,7 @@
         make.right.mas_equalTo(self.contentView.mas_right).offset(-kMsgLeftRightMargin);
         make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin);
         make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-kTopBottomMargin);
-        make.width.mas_equalTo(120);
+        make.width.mas_equalTo(baseModel.width);
     }];
 
 }
@@ -83,7 +83,7 @@
         make.left.mas_equalTo(self.contentView.mas_left).offset(kMsgLeftRightMargin);
         make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin);
         make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-kTopBottomMargin);
-        make.width.mas_equalTo(120);
+        make.width.mas_equalTo(baseModel.width);
     }];
 }
 
