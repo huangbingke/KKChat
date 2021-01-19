@@ -22,8 +22,10 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = kColor(0xf7f7f7);
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cellMsgLongGestureAction:) name:KKIMCellMsgLongPressGestureNotificationName object:nil];
-
-
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.dataArray.count-1 inSection:0];
+        [self.chatTableView scrollToRowAtIndexPath:indexPath atScrollPosition:(UITableViewScrollPositionBottom) animated:YES];
+    });
 }
 
 - (void)setupUI {
@@ -81,14 +83,14 @@
         [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationNone)];
     }
 }
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (self.bottomView.isOpen) {
-        if (!self.chatModel.openSelectStatus) {//没有开启多选, return
-            [self.bottomView dismiss];
-            return;
-        }
-    }
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    if (self.bottomView.isOpen) {
+//        if (!self.chatModel.openSelectStatus) {//没有开启多选, return
+//            [self.bottomView dismiss];
+//            return;
+//        }
+//    }
+//}
 #pragma mark - Action -
 - (void)cellMsgLongGestureAction:(NSNotification *)notification {
     NSLog(@"长按啦");
@@ -103,17 +105,24 @@
     [self.dataArray addObject:model];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.dataArray.count-1 inSection:0];
     [self.chatTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationNone)];
-    [self.chatTableView scrollToRowAtIndexPath:indexPath atScrollPosition:(UITableViewScrollPositionBottom) animated:NO];
+    [self.chatTableView scrollToRowAtIndexPath:indexPath atScrollPosition:(UITableViewScrollPositionMiddle) animated:NO];
 }
 - (void)bottomViewTextViewDidChangeHeight:(CGFloat)height bottomMargin:(CGFloat)bottomMargin {
     [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self.view).offset(-bottomMargin);
         make.height.mas_equalTo(height);
     }];
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.dataArray.count-1 inSection:0];
-//    [self.chatTableView scrollToRowAtIndexPath:indexPath atScrollPosition:(UITableViewScrollPositionBottom) animated:NO];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.dataArray.count-1 inSection:0];
+        [self.chatTableView scrollToRowAtIndexPath:indexPath atScrollPosition:(UITableViewScrollPositionMiddle) animated:NO];
+    });
 }
-
+- (void)bottomViewShouldBeginEditing:(UITextView *)textView {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.dataArray.count-1 inSection:0];
+        [self.chatTableView scrollToRowAtIndexPath:indexPath atScrollPosition:(UITableViewScrollPositionMiddle) animated:NO];
+    });
+}
 
 #pragma mark - Getter -
 - (KKChatTableView *)chatTableView {

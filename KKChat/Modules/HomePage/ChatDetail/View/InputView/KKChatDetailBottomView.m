@@ -212,6 +212,12 @@ CGFloat const KKChatDetailBottomViewAnimationDuration = 0.25;
 
 }
 #pragma mark - UITextViewDelegate -
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    if ([self.delegate respondsToSelector:@selector(bottomViewShouldBeginEditing:)]) {
+        [self.delegate bottomViewShouldBeginEditing:textView];
+    }
+    return YES;
+}
 - (void)textViewDidChange:(UITextView *)textView {
 //    NSLog(@"计算文字高度: %@", textView.text);
     self.inputContent = textView.text;
