@@ -16,6 +16,10 @@
 		4B43F38125B1D5CA0015557E /* 2-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B43F37E25B1D5CA0015557E /* 2-3.png */; };
 		4B43F38625B1EF2A0015557E /* KKSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B43F38525B1EF2A0015557E /* KKSocketManager.m */; };
 		4B43F39F25B296530015557E /* KKDarkModeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B43F39E25B296530015557E /* KKDarkModeManager.m */; };
+		4B43F3B125B5C34D0015557E /* UIButton+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B43F3B025B5C34D0015557E /* UIButton+Category.m */; };
+		4B43F3B625B5C5680015557E /* icons_filled_call_end.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4B43F3B325B5C5680015557E /* icons_filled_call_end.svg */; };
+		4B43F3B725B5C5680015557E /* icons_filled_call.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4B43F3B425B5C5680015557E /* icons_filled_call.svg */; };
+		4B43F3B825B5C5680015557E /* icons_filled_video_call.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4B43F3B525B5C5680015557E /* icons_filled_video_call.svg */; };
 		4B4CCA9F2594C30B00CB3929 /* KKHomeSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CCA9E2594C30B00CB3929 /* KKHomeSearchCell.m */; };
 		4B4CCAA32594C34A00CB3929 /* KKHomeThridDeviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CCAA22594C34A00CB3929 /* KKHomeThridDeviceCell.m */; };
 		4B4CCAAB2594C38200CB3929 /* KKHomeNoNetworkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CCAAA2594C38200CB3929 /* KKHomeNoNetworkCell.m */; };
@@ -278,6 +282,11 @@
 		4B43F38525B1EF2A0015557E /* KKSocketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSocketManager.m; sourceTree = "<group>"; };
 		4B43F39D25B296530015557E /* KKDarkModeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKDarkModeManager.h; sourceTree = "<group>"; };
 		4B43F39E25B296530015557E /* KKDarkModeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKDarkModeManager.m; sourceTree = "<group>"; };
+		4B43F3AF25B5C34D0015557E /* UIButton+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Category.h"; sourceTree = "<group>"; };
+		4B43F3B025B5C34D0015557E /* UIButton+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Category.m"; sourceTree = "<group>"; };
+		4B43F3B325B5C5680015557E /* icons_filled_call_end.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_filled_call_end.svg; sourceTree = "<group>"; };
+		4B43F3B425B5C5680015557E /* icons_filled_call.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_filled_call.svg; sourceTree = "<group>"; };
+		4B43F3B525B5C5680015557E /* icons_filled_video_call.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icons_filled_video_call.svg; sourceTree = "<group>"; };
 		4B4CCA9D2594C30B00CB3929 /* KKHomeSearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeSearchCell.h; sourceTree = "<group>"; };
 		4B4CCA9E2594C30B00CB3929 /* KKHomeSearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeSearchCell.m; sourceTree = "<group>"; };
 		4B4CCAA12594C34A00CB3929 /* KKHomeThridDeviceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeThridDeviceCell.h; sourceTree = "<group>"; };
@@ -659,6 +668,15 @@
 				4B43F39E25B296530015557E /* KKDarkModeManager.m */,
 			);
 			path = DarkMode;
+			sourceTree = "<group>";
+		};
+		4B43F3AE25B5C3290015557E /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				4B43F3AF25B5C34D0015557E /* UIButton+Category.h */,
+				4B43F3B025B5C34D0015557E /* UIButton+Category.m */,
+			);
+			path = UIButton;
 			sourceTree = "<group>";
 		};
 		4B4CCAB42594C3DC00CB3929 /* ChatList */ = {
@@ -1056,6 +1074,9 @@
 		8FBE153625A5B21F008E49C0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4B43F3B325B5C5680015557E /* icons_filled_call_end.svg */,
+				4B43F3B425B5C5680015557E /* icons_filled_call.svg */,
+				4B43F3B525B5C5680015557E /* icons_filled_video_call.svg */,
 				8F5CDD1125B005BD005C71EA /* icons_outlined_loading_light.svg */,
 				4B43F37425B0A0CD0015557E /* chat_left_qipao.svg */,
 				4B43F37525B0A0CD0015557E /* chat_right_qipao.svg */,
@@ -1130,6 +1151,7 @@
 		8FCF36D1259307070026412C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				4B43F3AE25B5C3290015557E /* UIButton */,
 				8F169CF225A6F0A100949B40 /* UIScrollView */,
 				8FBE152325A5A2E1008E49C0 /* UIImage */,
 				8FCF374525932F0D0026412C /* NSString */,
@@ -1456,12 +1478,14 @@
 				8F5CDCD125AFE31B005C71EA /* [激动]@2x.png in Resources */,
 				8FBE153425A5AAFD008E49C0 /* icons_outlined_back.svg in Resources */,
 				8F5CDC8D25AFE31B005C71EA /* [凋谢]@2x.png in Resources */,
+				4B43F3B825B5C5680015557E /* icons_filled_video_call.svg in Resources */,
 				8F5CDCD325AFE31B005C71EA /* [怒]@2x.png in Resources */,
 				8F5CDCFA25AFE31B005C71EA /* menu@2x.png in Resources */,
 				8FBE151F25A5A1BF008E49C0 /* icons_filled_discover.svg in Resources */,
 				8F5CDC9725AFE31B005C71EA /* [示爱]@2x.png in Resources */,
 				8F5CDD0A25AFE31B005C71EA /* emoj_pressed@2x.png in Resources */,
 				8F5CDCA025AFE31B005C71EA /* [鞭炮]@2x.png in Resources */,
+				4B43F3B725B5C5680015557E /* icons_filled_call.svg in Resources */,
 				8F169CD725A6D1EC00949B40 /* icons_outlined_add2.svg in Resources */,
 				8F5CDC8825AFE31B005C71EA /* [酷]@2x.png in Resources */,
 				8F5CDD1225B005BD005C71EA /* icons_outlined_loading_light.svg in Resources */,
@@ -1472,6 +1496,7 @@
 				8F5CDD0625AFE31B005C71EA /* [麦克风]@2x.png in Resources */,
 				8F5CDCEA25AFE31B005C71EA /* [微笑]@2x.png in Resources */,
 				8F5CDCB825AFE31B005C71EA /* [怄火]@2x.png in Resources */,
+				4B43F3B625B5C5680015557E /* icons_filled_call_end.svg in Resources */,
 				8F5CDCCF25AFE31B005C71EA /* [信封]@2x.png in Resources */,
 				8F5CDD0825AFE31B005C71EA /* [委屈]@2x.png in Resources */,
 				8F5CDCC125AFE31B005C71EA /* [闪电]@2x.png in Resources */,
@@ -1681,6 +1706,7 @@
 				4B43F36725AF3DC70015557E /* KKIMChatRecordMsgCell.m in Sources */,
 				8FCF374825932F200026412C /* NSString+Category.m in Sources */,
 				8F5CDD1625B015D4005C71EA /* KKIMReEditMsgCell.m in Sources */,
+				4B43F3B125B5C34D0015557E /* UIButton+Category.m in Sources */,
 				8F8080AA25A8484400A6D292 /* KKChatExpressionView.m in Sources */,
 				8F169CC925A6C6B400949B40 /* KKChatDetailBottomView.m in Sources */,
 				8FBE152625A5A307008E49C0 /* UIImage+Category.m in Sources */,

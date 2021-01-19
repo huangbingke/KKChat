@@ -43,7 +43,9 @@
 
 }
 - (void)sendPingMessage {
-//    [self.webSocket sendPing:[NSData data]];
+    NSString * request = @"GET / HTTP/1.1\n"
+                          "Host: localhost\n\n";
+    [self.webSocket sendPing:[NSData dataWithContentsOfURL:[NSURL URLWithString:request]]];
 }
 
 

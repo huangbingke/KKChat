@@ -53,10 +53,9 @@ NSInteger const KKIMTextMsgFont = 18;
 }
 
 
-- (instancetype)initWithContentAttributedText:(NSAttributedString *)contentAttributedText
-                                         isMe:(BOOL)isMe{
+- (instancetype)initWithIsMe:(BOOL)isMe
+       contentAttributedText:(NSAttributedString *)contentAttributedText{
     if (self = [super init]) {
-        self.isMe = isMe;
         self.contentAttributedText = contentAttributedText;
     }
     return self;
