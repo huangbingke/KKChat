@@ -10,6 +10,8 @@
 NSString * const KKIMCellMsgLongPressGestureNotificationName = @"KKIMCellMsgLongPressGestureNotificationName";
 
 @interface KKIMBaseCell ()
+//群聊显示姓名
+@property (nonatomic, strong) UILabel *nameLabel;
 
 @end
 
@@ -141,5 +143,11 @@ NSString * const KKIMCellMsgLongPressGestureNotificationName = @"KKIMCellMsgLong
     return _arrowView;
 }
 
-
+- (UILabel *)nameLabel {
+    if (!_nameLabel) {
+        _nameLabel = [[UILabel alloc] init];
+        [self.contentView addSubview:_nameLabel];
+    }
+    return _nameLabel;
+}
 @end

@@ -11,7 +11,6 @@
 @interface KKIMTextMsgCell ()
 
 @property (nonatomic, strong) YYLabel *textMsgLabel;
-@property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UIButton *errorBtn;
 
 @end
@@ -106,13 +105,7 @@
     }
     return _textMsgLabel;
 }
-- (UILabel *)nameLabel {
-    if (!_nameLabel) {
-        _nameLabel = [[UILabel alloc] init];
-        [self.contentView addSubview:_nameLabel];
-    }
-    return _nameLabel;
-}
+
 
 
 @end
