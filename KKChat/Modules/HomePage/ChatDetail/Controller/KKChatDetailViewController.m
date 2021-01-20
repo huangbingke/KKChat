@@ -38,7 +38,6 @@
 //        @strongify(self);
 
     }];
-    
     [self.view addSubview:self.chatTableView];
     [self.view addSubview:self.bottomView];
 }
@@ -156,7 +155,7 @@
         KKIMRedBagMsgCellModel *rightRedModel = [[KKIMRedBagMsgCellModel alloc] initWithIsMe:YES transferType:(KKIMMsgTransferTypeTransfer) reamrk:@"拿去花" amount:0.01];
         [_dataArray addObjectsFromArray:@[leftTranModel, leftRedModel, rightTranModel, rightRedModel]];
         
-        KKIMTextMsgCellModel *leftTextModel = [[KKIMTextMsgCellModel alloc] initWithIsMe: NO contentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"]];
+        KKIMTextMsgCellModel *leftTextModel = [[KKIMTextMsgCellModel alloc] initWithIsMe: NO contentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄"]];
         KKIMTextMsgCellModel *rightTextModel = [[KKIMTextMsgCellModel alloc] initWithIsMe:YES contentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"]];
         [_dataArray addObjectsFromArray:@[leftTextModel, rightTextModel]];
         

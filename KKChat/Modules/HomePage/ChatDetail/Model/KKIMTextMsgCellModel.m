@@ -24,20 +24,6 @@ NSInteger const KKIMTextMsgFont = 18;
     return ceil(layout.textBoundingSize.height);
 }
 
-
-- (CGFloat)oneLineWidth {
-    if (self.contentAttributedText) {
-        CGFloat textHeight = [self heightForText:self.contentAttributedText];
-        CGFloat oneLineHeight = [self oneLineHeight];
-        if (textHeight <= oneLineHeight) {
-            CGFloat width = [self oneLineWidthWithText:self.contentAttributedText];
-            return width;
-        }
-        return 0;
-    }
-    return 0;
-}
-
 - (CGFloat)cellHeight {
     if (self.contentAttributedText) {
         CGFloat textHeight = [self heightForText:self.contentAttributedText];

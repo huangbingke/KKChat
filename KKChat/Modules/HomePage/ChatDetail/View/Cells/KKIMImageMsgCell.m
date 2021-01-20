@@ -58,7 +58,6 @@
     CGFloat width = baseModel.imageSize.width;
     CGFloat imageWidth = 0;
     if (height >= width) {
-        
         imageWidth = (150-kTopBottomMargin*2)*(width/height);
     } else {
         imageWidth = (kScreenWidth-60)/2;
@@ -69,7 +68,6 @@
         make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-kTopBottomMargin);
         make.width.mas_equalTo(imageWidth);
     }];
-
 }
 
 #pragma mark - Getter -

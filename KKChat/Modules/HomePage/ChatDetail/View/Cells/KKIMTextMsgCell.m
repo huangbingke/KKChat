@@ -40,40 +40,22 @@
 - (void)layoutUIForMe:(KKIMTextMsgCellModel *)baseModel {
     [super layoutUIForMe:baseModel];
     self.textMsgLabel.backgroundColor = kColor(0x7fe967);
-    if (baseModel.cellHeight <= 60) {
-        [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(self.contentView.mas_right).offset(-kMsgLeftRightMargin);
-            make.left.mas_equalTo(self.contentView.mas_left).offset(kScreenWidth-(74+baseModel.oneLineWidth));
-            make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin);
-            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-kTopBottomMargin);
-        }];
-    } else {
-        [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(self.contentView.mas_right).offset(-kMsgLeftRightMargin);
-            make.left.mas_equalTo(self.contentView.mas_left).offset(kMsgLeftRightMargin);
-            make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin);
-            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-kTopBottomMargin);
-        }];
-    }
+    [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(self.contentView.mas_right).offset(-kMsgLeftRightMargin);
+        make.width.mas_lessThanOrEqualTo(kScreenWidth-2*kMsgLeftRightMargin-10);
+        make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin);
+        make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-kTopBottomMargin);
+    }];
 }
 - (void)layoutUIForOther:(KKIMTextMsgCellModel *)baseModel {
     [super layoutUIForOther:baseModel];
     self.textMsgLabel.backgroundColor = UIColor.whiteColor;
-    if (baseModel.cellHeight <= 60) {
-        [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.contentView.mas_left).offset(kMsgLeftRightMargin);
-            make.right.mas_equalTo(self.contentView.mas_right).offset(74+baseModel.oneLineWidth- kScreenWidth);
-            make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin);
-            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-kTopBottomMargin);
-        }];
-    } else {
-        [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.contentView.mas_left).offset(kMsgLeftRightMargin);
-            make.right.mas_equalTo(self.contentView.mas_right).offset(-kMsgLeftRightMargin);
-            make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin);
-            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-kTopBottomMargin);
-        }];
-    }
+    [self.textMsgLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.contentView.mas_left).offset(kMsgLeftRightMargin);
+        make.width.mas_lessThanOrEqualTo(kScreenWidth-2*kMsgLeftRightMargin-10);
+        make.top.mas_equalTo(self.contentView.mas_top).offset(kTopBottomMargin);
+        make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-kTopBottomMargin);
+    }];
 }
 
 #pragma mark - Action -
