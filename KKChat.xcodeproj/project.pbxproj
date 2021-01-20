@@ -51,6 +51,7 @@
 		8F19F16425B1340C002435DE /* KKIMReEditMsgCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F19F16325B1340C002435DE /* KKIMReEditMsgCellModel.m */; };
 		8F284FAF25A443A400FC56B0 /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F284FAE25A443A400FC56B0 /* UIView+Category.m */; };
 		8F284FB325A44A3700FC56B0 /* KKHomeNavBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F284FB225A44A3700FC56B0 /* KKHomeNavBarView.m */; };
+		8F47C43E25B80B8300F982F4 /* KKColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F47C43D25B80B8200F982F4 /* KKColor.m */; };
 		8F587AAF25ABED2C006B4B2D /* KKChatRecordDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F587AAE25ABED2C006B4B2D /* KKChatRecordDBHelper.m */; };
 		8F587AB425ABED46006B4B2D /* KKChatListDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F587AB325ABED46006B4B2D /* KKChatListDBHelper.m */; };
 		8F587AB825ABEE27006B4B2D /* KKUserInfoDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F587AB725ABEE27006B4B2D /* KKUserInfoDBHelper.m */; };
@@ -342,6 +343,8 @@
 		8F284FAE25A443A400FC56B0 /* UIView+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
 		8F284FB125A44A3700FC56B0 /* KKHomeNavBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeNavBarView.h; sourceTree = "<group>"; };
 		8F284FB225A44A3700FC56B0 /* KKHomeNavBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeNavBarView.m; sourceTree = "<group>"; };
+		8F47C43C25B80B8200F982F4 /* KKColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKColor.h; sourceTree = "<group>"; };
+		8F47C43D25B80B8200F982F4 /* KKColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKColor.m; sourceTree = "<group>"; };
 		8F587AAD25ABED2C006B4B2D /* KKChatRecordDBHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKChatRecordDBHelper.h; sourceTree = "<group>"; };
 		8F587AAE25ABED2C006B4B2D /* KKChatRecordDBHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKChatRecordDBHelper.m; sourceTree = "<group>"; };
 		8F587AB225ABED46006B4B2D /* KKChatListDBHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKChatListDBHelper.h; sourceTree = "<group>"; };
@@ -669,6 +672,8 @@
 			children = (
 				4B43F39D25B296530015557E /* KKDarkModeManager.h */,
 				4B43F39E25B296530015557E /* KKDarkModeManager.m */,
+				8F47C43C25B80B8200F982F4 /* KKColor.h */,
+				8F47C43D25B80B8200F982F4 /* KKColor.m */,
 			);
 			path = DarkMode;
 			sourceTree = "<group>";
@@ -1677,6 +1682,7 @@
 				8F19F13C25B13324002435DE /* KKIMTextMsgCellModel.m in Sources */,
 				8F587AB425ABED46006B4B2D /* KKChatListDBHelper.m in Sources */,
 				8F587AD825AC1BFD006B4B2D /* KKNormalCellModel.m in Sources */,
+				8F47C43E25B80B8300F982F4 /* KKColor.m in Sources */,
 				8FCF371225930BED0026412C /* KKFinderViewController.m in Sources */,
 				8F169C9F25A68E8200949B40 /* KKNavigationBar.m in Sources */,
 				8F587ABC25ABEEF2006B4B2D /* KKDBHelper.m in Sources */,
