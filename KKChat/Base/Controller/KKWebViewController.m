@@ -25,15 +25,12 @@
     
     
     if (self.localUrl) {
-//        NSURL* ul = [NSURL URLWithString:[NSString stringWithFormat:@"file://%@", url]];
-//        [self.webView loadFileURL:ul allowingReadAccessToURL:[ul URLByDeletingLastPathComponent]];
-//        [self.webView loadHTMLString:<#(nonnull NSString *)#> baseURL:<#(nullable NSURL *)#>]
+        NSString *path = [NSString stringWithFormat:@"file://%@/Resource/",[[NSBundle mainBundle] pathForResource:@"network_setting" ofType:@"html"]];
+        NSURL *url = [[NSBundle mainBundle] URLForResource:@"network_setting.html" withExtension:nil];
+        [self.webView loadHTMLString:path baseURL: url];
     }
     
-    
-    
-    
-    
+    ///Users/q.zhang/Desktop/KKChat/KKChat/Resource/network_setting.html
 }
 
 
