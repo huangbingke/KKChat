@@ -266,7 +266,7 @@
 		8FCF374C25932F480026412C /* KKIMBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF374B25932F480026412C /* KKIMBaseModel.m */; };
 		8FCF3751259330AA0026412C /* KKIMCallMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF3750259330AA0026412C /* KKIMCallMsgCell.m */; };
 		8FCF37582593313E0026412C /* KKIMVoiceMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF37572593313E0026412C /* KKIMVoiceMsgCell.m */; };
-		8FDFBEC925C7EBBA0096F759 /* KKUserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDFBEC825C7EBBA0096F759 /* KKUserInfoManager.m */; };
+		8FDFBED525C7FC840096F759 /* KKUserInfoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDFBED425C7FC840096F759 /* KKUserInfoHelper.m */; };
 		F58511EE57860048E3FFA24C /* Pods_KKChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD0BDD52FFC77621D1D58A6 /* Pods_KKChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -599,8 +599,8 @@
 		8FCF3750259330AA0026412C /* KKIMCallMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMCallMsgCell.m; sourceTree = "<group>"; };
 		8FCF37562593313E0026412C /* KKIMVoiceMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMVoiceMsgCell.h; sourceTree = "<group>"; };
 		8FCF37572593313E0026412C /* KKIMVoiceMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMVoiceMsgCell.m; sourceTree = "<group>"; };
-		8FDFBEC725C7EBBA0096F759 /* KKUserInfoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKUserInfoManager.h; sourceTree = "<group>"; };
-		8FDFBEC825C7EBBA0096F759 /* KKUserInfoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKUserInfoManager.m; sourceTree = "<group>"; };
+		8FDFBED325C7FC840096F759 /* KKUserInfoHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKUserInfoHelper.h; sourceTree = "<group>"; };
+		8FDFBED425C7FC840096F759 /* KKUserInfoHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKUserInfoHelper.m; sourceTree = "<group>"; };
 		A22901DF6A43348524B2AC67 /* Pods-KKChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKChat.release.xcconfig"; path = "Target Support Files/Pods-KKChat/Pods-KKChat.release.xcconfig"; sourceTree = "<group>"; };
 		CF5FA835014BC3F053C9AE33 /* Pods-KKChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKChat.debug.xcconfig"; path = "Target Support Files/Pods-KKChat/Pods-KKChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -787,7 +787,6 @@
 		8F587AA225ABEB70006B4B2D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				8FDFBEC625C7EB9E0096F759 /* UserInfo */,
 				4B43F39C25B2963A0015557E /* DarkMode */,
 				4B43F38325B1EF030015557E /* Socket */,
 				8F587AA725ABEC34006B4B2D /* FMDB */,
@@ -804,6 +803,8 @@
 				8F587AAE25ABED2C006B4B2D /* KKChatRecordDBHelper.m */,
 				8F587AB225ABED46006B4B2D /* KKChatListDBHelper.h */,
 				8F587AB325ABED46006B4B2D /* KKChatListDBHelper.m */,
+				8FDFBED325C7FC840096F759 /* KKUserInfoHelper.h */,
+				8FDFBED425C7FC840096F759 /* KKUserInfoHelper.m */,
 			);
 			path = FMDB;
 			sourceTree = "<group>";
@@ -1353,15 +1354,6 @@
 			path = NSString;
 			sourceTree = "<group>";
 		};
-		8FDFBEC625C7EB9E0096F759 /* UserInfo */ = {
-			isa = PBXGroup;
-			children = (
-				8FDFBEC725C7EBBA0096F759 /* KKUserInfoManager.h */,
-				8FDFBEC825C7EBBA0096F759 /* KKUserInfoManager.m */,
-			);
-			path = UserInfo;
-			sourceTree = "<group>";
-		};
 		C2DEE4358E7AE0C5CFB7D800 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1717,9 +1709,9 @@
 				8F19F15825B133E3002435DE /* KKIMCallMsgCellModel.m in Sources */,
 				4B43F3BD25B6FF2B0015557E /* KKChatExpressionView.m in Sources */,
 				8FCF373525932BED0026412C /* KKIMTimeMsgCell.m in Sources */,
-				8FDFBEC925C7EBBA0096F759 /* KKUserInfoManager.m in Sources */,
 				8FCF3751259330AA0026412C /* KKIMCallMsgCell.m in Sources */,
 				8F587AD425AC1B57006B4B2D /* KKNormalCell.m in Sources */,
+				8FDFBED525C7FC840096F759 /* KKUserInfoHelper.m in Sources */,
 				8FCF36EB2593086B0026412C /* KKBaseCellModel.m in Sources */,
 				8F19F14825B133A4002435DE /* KKIMImageMsgCellModel.m in Sources */,
 				8F19F14425B13397002435DE /* KKIMVoiceMsgCellModel.m in Sources */,
