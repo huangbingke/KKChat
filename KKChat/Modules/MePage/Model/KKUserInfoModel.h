@@ -9,7 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KKUserInfoModel : NSObject
+@interface KKUserInfoModel : NSObject<NSCoding>
+
+@property (nonatomic, copy) NSString *userId;
 
 @end
 

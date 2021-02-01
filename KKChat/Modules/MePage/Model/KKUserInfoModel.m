@@ -9,4 +9,31 @@
 
 @implementation KKUserInfoModel
 
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+    
+    
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    if (self = [super init]) {
+        
+        
+        
+        
+    }
+    return self;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @end
