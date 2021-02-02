@@ -14,9 +14,16 @@
 @property (nonatomic, strong) KKChatTableView *chatTableView;
 @property (nonatomic, strong) KKChatDetailBottomView *bottomView;
 @property (nonatomic, strong) NSMutableArray<KKIMBaseModel *> *dataArray;
+@property (nonatomic, assign) BOOL isScrollBottom;
 @end
 
 @implementation KKChatDetailViewController
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.isScrollBottom = YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -39,7 +46,6 @@
 //        @strongify(self);
 
     }];
-    
     [self.view addSubview:self.chatTableView];
     [self.view addSubview:self.bottomView];
 }
@@ -60,6 +66,12 @@
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource -
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (!self.isScrollBottom && self.dataArray.count > 0) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.dataArray.count-1 inSection:0];
+            [self.chatTableView scrollToRowAtIndexPath:indexPath atScrollPosition:(UITableViewScrollPositionMiddle) animated:NO];
+        });
+    }
     return self.dataArray.count;
 }
 - (UITableViewCell *)tableView:(KKChatTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -157,7 +169,7 @@
         KKIMRedBagMsgCellModel *rightRedModel = [[KKIMRedBagMsgCellModel alloc] initWithIsMe:YES transferType:(KKIMMsgTransferTypeTransfer) reamrk:@"拿去花" amount:0.01];
         [_dataArray addObjectsFromArray:@[leftTranModel, leftRedModel, rightTranModel, rightRedModel]];
         
-        KKIMTextMsgCellModel *leftTextModel = [[KKIMTextMsgCellModel alloc] initWithIsMe: NO contentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"]];
+        KKIMTextMsgCellModel *leftTextModel = [[KKIMTextMsgCellModel alloc] initWithIsMe: NO contentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄"]];
         KKIMTextMsgCellModel *rightTextModel = [[KKIMTextMsgCellModel alloc] initWithIsMe:YES contentAttributedText:[[NSAttributedString alloc] initWithString:@"哈哈哈😄😄😄😄😄😄😄😄😄"]];
         [_dataArray addObjectsFromArray:@[leftTextModel, rightTextModel]];
         

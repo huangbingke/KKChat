@@ -12,6 +12,7 @@
 #import "KKHomeChatCell.h"
 #import "KKHomeNavBarView.h"
 #import "KKChatDetailViewController.h"
+#import "KKWebViewController.h"
 @interface KKHomeViewController ()<UITableViewDelegate, UITableViewDataSource, KKHomeNavBarViewDelegate>
 @property (nonatomic, strong) UITableView *listTableView;
 @property (nonatomic, strong) KKHomeNavBarView *navBarView;
@@ -81,7 +82,9 @@
     if ([model isKindOfClass:KKHomeSearchCellModel.class]) {
         
     } else if ([model isKindOfClass:KKHomeNoNetworkCellModel.class]) {
-        
+        KKWebViewController *webVC = [[KKWebViewController alloc] init];
+        webVC.localUrl = @"network_setting";
+        [self.navigationController pushViewController:webVC animated:YES];
     } else if ([model isKindOfClass:KKHomeThridDeviceCellModel.class]) {
         
     } else if ([model isKindOfClass:KKHomeChatCellModel.class]) {

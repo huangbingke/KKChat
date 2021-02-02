@@ -18,15 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIUserInterfaceStyle)currentInterfaceStyle;
 
 
-
-
-
-
-
-
-
-
-
+@property (nonatomic, assign) BOOL isDark;
 
 
 @end

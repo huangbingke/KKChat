@@ -51,9 +51,9 @@
 		8F19F16425B1340C002435DE /* KKIMReEditMsgCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F19F16325B1340C002435DE /* KKIMReEditMsgCellModel.m */; };
 		8F284FAF25A443A400FC56B0 /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F284FAE25A443A400FC56B0 /* UIView+Category.m */; };
 		8F284FB325A44A3700FC56B0 /* KKHomeNavBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F284FB225A44A3700FC56B0 /* KKHomeNavBarView.m */; };
+		8F47C43E25B80B8300F982F4 /* KKColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F47C43D25B80B8200F982F4 /* KKColor.m */; };
 		8F587AAF25ABED2C006B4B2D /* KKChatRecordDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F587AAE25ABED2C006B4B2D /* KKChatRecordDBHelper.m */; };
 		8F587AB425ABED46006B4B2D /* KKChatListDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F587AB325ABED46006B4B2D /* KKChatListDBHelper.m */; };
-		8F587AB825ABEE27006B4B2D /* KKUserInfoDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F587AB725ABEE27006B4B2D /* KKUserInfoDBHelper.m */; };
 		8F587ABC25ABEEF2006B4B2D /* KKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F587ABB25ABEEF2006B4B2D /* KKDBHelper.m */; };
 		8F587AC725ABF019006B4B2D /* KKUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F587AC625ABF019006B4B2D /* KKUserInfoModel.m */; };
 		8F587AD025AC15E4006B4B2D /* icons_filled_camera.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8F587ACF25AC15E4006B4B2D /* icons_filled_camera.svg */; };
@@ -266,6 +266,7 @@
 		8FCF374C25932F480026412C /* KKIMBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF374B25932F480026412C /* KKIMBaseModel.m */; };
 		8FCF3751259330AA0026412C /* KKIMCallMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF3750259330AA0026412C /* KKIMCallMsgCell.m */; };
 		8FCF37582593313E0026412C /* KKIMVoiceMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF37572593313E0026412C /* KKIMVoiceMsgCell.m */; };
+		8FDFBED525C7FC840096F759 /* KKUserInfoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDFBED425C7FC840096F759 /* KKUserInfoHelper.m */; };
 		F58511EE57860048E3FFA24C /* Pods_KKChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD0BDD52FFC77621D1D58A6 /* Pods_KKChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -342,12 +343,12 @@
 		8F284FAE25A443A400FC56B0 /* UIView+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
 		8F284FB125A44A3700FC56B0 /* KKHomeNavBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeNavBarView.h; sourceTree = "<group>"; };
 		8F284FB225A44A3700FC56B0 /* KKHomeNavBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeNavBarView.m; sourceTree = "<group>"; };
+		8F47C43C25B80B8200F982F4 /* KKColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKColor.h; sourceTree = "<group>"; };
+		8F47C43D25B80B8200F982F4 /* KKColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKColor.m; sourceTree = "<group>"; };
 		8F587AAD25ABED2C006B4B2D /* KKChatRecordDBHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKChatRecordDBHelper.h; sourceTree = "<group>"; };
 		8F587AAE25ABED2C006B4B2D /* KKChatRecordDBHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKChatRecordDBHelper.m; sourceTree = "<group>"; };
 		8F587AB225ABED46006B4B2D /* KKChatListDBHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKChatListDBHelper.h; sourceTree = "<group>"; };
 		8F587AB325ABED46006B4B2D /* KKChatListDBHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKChatListDBHelper.m; sourceTree = "<group>"; };
-		8F587AB625ABEE27006B4B2D /* KKUserInfoDBHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKUserInfoDBHelper.h; sourceTree = "<group>"; };
-		8F587AB725ABEE27006B4B2D /* KKUserInfoDBHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKUserInfoDBHelper.m; sourceTree = "<group>"; };
 		8F587ABA25ABEEF2006B4B2D /* KKDBHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKDBHelper.h; sourceTree = "<group>"; };
 		8F587ABB25ABEEF2006B4B2D /* KKDBHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKDBHelper.m; sourceTree = "<group>"; };
 		8F587AC525ABF019006B4B2D /* KKUserInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKUserInfoModel.h; sourceTree = "<group>"; };
@@ -598,6 +599,8 @@
 		8FCF3750259330AA0026412C /* KKIMCallMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMCallMsgCell.m; sourceTree = "<group>"; };
 		8FCF37562593313E0026412C /* KKIMVoiceMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKIMVoiceMsgCell.h; sourceTree = "<group>"; };
 		8FCF37572593313E0026412C /* KKIMVoiceMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKIMVoiceMsgCell.m; sourceTree = "<group>"; };
+		8FDFBED325C7FC840096F759 /* KKUserInfoHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKUserInfoHelper.h; sourceTree = "<group>"; };
+		8FDFBED425C7FC840096F759 /* KKUserInfoHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKUserInfoHelper.m; sourceTree = "<group>"; };
 		A22901DF6A43348524B2AC67 /* Pods-KKChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKChat.release.xcconfig"; path = "Target Support Files/Pods-KKChat/Pods-KKChat.release.xcconfig"; sourceTree = "<group>"; };
 		CF5FA835014BC3F053C9AE33 /* Pods-KKChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKChat.debug.xcconfig"; path = "Target Support Files/Pods-KKChat/Pods-KKChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -669,6 +672,8 @@
 			children = (
 				4B43F39D25B296530015557E /* KKDarkModeManager.h */,
 				4B43F39E25B296530015557E /* KKDarkModeManager.m */,
+				8F47C43C25B80B8200F982F4 /* KKColor.h */,
+				8F47C43D25B80B8200F982F4 /* KKColor.m */,
 			);
 			path = DarkMode;
 			sourceTree = "<group>";
@@ -798,8 +803,8 @@
 				8F587AAE25ABED2C006B4B2D /* KKChatRecordDBHelper.m */,
 				8F587AB225ABED46006B4B2D /* KKChatListDBHelper.h */,
 				8F587AB325ABED46006B4B2D /* KKChatListDBHelper.m */,
-				8F587AB625ABEE27006B4B2D /* KKUserInfoDBHelper.h */,
-				8F587AB725ABEE27006B4B2D /* KKUserInfoDBHelper.m */,
+				8FDFBED325C7FC840096F759 /* KKUserInfoHelper.h */,
+				8FDFBED425C7FC840096F759 /* KKUserInfoHelper.m */,
 			);
 			path = FMDB;
 			sourceTree = "<group>";
@@ -1671,12 +1676,12 @@
 				8F8080AE25A849CB00A6D292 /* KKChatMoreView.m in Sources */,
 				8F587AC725ABF019006B4B2D /* KKUserInfoModel.m in Sources */,
 				4B4CCA9F2594C30B00CB3929 /* KKHomeSearchCell.m in Sources */,
-				8F587AB825ABEE27006B4B2D /* KKUserInfoDBHelper.m in Sources */,
 				8FCF36D82593076F0026412C /* KKTabBarViewController.m in Sources */,
 				4B4CCACF2594C93500CB3929 /* KKHomeListCellModel.m in Sources */,
 				8F19F13C25B13324002435DE /* KKIMTextMsgCellModel.m in Sources */,
 				8F587AB425ABED46006B4B2D /* KKChatListDBHelper.m in Sources */,
 				8F587AD825AC1BFD006B4B2D /* KKNormalCellModel.m in Sources */,
+				8F47C43E25B80B8300F982F4 /* KKColor.m in Sources */,
 				8FCF371225930BED0026412C /* KKFinderViewController.m in Sources */,
 				8F169C9F25A68E8200949B40 /* KKNavigationBar.m in Sources */,
 				8F587ABC25ABEEF2006B4B2D /* KKDBHelper.m in Sources */,
@@ -1706,6 +1711,7 @@
 				8FCF373525932BED0026412C /* KKIMTimeMsgCell.m in Sources */,
 				8FCF3751259330AA0026412C /* KKIMCallMsgCell.m in Sources */,
 				8F587AD425AC1B57006B4B2D /* KKNormalCell.m in Sources */,
+				8FDFBED525C7FC840096F759 /* KKUserInfoHelper.m in Sources */,
 				8FCF36EB2593086B0026412C /* KKBaseCellModel.m in Sources */,
 				8F19F14825B133A4002435DE /* KKIMImageMsgCellModel.m in Sources */,
 				8F19F14425B13397002435DE /* KKIMVoiceMsgCellModel.m in Sources */,
@@ -1873,7 +1879,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KKChat/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = KKChat/Other/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1893,7 +1899,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KKChat/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = KKChat/Other/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

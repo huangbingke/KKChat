@@ -21,13 +21,23 @@
 
 
 - (UIUserInterfaceStyle)currentInterfaceStyle {
-    
-    return UIUserInterfaceStyleLight;
+    if ([UIApplication sharedApplication].delegate.window.rootViewController.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+        NSLog(@"暗黑模式");
+        return UIUserInterfaceStyleDark;
+    } else {
+        NSLog(@"非暗黑模式");
+        return UIUserInterfaceStyleLight;
+    }
 }
 
 
 
-
+- (BOOL)isDark {
+    if ([self currentInterfaceStyle] == UIUserInterfaceStyleDark) {
+        return YES;
+    }
+    return NO;
+}
 
 
 

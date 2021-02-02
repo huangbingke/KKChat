@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
                              Size:(CGSize)size;
 
 
-
+- (NSString *)md5;
 
 
 

@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import "KKSocketManager.h"
+#import "KKDarkModeManager.h"
 @interface AppDelegate ()
 
 @end
@@ -24,14 +25,7 @@
     
 //    [[KKSocketManager shareManager] connect];
     
-    if (@available(iOS 13.0, *)) {
-        self.window.rootViewController.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
-    }
-    if (self.window.rootViewController.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-        NSLog(@"暗黑模式");
-    } else {
-        NSLog(@"非暗黑模式");
-    }
+    [[KKDarkModeManager shareManager] currentInterfaceStyle];
     
     return YES;
 }

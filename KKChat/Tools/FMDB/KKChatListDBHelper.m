@@ -9,4 +9,24 @@
 
 @implementation KKChatListDBHelper
 
+
+- (void)createTableWithModel:(KKUserInfoModel *)model {
+    FMResultSet *set = [self.db executeQuery:[NSString stringWithFormat:@"select *from %@ where type = 'table' and name == ChatList_'%@'", KKDBName, model.userId]];
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end

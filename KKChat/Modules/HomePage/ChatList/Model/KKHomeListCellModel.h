@@ -16,9 +16,9 @@ typedef NS_ENUM(NSUInteger, KKMessageType) {
     KKMessageTypeSubscription, //订阅号
     KKMessageTypePublic, //订阅号
 };
-typedef NS_ENUM(NSUInteger, KKVoiceListionMode) {
-    KKVoiceListionModeReceiver,//听筒
-    KKVoiceListionModeLoudspeaker,//扬声器
+typedef NS_ENUM(NSUInteger, KKVoiceListenMode) {
+    KKVoiceListenModeReceiver,//听筒
+    KKVoiceListenModeLoudspeaker,//扬声器
 };
 
 extern NSString * const KKHomeChatCellID;
@@ -71,10 +71,13 @@ extern NSString * const KKHomeSearchCellID;
 @property (nonatomic, assign) KKMessageType messageType;//单聊, 群聊, 公众号, 订阅号...
 @property (nonatomic, assign) NSInteger noReadCount;
 
-@property (nonatomic, assign) KKVoiceListionMode listionMode;
+@property (nonatomic, assign) KKVoiceListenMode listenMode; //听筒/扬声器
 @property (nonatomic, assign) BOOL showName;//群聊里是否展示昵称
 
 @property (nonatomic, assign) BOOL openSelectStatus; //是否开启多选
+
+
+
 
 @end
 
