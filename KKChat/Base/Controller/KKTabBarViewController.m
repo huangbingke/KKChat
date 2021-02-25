@@ -12,7 +12,7 @@
 #import "KKFinderViewController.h"
 #import "KKMeViewController.h"
 
-@interface KKTabBarViewController ()
+@interface KKTabBarViewController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.delegate = self;
     [self addViewController];
 }
 
@@ -64,8 +64,22 @@
     }
     return nav;
 }
-
-
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    if ([viewController.tabBarItem.title isEqualToString:@"我的"]) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    KKNavigationController *nav = (KKNavigationController *)viewController;
+    UIViewController *vc = nav.topViewController;
+    if ([vc isKindOfClass:KKMeViewController.class]) {
+        //...
+    } else {
+        //...
+    }
+}
 
 
 @end

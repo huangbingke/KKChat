@@ -29,6 +29,7 @@ NSString * const KKUserInfoKey = @"KKUserInfoKey";
 
 - (BOOL)deleteUserInfo:(KKUserInfoModel *)model {
     
+    return YES;
 }
 
 
