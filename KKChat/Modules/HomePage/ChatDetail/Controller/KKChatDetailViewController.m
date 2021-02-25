@@ -33,6 +33,7 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.dataArray.count-1 inSection:0];
         [self.chatTableView scrollToRowAtIndexPath:indexPath atScrollPosition:(UITableViewScrollPositionBottom) animated:YES];
     });
+    
 }
 
 - (void)setupUI {
